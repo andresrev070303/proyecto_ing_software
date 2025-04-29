@@ -31,7 +31,8 @@ describe('Obtencion de Estaciones', () => {
       direccion: "Av. América #1256",
       tipoCombustible: "Normal",
       cantidadDisponible: 8500,
-      zona: "Norte"
+      zona: "Norte",
+      filaEspera: []
     });
 
     expect(estaciones[1]).toEqual({
@@ -39,7 +40,8 @@ describe('Obtencion de Estaciones', () => {
       direccion: "Av. Melchor Pérez #245",
       tipoCombustible: "Especial",
       cantidadDisponible: 7200,
-      zona: "Norte"
+      zona: "Norte",
+      filaEspera: []
     });
 
     expect(estaciones[2]).toEqual({
@@ -47,7 +49,8 @@ describe('Obtencion de Estaciones', () => {
       direccion: "Calle Jordán #321",
       tipoCombustible: "Diesel",
       cantidadDisponible: 6800,
-      zona: "Norte"
+      zona: "Norte",
+      filaEspera: []
     });
 
     expect(estaciones[3]).toEqual({
@@ -55,7 +58,8 @@ describe('Obtencion de Estaciones', () => {
       direccion: "Av. Villazón #789",
       tipoCombustible: "Normal",
       cantidadDisponible: 9200,
-      zona: "Sur"
+      zona: "Sur",
+      filaEspera: []
     });
     
     expect(estaciones.length).toBe(10); // Sin contar añadidos del localStorage

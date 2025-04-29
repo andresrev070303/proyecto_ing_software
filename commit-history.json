@@ -17,6 +17,23 @@
     "test_count": 1
   },
   {
+    "sha": "a1236c9c3a77c89cbd17bb243b1f5a1911631b1a",
+    "author": "Leonardo Koller",
+    "commit": {
+      "date": "2025-04-29T15:51:14.000Z",
+      "message": "refactory: se cambio los test para que pasen con la nueva variable",
+      "url": "https://github.com/andresrev070303/proyecto_ing_software/commit/a1236c9c3a77c89cbd17bb243b1f5a1911631b1a"
+    },
+    "stats": {
+      "total": 12,
+      "additions": 8,
+      "deletions": 4,
+      "date": "2025-04-29"
+    },
+    "coverage": 0,
+    "test_count": 20
+  },
+  {
     "sha": "02957da0df46b7e7844d52100adea36e04564a48",
     "author": "andresrev070303",
     "commit": {
