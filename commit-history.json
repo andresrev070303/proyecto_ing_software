@@ -1,0 +1,19 @@
+[
+  {
+    "sha": "1711849e294157dec72d6d03e10ecdc4165ac0f5",
+    "author": "andresrev070303",
+    "commit": {
+      "date": "2025-04-29T13:55:12.000Z",
+      "message": "feat:Se agrego visualizacion en la interfaz de usuario",
+      "url": "https://github.com/andresrev070303/proyecto_ing_software/commit/1711849e294157dec72d6d03e10ecdc4165ac0f5"
+    },
+    "stats": {
+      "total": 13,
+      "additions": 3,
+      "deletions": 10,
+      "date": "2025-04-29"
+    },
+    "coverage": 0,
+    "test_count": 1
+  }
+]
