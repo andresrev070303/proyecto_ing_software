@@ -96,18 +96,19 @@ let estacionesLista = [
   
   function agregarAfila(nombreEstacion, datosConductor) {
     const estacion = estacionesLista.find(est => est.nombre === nombreEstacion);
+    console.log(estacion);
     if (estacion) {
-      const nuevaPosicion = estacion.fila.length + 1;
-      estacion.fila.push({
+      const nuevaPosicion = estacion.filaEspera.length + 1;
+      estacion.filaEspera.push({
         ...datosConductor, 
         posicion: nuevaPosicion
       });
-      console.log(`Conductor ${datosConductor.nombreConductor} agregado a la fila de ${nombreEstacion}. Posición: ${nuevaPosicion}`);
-      return true;
+      console.log(`Conductor ${datosConductor.nombre} agregado a la fila de ${nombreEstacion}. Posición: ${nuevaPosicion}`);
+      return nuevaPosicion;
     } else {
       console.error(`Error: No se encontró la estación "${nombreEstacion}"`);
       return false;
     }
   }
-  
+
   export { estacionesLista, agregarEstacion, agregarAfila};

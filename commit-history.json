@@ -34,6 +34,23 @@
     "test_count": 20
   },
   {
+    "sha": "003b51b68e34cd68c63fabb2def613920674d684",
+    "author": "Leonardo Koller",
+    "commit": {
+      "date": "2025-04-29T19:30:34.000Z",
+      "message": "refactory: se agrego el formulario de los conductores, mensajes de falta llenar casillas y mensaje de confirmacion",
+      "url": "https://github.com/andresrev070303/proyecto_ing_software/commit/003b51b68e34cd68c63fabb2def613920674d684"
+    },
+    "stats": {
+      "total": 59,
+      "additions": 50,
+      "deletions": 9,
+      "date": "2025-04-29"
+    },
+    "coverage": 0,
+    "test_count": 20
+  },
+  {
     "sha": "02957da0df46b7e7844d52100adea36e04564a48",
     "author": "andresrev070303",
     "commit": {

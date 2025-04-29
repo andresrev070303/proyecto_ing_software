@@ -1,3 +1,4 @@
+import { agregarAfila } from './data/mockEstaciones.js';
 import { 
     obtenerEstaciones, 
     filtrarPorCombustible, 
@@ -19,17 +20,56 @@ import {
       return;
     }
   
-    divEstaciones.innerHTML = estaciones.map(estacion => `
-      <div>
+    //divEstaciones.innerHTML = "";
+  
+    estaciones.forEach(estacion => {
+      const div = document.createElement("div");
+  
+      div.innerHTML = `
         <h3>${estacion.nombre}</h3>
         <p><strong>Zona:</strong> ${estacion.zona}</p>
         <p><strong>Dirección:</strong> ${estacion.direccion}</p>
         <p><strong>Combustible:</strong> ${estacion.tipoCombustible}</p>
         <p><strong>Disponible:</strong> ${estacion.cantidadDisponible} litros</p>
-      </div>
-    `).join("");
-  }
+      `;
   
+      const boton = document.createElement("button");
+      boton.textContent = "Agregar conductor a la fila";
+      boton.addEventListener("click", () => mostrarFormularioConductor(estacion.nombre));
+  
+      div.appendChild(boton);
+      divEstaciones.appendChild(div);
+    });
+  }
+
+  function mostrarFormularioConductor(nombreEstacion) {
+    divEstaciones.innerHTML = "";
+    divEstaciones.innerHTML = `
+      <h2>Agregar conductor a ${nombreEstacion}</h2>
+      <form id="form-conductor">
+        <label>Nombre del conductor:</label>
+        <input type="text" id="nombreConductor" required><br>
+        <label>Placa del vehículo:</label>
+        <input type="text" id="placaVehiculo" required><br>
+        <button type="submit">Registrar</button>
+      </form>
+      <div id="resultadoConductor"></div>
+    `;
+  
+    const form = document.getElementById("form-conductor");
+    form.addEventListener("submit", function(e) {
+      e.preventDefault();
+  
+      const nombre = document.getElementById("nombreConductor").value.trim();
+      const placa = document.getElementById("placaVehiculo").value.trim();
+      const nuevoConductor = { nombre, placa };
+
+      const posicion = agregarAfila(nombreEstacion, nuevoConductor);
+  
+      document.getElementById("resultadoConductor").innerHTML =
+        `<p style="color:green">Conductor registrado en la posición ${posicion} de la fila</p>`;
+    });
+  }
   // Función para aplicar todos los filtros
   function aplicarFiltros() {
     const estacionesFiltradas = aplicarFiltrosCombinados({
