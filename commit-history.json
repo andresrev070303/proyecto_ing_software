@@ -15,5 +15,22 @@
     },
     "coverage": 0,
     "test_count": 1
+  },
+  {
+    "sha": "02957da0df46b7e7844d52100adea36e04564a48",
+    "author": "andresrev070303",
+    "commit": {
+      "date": "2025-04-30T19:40:52.000Z",
+      "message": "feat: se agrego el boton de registrar surtidor",
+      "url": "https://github.com/andresrev070303/proyecto_ing_software/commit/02957da0df46b7e7844d52100adea36e04564a48"
+    },
+    "stats": {
+      "total": 43,
+      "additions": 30,
+      "deletions": 13,
+      "date": "2025-04-30"
+    },
+    "coverage": 0,
+    "test_count": 1
   }
 ]

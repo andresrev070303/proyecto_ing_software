@@ -1,15 +1,23 @@
-import sumar from "./sumador";
+document.addEventListener("DOMContentLoaded", () => {
+  const openWindowButton = document.querySelector("#open-window-btn");
+  const newWindow = document.querySelector("#new-window");
+  const originalContent = document.querySelector("#original-content");
+  const closeWindowButton = document.querySelector("#close-window-btn");
 
-const first = document.querySelector("#primer-numero");
-const second = document.querySelector("#segundo-numero");
-const form = document.querySelector("#sumar-form");
-const div = document.querySelector("#resultado-div");
+  // Mostrar la "nueva ventana" y ocultar el contenido original cuando se hace clic en el botón
+  if (openWindowButton) {
+    openWindowButton.addEventListener("click", () => {
+      originalContent.style.display = "none"; // Ocultar contenido original
+      newWindow.style.display = "block"; // Mostrar "ventana" nueva
+    });
+  }
 
-form.addEventListener("submit", (event) => {
-  event.preventDefault();
-
-  const firstNumber = Number.parseInt(first.value);
-  const secondNumber = Number.parseInt(second.value);
-
-  div.innerHTML = "<p>" + sumar(firstNumber, secondNumber) + "</p>";
+  // Cerrar la "nueva ventana" y volver a mostrar el contenido original
+  if (closeWindowButton) {
+    closeWindowButton.addEventListener("click", () => {
+      originalContent.style.display = "block"; // Mostrar contenido original
+      newWindow.style.display = "none"; // Ocultar la "ventana"
+    });
+  }
 });
+
