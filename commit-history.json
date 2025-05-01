@@ -270,5 +270,22 @@
     },
     "coverage": 0,
     "test_count": 10
+  },
+  {
+    "sha": "ef65a85bd7e4f505d7abdf6793ab1eca79cf8281",
+    "author": "Jesus Ariel Mamani Gutierrez",
+    "commit": {
+      "date": "2025-05-01T22:12:47.000Z",
+      "message": "refactor: Enlace a index2",
+      "url": "https://github.com/andresrev070303/proyecto_ing_software/commit/ef65a85bd7e4f505d7abdf6793ab1eca79cf8281"
+    },
+    "stats": {
+      "total": 3,
+      "additions": 3,
+      "deletions": 0,
+      "date": "2025-05-01"
+    },
+    "coverage": 0,
+    "test_count": 10
   }
 ]
