@@ -117,5 +117,22 @@
     },
     "coverage": 0,
     "test_count": 9
+  },
+  {
+    "sha": "a3124017bab8bafa96a700f1ecb49a550a8fd9eb",
+    "author": "Jesus Ariel Mamani Gutierrez",
+    "commit": {
+      "date": "2025-05-01T19:20:24.000Z",
+      "message": "Fix and Refactor: Eliminacioncompleta  de palabras con acentos y que daba errores, tambien nueva ruta a la lista de estaciones",
+      "url": "https://github.com/andresrev070303/proyecto_ing_software/commit/a3124017bab8bafa96a700f1ecb49a550a8fd9eb"
+    },
+    "stats": {
+      "total": 220,
+      "additions": 112,
+      "deletions": 108,
+      "date": "2025-05-01"
+    },
+    "coverage": 0,
+    "test_count": 9
   }
 ]
