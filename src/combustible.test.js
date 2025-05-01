@@ -38,5 +38,14 @@ describe('Obtención de Estaciones', () => {
     expect(estaciones.length).toBe(6);
   });
 
+  it('debe contener los tres tipos de combustible', () => {
+    const estaciones = obtenerEstaciones();
+    const tipos = estaciones.map(e => e.tipoCombustible);
+    
+    expect(tipos).toContain("Normal");
+    expect(tipos).toContain("Especial");
+    expect(tipos).toContain("Diesel");
+  });
+
   
 });
