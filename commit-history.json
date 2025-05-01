@@ -32,5 +32,243 @@
     },
     "coverage": 0,
     "test_count": 1
+  },
+  {
+    "sha": "29f0f35aa8fb83a358e7401f5d53e671275631e3",
+    "author": "Jesus Ariel Mamani Gutierrez",
+    "commit": {
+      "date": "2025-05-01T17:00:01.000Z",
+      "message": "Feat and Test: Primer test y funcion de listarSurtidores para que se vea sus propiedades",
+      "url": "https://github.com/andresrev070303/proyecto_ing_software/commit/29f0f35aa8fb83a358e7401f5d53e671275631e3"
+    },
+    "stats": {
+      "total": 63,
+      "additions": 49,
+      "deletions": 14,
+      "date": "2025-05-01"
+    },
+    "coverage": 0,
+    "test_count": 1
+  },
+  {
+    "sha": "95d430da4d218bd598deaad5511f3318742b1dc7",
+    "author": "Jesus Ariel Mamani Gutierrez",
+    "commit": {
+      "date": "2025-05-01T17:18:28.000Z",
+      "message": "Test: Prueba con los 4 primero surtidores registrados",
+      "url": "https://github.com/andresrev070303/proyecto_ing_software/commit/95d430da4d218bd598deaad5511f3318742b1dc7"
+    },
+    "stats": {
+      "total": 86,
+      "additions": 71,
+      "deletions": 15,
+      "date": "2025-05-01"
+    },
+    "coverage": 0,
+    "test_count": 1
+  },
+  {
+    "sha": "551901c702035bef40f31ea313764eaa66e6cc0b",
+    "author": "Jesus Ariel Mamani Gutierrez",
+    "commit": {
+      "date": "2025-05-01T17:21:41.000Z",
+      "message": "Test: Prueba que el array cumple con 6 estaciones y que entre los 6 surtidores haya de los 3 tipos de combustibles",
+      "url": "https://github.com/andresrev070303/proyecto_ing_software/commit/551901c702035bef40f31ea313764eaa66e6cc0b"
+    },
+    "stats": {
+      "total": 9,
+      "additions": 9,
+      "deletions": 0,
+      "date": "2025-05-01"
+    },
+    "coverage": 0,
+    "test_count": 2
+  },
+  {
+    "sha": "65b49dfc039ffd5fc6e994558dfc2520a77742d9",
+    "author": "Jesus Ariel Mamani Gutierrez",
+    "commit": {
+      "date": "2025-05-01T17:22:35.000Z",
+      "message": "Test: Prueba que los surtidores tengan mas 0Litros en combustibe",
+      "url": "https://github.com/andresrev070303/proyecto_ing_software/commit/65b49dfc039ffd5fc6e994558dfc2520a77742d9"
+    },
+    "stats": {
+      "total": 7,
+      "additions": 6,
+      "deletions": 1,
+      "date": "2025-05-01"
+    },
+    "coverage": 0,
+    "test_count": 3
+  },
+  {
+    "sha": "042d16e3795eac90b4299be414574fc608e75d38",
+    "author": "Jesus Ariel Mamani Gutierrez",
+    "commit": {
+      "date": "2025-05-01T18:21:20.000Z",
+      "message": "Test and Feat: Prueba y funcionalidad  para comprobar una lista ordenada por combustible",
+      "url": "https://github.com/andresrev070303/proyecto_ing_software/commit/042d16e3795eac90b4299be414574fc608e75d38"
+    },
+    "stats": {
+      "total": 25,
+      "additions": 24,
+      "deletions": 1,
+      "date": "2025-05-01"
+    },
+    "coverage": 0,
+    "test_count": 4
+  },
+  {
+    "sha": "b432a89c971cf62f8dbcc08ae9b91327753cf5b7",
+    "author": "Jesus Ariel Mamani Gutierrez",
+    "commit": {
+      "date": "2025-05-01T18:34:03.000Z",
+      "message": "Test and Feat: Prueba y funcionalidad  para filtrar por tipo de combustible",
+      "url": "https://github.com/andresrev070303/proyecto_ing_software/commit/b432a89c971cf62f8dbcc08ae9b91327753cf5b7"
+    },
+    "stats": {
+      "total": 49,
+      "additions": 45,
+      "deletions": 4,
+      "date": "2025-05-01"
+    },
+    "coverage": 0,
+    "test_count": 9
+  },
+  {
+    "sha": "a3124017bab8bafa96a700f1ecb49a550a8fd9eb",
+    "author": "Jesus Ariel Mamani Gutierrez",
+    "commit": {
+      "date": "2025-05-01T19:20:24.000Z",
+      "message": "Fix and Refactor: Eliminacioncompleta  de palabras con acentos y que daba errores, tambien nueva ruta a la lista de estaciones",
+      "url": "https://github.com/andresrev070303/proyecto_ing_software/commit/a3124017bab8bafa96a700f1ecb49a550a8fd9eb"
+    },
+    "stats": {
+      "total": 220,
+      "additions": 112,
+      "deletions": 108,
+      "date": "2025-05-01"
+    },
+    "coverage": 0,
+    "test_count": 9
+  },
+  {
+    "sha": "4ff4b983ac78e83a8eecee8c4874b4ee0fea7944",
+    "author": "Jesus Ariel Mamani Gutierrez",
+    "commit": {
+      "date": "2025-05-01T19:24:20.000Z",
+      "message": "Refactor:Implementacion de presenter2 y index2 para no estropear el main original, archivos que se van a elimnar a futuro",
+      "url": "https://github.com/andresrev070303/proyecto_ing_software/commit/4ff4b983ac78e83a8eecee8c4874b4ee0fea7944"
+    },
+    "stats": {
+      "total": 26,
+      "additions": 26,
+      "deletions": 0,
+      "date": "2025-05-01"
+    },
+    "coverage": 0,
+    "test_count": 9
+  },
+  {
+    "sha": "c66407a46004155cfe29960e555b50717a5b0bc0",
+    "author": "Jesus Ariel Mamani Gutierrez",
+    "commit": {
+      "date": "2025-05-01T19:36:20.000Z",
+      "message": "Docs: Cambios en el presenter2 y index2 para que me muestre los surtidores por mayor cant de litros y por tipo de combustible",
+      "url": "https://github.com/andresrev070303/proyecto_ing_software/commit/c66407a46004155cfe29960e555b50717a5b0bc0"
+    },
+    "stats": {
+      "total": 92,
+      "additions": 69,
+      "deletions": 23,
+      "date": "2025-05-01"
+    },
+    "coverage": 0,
+    "test_count": 9
+  },
+  {
+    "sha": "a300aefbd28d0eda495fbe8de69be3c22b27d939",
+    "author": "Jesus Ariel Mamani Gutierrez",
+    "commit": {
+      "date": "2025-05-01T20:51:09.000Z",
+      "message": "feat, refactor, test: Nueva funcionalidad que es poder fltrar por zona, a la misma vez los test pasados los actualizamos para que no error, y realizamos los test de zona",
+      "url": "https://github.com/andresrev070303/proyecto_ing_software/commit/a300aefbd28d0eda495fbe8de69be3c22b27d939"
+    },
+    "stats": {
+      "total": 200,
+      "additions": 140,
+      "deletions": 60,
+      "date": "2025-05-01"
+    },
+    "coverage": 0,
+    "test_count": 10
+  },
+  {
+    "sha": "70594f6370e645433e188ff8b997c2f4ac6365b9",
+    "author": "Jesus Ariel Mamani Gutierrez",
+    "commit": {
+      "date": "2025-05-01T20:54:03.000Z",
+      "message": "refactor: Actuliacion del archivo presenter2 respecto a la nueva funcionalidad de filtrar por zona",
+      "url": "https://github.com/andresrev070303/proyecto_ing_software/commit/70594f6370e645433e188ff8b997c2f4ac6365b9"
+    },
+    "stats": {
+      "total": 117,
+      "additions": 74,
+      "deletions": 43,
+      "date": "2025-05-01"
+    },
+    "coverage": 0,
+    "test_count": 10
+  },
+  {
+    "sha": "4be62fb2c4d2c234a4f18869bb672b6f99a597b6",
+    "author": "Jesus Ariel Mamani Gutierrez",
+    "commit": {
+      "date": "2025-05-01T21:42:10.000Z",
+      "message": "Guardando/Save cambios de la rama con 3H.U completadas",
+      "url": "https://github.com/andresrev070303/proyecto_ing_software/commit/4be62fb2c4d2c234a4f18869bb672b6f99a597b6"
+    },
+    "stats": {
+      "total": 59,
+      "additions": 32,
+      "deletions": 27,
+      "date": "2025-05-01"
+    },
+    "coverage": 0,
+    "test_count": 10
+  },
+  {
+    "sha": "697d124c559b83dfda95b55b6270876f26eafab6",
+    "author": "Jesus Ariel Mamani Gutierrez",
+    "commit": {
+      "date": "2025-05-01T21:57:19.000Z",
+      "message": "Replicar el index del main para que no haya error en el merge",
+      "url": "https://github.com/andresrev070303/proyecto_ing_software/commit/697d124c559b83dfda95b55b6270876f26eafab6"
+    },
+    "stats": {
+      "total": 10,
+      "additions": 3,
+      "deletions": 7,
+      "date": "2025-05-01"
+    },
+    "coverage": 0,
+    "test_count": 10
+  },
+  {
+    "sha": "02cc4f1e24300d9a17615d11e6abed43d225fe6d",
+    "author": "Jesus Ariel Mamani Gutierrez",
+    "commit": {
+      "date": "2025-05-01T22:09:18.000Z",
+      "message": "Merge completado: integrando dispo_combustible y nuevos archivos",
+      "url": "https://github.com/andresrev070303/proyecto_ing_software/commit/02cc4f1e24300d9a17615d11e6abed43d225fe6d"
+    },
+    "stats": {
+      "total": 601,
+      "additions": 587,
+      "deletions": 14,
+      "date": "2025-05-01"
+    },
+    "coverage": 0,
+    "test_count": 10
   }
 ]
