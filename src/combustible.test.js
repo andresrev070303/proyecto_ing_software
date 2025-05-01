@@ -1,39 +1,43 @@
 /* combustible.test.js */
-import {obtenerEstaciones} from './estaciones.js';
+import { obtenerEstaciones } from './estaciones.js';
 
 describe('Obtencion de Estaciones', () => {
   it('debe retornar estaciones con sus respectivas propiedades', () => {
     const estaciones = obtenerEstaciones();
     
     expect(estaciones[0]).toEqual({
-      nombre: "Estacion San Martin",
-      direccion: "Av. San Martin #456",
+      nombre: "Gulf Norte",
+      direccion: "Av. América #1256",
       tipoCombustible: "Normal",
-      cantidadDisponible: 7500
+      cantidadDisponible: 8500,
+      zona: "Norte"
     });
 
     expect(estaciones[1]).toEqual({
-      nombre: "Estacion Prado",
-      direccion: "El Prado #789",
+      nombre: "YPFB Cala Cala",
+      direccion: "Av. Melchor Pérez #245",
       tipoCombustible: "Especial",
-      cantidadDisponible: 4200
+      cantidadDisponible: 7200,
+      zona: "Norte"
     });
 
     expect(estaciones[2]).toEqual({
-      nombre: "Estacion La Recoleta",
-      direccion: "Calle Jordan #321",
+      nombre: "Petrobras La Recoleta",
+      direccion: "Calle Jordán #321",
       tipoCombustible: "Diesel",
-      cantidadDisponible: 6800
+      cantidadDisponible: 6800,
+      zona: "Norte"
     });
 
     expect(estaciones[3]).toEqual({
-      nombre: "Estacion Queru Queru",
-      direccion: "Av. Queru Queru #101",
+      nombre: "YPFB San Antonio",
+      direccion: "Av. Villazón #789",
       tipoCombustible: "Normal",
-      cantidadDisponible: 3000
+      cantidadDisponible: 9200,
+      zona: "Sur"
     });
     
-    expect(estaciones.length).toBe(6);
+    expect(estaciones.length).toBe(10); // Actualizado a 10 estaciones
   });
 
   it('debe contener los tres tipos de combustible', () => {
@@ -49,6 +53,13 @@ describe('Obtencion de Estaciones', () => {
     const estaciones = obtenerEstaciones();
     estaciones.forEach(estacion => {
       expect(estacion.cantidadDisponible).toBeGreaterThan(0);
+    });
+  });
+
+  it('debe incluir la propiedad zona en todas las estaciones', () => {
+    const estaciones = obtenerEstaciones();
+    estaciones.forEach(estacion => {
+      expect(estacion).toHaveProperty('zona');
     });
   });
 });

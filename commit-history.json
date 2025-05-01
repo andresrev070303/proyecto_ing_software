@@ -168,5 +168,22 @@
     },
     "coverage": 0,
     "test_count": 9
+  },
+  {
+    "sha": "a300aefbd28d0eda495fbe8de69be3c22b27d939",
+    "author": "Jesus Ariel Mamani Gutierrez",
+    "commit": {
+      "date": "2025-05-01T20:51:09.000Z",
+      "message": "feat, refactor, test: Nueva funcionalidad que es poder fltrar por zona, a la misma vez los test pasados los actualizamos para que no error, y realizamos los test de zona",
+      "url": "https://github.com/andresrev070303/proyecto_ing_software/commit/a300aefbd28d0eda495fbe8de69be3c22b27d939"
+    },
+    "stats": {
+      "total": 200,
+      "additions": 140,
+      "deletions": 60,
+      "date": "2025-05-01"
+    },
+    "coverage": 0,
+    "test_count": 10
   }
 ]
