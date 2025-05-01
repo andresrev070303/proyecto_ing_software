@@ -6,18 +6,24 @@
 <body>
   <h1>Bienvenido a <em>A TODO GAS!</em></h1>
   
-  <!-- Selector de Combustible -->
-  <label for="combustible">Filtrar por combustible:</label>
-  <select id="combustible">
-    <option value="Todos">Todos</option>
-    <option value="Normal">Normal</option>
-    <option value="Especial">Especial</option>
-    <option value="Diesel">Diesel</option>
-    <option value="Gas">Gas</option>
-  </select>
-  
-  <!-- Botón de Ordenamiento -->
-  <button id="btn-ordenar">Ordenar por Cantidad (Mayor a Menor)</button>
+  <div>
+    <!-- Selector de Zona -->
+    <div>
+      <label for="filtro-zona">Filtrar por zona:</label>
+      <select id="filtro-zona"></select>
+    </div>
+    
+    <!-- Selector de Combustible -->
+    <div>
+      <label for="combustible">Filtrar por combustible:</label>
+      <select id="combustible"></select>
+    </div>
+    
+    <!-- Checkbox para ordenamiento -->
+    <label>
+      <input type="checkbox" id="ordenar-checkbox"> Ordenar por cantidad (Mayor a Menor)
+    </label>
+  </div>
   
   <!-- Contenedor de Resultados -->
   <div id="estaciones-container"></div>
