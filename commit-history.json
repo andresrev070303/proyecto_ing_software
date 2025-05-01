@@ -219,5 +219,22 @@
     },
     "coverage": 0,
     "test_count": 10
+  },
+  {
+    "sha": "697d124c559b83dfda95b55b6270876f26eafab6",
+    "author": "Jesus Ariel Mamani Gutierrez",
+    "commit": {
+      "date": "2025-05-01T21:57:19.000Z",
+      "message": "Replicar el index del main para que no haya error en el merge",
+      "url": "https://github.com/andresrev070303/proyecto_ing_software/commit/697d124c559b83dfda95b55b6270876f26eafab6"
+    },
+    "stats": {
+      "total": 10,
+      "additions": 3,
+      "deletions": 7,
+      "date": "2025-05-01"
+    },
+    "coverage": 0,
+    "test_count": 10
   }
 ]
