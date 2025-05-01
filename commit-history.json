@@ -100,5 +100,22 @@
     },
     "coverage": 0,
     "test_count": 4
+  },
+  {
+    "sha": "b432a89c971cf62f8dbcc08ae9b91327753cf5b7",
+    "author": "Jesus Ariel Mamani Gutierrez",
+    "commit": {
+      "date": "2025-05-01T18:34:03.000Z",
+      "message": "Test and Feat: Prueba y funcionalidad  para filtrar por tipo de combustible",
+      "url": "https://github.com/andresrev070303/proyecto_ing_software/commit/b432a89c971cf62f8dbcc08ae9b91327753cf5b7"
+    },
+    "stats": {
+      "total": 49,
+      "additions": 45,
+      "deletions": 4,
+      "date": "2025-05-01"
+    },
+    "coverage": 0,
+    "test_count": 9
   }
 ]
