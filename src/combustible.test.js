@@ -47,5 +47,10 @@ describe('Obtención de Estaciones', () => {
     expect(tipos).toContain("Diesel");
   });
 
-  
+  it('debe tener cantidades disponibles mayores a 0', () => {
+    const estaciones = obtenerEstaciones();
+    estaciones.forEach(estacion => {
+      expect(estacion.cantidadDisponible).toBeGreaterThan(0);
+    });
+  });
 });
