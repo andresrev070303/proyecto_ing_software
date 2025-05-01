@@ -15,5 +15,22 @@
     },
     "coverage": 0,
     "test_count": 1
+  },
+  {
+    "sha": "29f0f35aa8fb83a358e7401f5d53e671275631e3",
+    "author": "Jesus Ariel Mamani Gutierrez",
+    "commit": {
+      "date": "2025-05-01T17:00:01.000Z",
+      "message": "Feat and Test: Primer test y funcion de listarSurtidores para que se vea sus propiedades",
+      "url": "https://github.com/andresrev070303/proyecto_ing_software/commit/29f0f35aa8fb83a358e7401f5d53e671275631e3"
+    },
+    "stats": {
+      "total": 63,
+      "additions": 49,
+      "deletions": 14,
+      "date": "2025-05-01"
+    },
+    "coverage": 0,
+    "test_count": 1
   }
 ]
