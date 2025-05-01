@@ -151,5 +151,22 @@
     },
     "coverage": 0,
     "test_count": 9
+  },
+  {
+    "sha": "c66407a46004155cfe29960e555b50717a5b0bc0",
+    "author": "Jesus Ariel Mamani Gutierrez",
+    "commit": {
+      "date": "2025-05-01T19:36:20.000Z",
+      "message": "Docs: Cambios en el presenter2 y index2 para que me muestre los surtidores por mayor cant de litros y por tipo de combustible",
+      "url": "https://github.com/andresrev070303/proyecto_ing_software/commit/c66407a46004155cfe29960e555b50717a5b0bc0"
+    },
+    "stats": {
+      "total": 92,
+      "additions": 69,
+      "deletions": 23,
+      "date": "2025-05-01"
+    },
+    "coverage": 0,
+    "test_count": 9
   }
 ]
