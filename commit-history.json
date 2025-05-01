@@ -134,5 +134,22 @@
     },
     "coverage": 0,
     "test_count": 9
+  },
+  {
+    "sha": "4ff4b983ac78e83a8eecee8c4874b4ee0fea7944",
+    "author": "Jesus Ariel Mamani Gutierrez",
+    "commit": {
+      "date": "2025-05-01T19:24:20.000Z",
+      "message": "Refactor:Implementacion de presenter2 y index2 para no estropear el main original, archivos que se van a elimnar a futuro",
+      "url": "https://github.com/andresrev070303/proyecto_ing_software/commit/4ff4b983ac78e83a8eecee8c4874b4ee0fea7944"
+    },
+    "stats": {
+      "total": 26,
+      "additions": 26,
+      "deletions": 0,
+      "date": "2025-05-01"
+    },
+    "coverage": 0,
+    "test_count": 9
   }
 ]
