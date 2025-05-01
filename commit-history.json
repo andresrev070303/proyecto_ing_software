@@ -185,5 +185,22 @@
     },
     "coverage": 0,
     "test_count": 10
+  },
+  {
+    "sha": "70594f6370e645433e188ff8b997c2f4ac6365b9",
+    "author": "Jesus Ariel Mamani Gutierrez",
+    "commit": {
+      "date": "2025-05-01T20:54:03.000Z",
+      "message": "refactor: Actuliacion del archivo presenter2 respecto a la nueva funcionalidad de filtrar por zona",
+      "url": "https://github.com/andresrev070303/proyecto_ing_software/commit/70594f6370e645433e188ff8b997c2f4ac6365b9"
+    },
+    "stats": {
+      "total": 117,
+      "additions": 74,
+      "deletions": 43,
+      "date": "2025-05-01"
+    },
+    "coverage": 0,
+    "test_count": 10
   }
 ]
