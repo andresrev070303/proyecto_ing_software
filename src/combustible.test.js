@@ -1,15 +1,42 @@
-// combustible.test.js (ruta corregida)
-import obtenerEstaciones from './estaciones.js';  // <-- ¡Agrega el punto (./)!
+// combustible.test.js
+import obtenerEstaciones from './estaciones.js';
 
 describe('Obtención de Estaciones', () => {
-    it('debe retornar estaciones con sus respectivas propiedades', () => {
-        const estaciones = obtenerEstaciones();
-        expect(estaciones[0]).toEqual({
-          nombre: "Estación Principal",
-          dirección: "Avenida Libertad 123",
-          tipoCombustible: "Normal",
-          cantidadDisponible: 5000
-        });
+  it('debe retornar estaciones con sus respectivas propiedades', () => {
+    const estaciones = obtenerEstaciones();
+    
+    
+    expect(estaciones[0]).toEqual({
+      nombre: "Estación San Martín",
+      dirección: "Av. San Martín #456",
+      tipoCombustible: "Normal",
+      cantidadDisponible: 7500
+    });
+
+    
+    expect(estaciones[1]).toEqual({
+      nombre: "Estación Prado",
+      dirección: "El Prado #789",
+      tipoCombustible: "Especial",
+      cantidadDisponible: 4200
+    });
+
+    expect(estaciones[2]).toEqual({
+        nombre: "Estación La Recoleta",
+      dirección: "Calle Jordán #321",
+      tipoCombustible: "Diesel",
+      cantidadDisponible: 6800
+      });
+
+      expect(estaciones[3]).toEqual({
+        nombre: "Estación Queru Queru",
+      dirección: "Av. Queru Queru #101",
+      tipoCombustible: "Normal",
+      cantidadDisponible: 3000
       });
     
+    expect(estaciones.length).toBe(6);
+  });
+
+  
 });
