@@ -83,5 +83,22 @@
     },
     "coverage": 0,
     "test_count": 3
+  },
+  {
+    "sha": "042d16e3795eac90b4299be414574fc608e75d38",
+    "author": "Jesus Ariel Mamani Gutierrez",
+    "commit": {
+      "date": "2025-05-01T18:21:20.000Z",
+      "message": "Test and Feat: Prueba y funcionalidad  para comprobar una lista ordenada por combustible",
+      "url": "https://github.com/andresrev070303/proyecto_ing_software/commit/042d16e3795eac90b4299be414574fc608e75d38"
+    },
+    "stats": {
+      "total": 25,
+      "additions": 24,
+      "deletions": 1,
+      "date": "2025-05-01"
+    },
+    "coverage": 0,
+    "test_count": 4
   }
 ]

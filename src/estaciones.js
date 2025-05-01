@@ -40,3 +40,15 @@ const estacionesLista = [
   export default function obtenerEstaciones() {
     return estacionesLista;
   }
+  
+  export function ordenarPorCantidad() {
+    return [...estacionesLista].sort((a, b) => b.cantidadDisponible - a.cantidadDisponible);
+  }
+  
+
+  
+
+
+  
+
+ 
