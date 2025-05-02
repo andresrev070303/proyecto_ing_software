@@ -340,6 +340,23 @@
     "test_count": 21
   },
   {
+    "sha": "2e33562e670193cd7a9b55ba47010100817043e8",
+    "author": "Leonardo Koller",
+    "commit": {
+      "date": "2025-05-02T04:37:36.000Z",
+      "message": "feat: se agrego el boton de registrar combustible",
+      "url": "https://github.com/andresrev070303/proyecto_ing_software/commit/2e33562e670193cd7a9b55ba47010100817043e8"
+    },
+    "stats": {
+      "total": 11,
+      "additions": 6,
+      "deletions": 5,
+      "date": "2025-05-02"
+    },
+    "coverage": 0,
+    "test_count": 21
+  },
+  {
     "sha": "8ba819f0ff95d234be55d6f036be83506a868bca",
     "author": "Leonardo Koller",
     "commit": {
