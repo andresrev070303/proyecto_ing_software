@@ -323,6 +323,23 @@
     "test_count": 10
   },
   {
+    "sha": "ed43228208967f621527be9a4eaebc12c382e03d",
+    "author": "Leonardo Koller",
+    "commit": {
+      "date": "2025-05-02T04:13:30.000Z",
+      "message": "feat: agrege mensaje que es una cantidad invalidad",
+      "url": "https://github.com/andresrev070303/proyecto_ing_software/commit/ed43228208967f621527be9a4eaebc12c382e03d"
+    },
+    "stats": {
+      "total": 13,
+      "additions": 11,
+      "deletions": 2,
+      "date": "2025-05-02"
+    },
+    "coverage": 0,
+    "test_count": 21
+  },
+  {
     "sha": "8ba819f0ff95d234be55d6f036be83506a868bca",
     "author": "Leonardo Koller",
     "commit": {

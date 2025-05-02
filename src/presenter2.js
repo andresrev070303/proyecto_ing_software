@@ -71,8 +71,17 @@ import {
       </form>
       <div id="resultadoConductor"></div>
     `;
-
-    
+    const form = document.getElementById("form-combustible");
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+  
+      const cantidad = parseFloat(document.getElementById("cantidadCombustible").value);
+      if (isNaN(cantidad) || cantidad <= 0) {
+        document.getElementById("resultadoCombustible").innerHTML =
+          `<p style="color:red">Cantidad inválida.</p>`;
+        return;
+      }
+   });
   }
   function mostrarFormularioConductor(nombreEstacion) {
     divEstaciones.innerHTML = "";
