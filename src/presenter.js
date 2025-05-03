@@ -26,13 +26,16 @@ document.addEventListener("DOMContentLoaded", () => {
   // Manejo del formulario
   const form = document.querySelector("#form-surtidor");
   const nombreInput = document.querySelector("#nombre");
+  const zonaInput = document.querySelector("#zona");
   const resultadoDiv = document.querySelector("#resultado-surtidor");
+
 
   if (form) {
     form.addEventListener("submit", (e) => {
       e.preventDefault();
       const nombre = nombreInput.value;
-      const resultado = registrarSurtidor({ nombre });
+      const zona = zonaInput.value.trim();
+      const resultado = registrarSurtidor({ nombre, zona});
 
       if (resultado === "") {
         resultadoDiv.innerHTML = `<p style="color: red;">Nombre inválido.</p>`;
@@ -42,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
           direccion: "",
           tipoCombustible: "",
           cantidadDisponible: 0,
-          zona: ""
+          zona: resultado.zona
         };
         
         agregarEstacion(nuevaEstacion);

@@ -372,5 +372,22 @@
     },
     "coverage": 0,
     "test_count": 12
+  },
+  {
+    "sha": "c84dbf8a4459e1fc517468186119b97fad902bd0",
+    "author": "andresrev070303",
+    "commit": {
+      "date": "2025-05-03T03:20:07.000Z",
+      "message": "Se agrega la zona de la estacion de servicio en la lista",
+      "url": "https://github.com/andresrev070303/proyecto_ing_software/commit/c84dbf8a4459e1fc517468186119b97fad902bd0"
+    },
+    "stats": {
+      "total": 7,
+      "additions": 5,
+      "deletions": 2,
+      "date": "2025-05-03"
+    },
+    "coverage": 0,
+    "test_count": 12
   }
 ]
