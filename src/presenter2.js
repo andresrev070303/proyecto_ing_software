@@ -61,8 +61,18 @@ import {
       divEstaciones.appendChild(div);
     });
   }
-  function MostrarFormularioCombustible(){
+  function MostrarFormularioCombustible(nombreEstacion){
+    divEstaciones.innerHTML = "";
+    divEstaciones.innerHTML = `
+      <h2>Agregar combustible a ${nombreEstacion}</h2>
+      <form id="form-combustible">
+        <label>cantidad de combustible:</label>
+        <input type="number" id="cantidadCombustible" required><br>
+      </form>
+      <div id="resultadoConductor"></div>
+    `;
 
+    
   }
   function mostrarFormularioConductor(nombreEstacion) {
     divEstaciones.innerHTML = "";

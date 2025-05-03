@@ -493,6 +493,23 @@
     "test_count": 13
   },
   {
+    "sha": "74e6ac2dd4567836d81a8b33dca01a5df6b35c50",
+    "author": "Leonardo Koller",
+    "commit": {
+      "date": "2025-05-03T03:48:44.000Z",
+      "message": "feat: se agrego el formulario de ingresar combustible",
+      "url": "https://github.com/andresrev070303/proyecto_ing_software/commit/74e6ac2dd4567836d81a8b33dca01a5df6b35c50"
+    },
+    "stats": {
+      "total": 12,
+      "additions": 11,
+      "deletions": 1,
+      "date": "2025-05-03"
+    },
+    "coverage": 0,
+    "test_count": 21
+  },
+  {
     "sha": "95b70d77b25a80d91a7fcc76bf5e2dbc148c5dcc",
     "author": "andresrev070303",
     "commit": {
