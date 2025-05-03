@@ -474,5 +474,22 @@
     },
     "coverage": 0,
     "test_count": 14
+  },
+  {
+    "sha": "2de41ffb0b3f72da8d42d7a9adc4dea5d0031c28",
+    "author": "andresrev070303",
+    "commit": {
+      "date": "2025-05-03T04:05:31.000Z",
+      "message": "feat: se agrego la visualizacion que los campos son necesarios",
+      "url": "https://github.com/andresrev070303/proyecto_ing_software/commit/2de41ffb0b3f72da8d42d7a9adc4dea5d0031c28"
+    },
+    "stats": {
+      "total": 5,
+      "additions": 5,
+      "deletions": 0,
+      "date": "2025-05-03"
+    },
+    "coverage": 0,
+    "test_count": 14
   }
 ]

@@ -30,6 +30,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const direccionInput = document.querySelector("#direccion");
 
   const resultadoDiv = document.querySelector("#resultado-surtidor");
+  if (!nombre || !zona || !direccion) {
+    resultadoDiv.innerHTML = `<p style="color: red;">Todos los campos son obligatorios.</p>`;
+    return;
+  }
+  
 
 
   if (form) {
