@@ -644,5 +644,22 @@
     },
     "coverage": 0,
     "test_count": 19
+  },
+  {
+    "sha": "80f6290c32ac121987121c05112a95bed30e2659",
+    "author": "andresrev070303",
+    "commit": {
+      "date": "2025-05-03T17:03:06.000Z",
+      "message": "feat:Si la cantidad de vehiculos es igual a la capacidad de carga manda un mnesaje de advertencia",
+      "url": "https://github.com/andresrev070303/proyecto_ing_software/commit/80f6290c32ac121987121c05112a95bed30e2659"
+    },
+    "stats": {
+      "total": 10,
+      "additions": 8,
+      "deletions": 2,
+      "date": "2025-05-03"
+    },
+    "coverage": 0,
+    "test_count": 20
   }
 ]

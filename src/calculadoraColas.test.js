@@ -16,5 +16,8 @@ describe("calcularCola", () => {
   it("debería retornar mensaje negativo si no alcanza", () => {
     expect(gasolinaAlcanzara(30, 50)).toBe("No alcanzará: El combustible no cubrirá su posición en la cola");
   });
+  it("debería retornar mensaje de advertencia si la capacidad es exacta", () => {
+    expect(gasolinaAlcanzara(18, 150)).toBe("Advertencia: El combustible justo alcanza, mejor ir a otro surtidor para no arriesgarse");
+  });
 
 });
