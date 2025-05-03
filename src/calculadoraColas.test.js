@@ -13,4 +13,8 @@ describe("calcularCola", () => {
   it("debería retornar mensaje positivo si alcanza", () => {
     expect(gasolinaAlcanzara(18, 200)).toBe("Sí alcanzará: Hay suficiente combustible para su turno");
   });
+  it("debería retornar mensaje negativo si no alcanza", () => {
+    expect(gasolinaAlcanzara(30, 50)).toBe("No alcanzará: El combustible no cubrirá su posición en la cola");
+  });
+
 });

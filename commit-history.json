@@ -627,5 +627,22 @@
     },
     "coverage": 0,
     "test_count": 18
+  },
+  {
+    "sha": "8aedd27952f90a937e9924ef4ca44913d4611818",
+    "author": "andresrev070303",
+    "commit": {
+      "date": "2025-05-03T16:56:55.000Z",
+      "message": "feat:Lanza un mensaje negativo si no alcanzara",
+      "url": "https://github.com/andresrev070303/proyecto_ing_software/commit/8aedd27952f90a937e9924ef4ca44913d4611818"
+    },
+    "stats": {
+      "total": 8,
+      "additions": 7,
+      "deletions": 1,
+      "date": "2025-05-03"
+    },
+    "coverage": 0,
+    "test_count": 19
   }
 ]

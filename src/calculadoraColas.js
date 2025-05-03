@@ -10,5 +10,7 @@ export function calcularVehiculosEnCola(distancia) {
   
     if (capacidad >= vehiculos) {
       return "Sí alcanzará: Hay suficiente combustible para su turno";
-    }
+    }else {
+        return "No alcanzará: El combustible no cubrirá su posición en la cola";
+      }
 }
