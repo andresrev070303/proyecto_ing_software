@@ -389,5 +389,22 @@
     },
     "coverage": 0,
     "test_count": 12
+  },
+  {
+    "sha": "91aa79ee9472e5cd2571ce1fd57dd7b2c9003b9f",
+    "author": "andresrev070303",
+    "commit": {
+      "date": "2025-05-03T03:24:42.000Z",
+      "message": "feat: Se agrego el espacio para la direccion en la interfaz de usuario",
+      "url": "https://github.com/andresrev070303/proyecto_ing_software/commit/91aa79ee9472e5cd2571ce1fd57dd7b2c9003b9f"
+    },
+    "stats": {
+      "total": 2,
+      "additions": 2,
+      "deletions": 0,
+      "date": "2025-05-03"
+    },
+    "coverage": 0,
+    "test_count": 12
   }
 ]
