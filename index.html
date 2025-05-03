@@ -46,13 +46,17 @@
         <label for="distancia">Distancia al surtidor (en metros):</label><br />
         <input type="number" id="distancia" name="distancia" required /><br /><br />
 
-        <label for="distancia">Cantidad de combustible disponible (en litros):</label><br />
+        <label for="combustible">Cantidad de combustible disponible (en litros):</label><br />
         <input type="number" id="combustible" name="combustible" required /><br /><br />
     
         <input type="submit" value="Calcular vehículos en la cola" />
       </form>
+      
     
       <div id="resultado-cola" style="margin-top: 10px;"></div>
+      <div id="detalle-cola" style="margin-top: 10px; display: none;"></div>
+      <button id="mostrar-detalle-btn" style="display: none; margin-top: 5px;">Ver detalles del cálculo</button>
+
       <button id="close-window2-btn">Cerrar ventana</button>
     </div>
 

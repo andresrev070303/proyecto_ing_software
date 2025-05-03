@@ -12,6 +12,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const openWindow2Button = document.querySelector("#open-window2-btn");
   const newWindow2 = document.querySelector("#new-window2");
   const closeWindow2Button = document.querySelector("#close-window2-btn");
+  
+
 
   // Mostrar la "nueva ventana" y ocultar el contenido original
   if (openWindowButton) {
@@ -54,6 +56,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const distanciaInput = document.querySelector("#distancia");
   const combustibleInput = document.querySelector("#combustible");
   const resultadoColaDiv = document.querySelector("#resultado-cola");
+  const detalleColaDiv = document.querySelector("#detalle-cola");
+  const mostrarDetalleBtn = document.querySelector("#mostrar-detalle-btn");
+  
 
   const resultadoDiv = document.querySelector("#resultado-surtidor");
   if (!nombre || !zona || !direccion) {
@@ -106,6 +111,8 @@ resultadoDiv.innerHTML = `<p style="color: green;">Registrado correctamente: ${r
       const mensaje = gasolinaAlcanzara(distancia, combustible);
 
       resultadoColaDiv.innerHTML = `<p><strong>${mensaje}</strong></p>`;
+      mostrarDetalleBtn.style.display = "inline-block";
+    detalleColaDiv.style.display = "none";
     });
   }
   

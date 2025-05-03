@@ -695,5 +695,22 @@
     },
     "coverage": 0,
     "test_count": 20
+  },
+  {
+    "sha": "4f24fe9dc7964ebedc6fb33a5b0dd79140994b2f",
+    "author": "andresrev070303",
+    "commit": {
+      "date": "2025-05-03T17:29:22.000Z",
+      "message": "Se agrego el boton de mostrar detalles del calculo en la interfaz de usuario",
+      "url": "https://github.com/andresrev070303/proyecto_ing_software/commit/4f24fe9dc7964ebedc6fb33a5b0dd79140994b2f"
+    },
+    "stats": {
+      "total": 13,
+      "additions": 12,
+      "deletions": 1,
+      "date": "2025-05-03"
+    },
+    "coverage": 0,
+    "test_count": 20
   }
 ]
