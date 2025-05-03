@@ -9,5 +9,12 @@ describe("RegistrarSurtidor", () => {
             nombre: "Copacabana E.S", 
             zona: "Sur" });
       });
+      it("debería registrar nombre, zona y dirección correctamente", () => {
+        expect(registrarSurtidor({ nombre: "Copacabana E.S", zona: "Sur", direccion: "Av. Costanera #123" })).toEqual({ 
+          nombre: "Copacabana E.S", 
+          zona: "Sur", 
+          direccion: "Av. Costanera #123" 
+        });
+      });
       
 });
