@@ -440,5 +440,22 @@
     },
     "coverage": 0,
     "test_count": 13
+  },
+  {
+    "sha": "95b70d77b25a80d91a7fcc76bf5e2dbc148c5dcc",
+    "author": "andresrev070303",
+    "commit": {
+      "date": "2025-05-03T03:52:01.000Z",
+      "message": "feat: Si la ES recibe registra uno ya existente lanza un mensaje de que ya esta registrado",
+      "url": "https://github.com/andresrev070303/proyecto_ing_software/commit/95b70d77b25a80d91a7fcc76bf5e2dbc148c5dcc"
+    },
+    "stats": {
+      "total": 42,
+      "additions": 41,
+      "deletions": 1,
+      "date": "2025-05-03"
+    },
+    "coverage": 0,
+    "test_count": 14
   }
 ]

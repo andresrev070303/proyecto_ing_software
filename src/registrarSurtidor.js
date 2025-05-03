@@ -1,3 +1,4 @@
+import { estacionesLista } from "./data/mockEstaciones.js";
 function registrarSurtidor({ nombre, zona, direccion }) {
     if (!nombre || typeof nombre !== "string" || nombre.trim() === "") {
       return "";
@@ -12,7 +13,20 @@ function registrarSurtidor({ nombre, zona, direccion }) {
     if (direccion && typeof direccion === "string" && direccion.trim() !== "") {
       resultado.direccion = direccion.trim();
     }
-  
+    if (resultado.nombre && resultado.zona && resultado.direccion) {
+        const adicionales = JSON.parse(localStorage.getItem("nuevasEstaciones") || "[]");
+        const existentes = [...estacionesLista, ...adicionales];
+    
+        const yaExiste = existentes.some(e =>
+          e.nombre === resultado.nombre &&
+          e.zona === resultado.zona &&
+          e.direccion === resultado.direccion
+        );
+    
+        if (yaExiste) {
+          return "Estacion de servicio ya existente";
+        }
+      }
     return resultado;
   }
   
