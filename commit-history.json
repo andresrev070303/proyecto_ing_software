@@ -423,5 +423,22 @@
     },
     "coverage": 0,
     "test_count": 13
+  },
+  {
+    "sha": "8bdd9058fdbf7f5c599514b852f893215646055a",
+    "author": "andresrev070303",
+    "commit": {
+      "date": "2025-05-03T03:37:20.000Z",
+      "message": "feat: se agrega la direccion de la estacion de servicio en la zona",
+      "url": "https://github.com/andresrev070303/proyecto_ing_software/commit/8bdd9058fdbf7f5c599514b852f893215646055a"
+    },
+    "stats": {
+      "total": 7,
+      "additions": 5,
+      "deletions": 2,
+      "date": "2025-05-03"
+    },
+    "coverage": 0,
+    "test_count": 13
   }
 ]

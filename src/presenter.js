@@ -27,6 +27,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const form = document.querySelector("#form-surtidor");
   const nombreInput = document.querySelector("#nombre");
   const zonaInput = document.querySelector("#zona");
+  const direccionInput = document.querySelector("#direccion");
+
   const resultadoDiv = document.querySelector("#resultado-surtidor");
 
 
@@ -35,14 +37,15 @@ document.addEventListener("DOMContentLoaded", () => {
       e.preventDefault();
       const nombre = nombreInput.value;
       const zona = zonaInput.value.trim();
-      const resultado = registrarSurtidor({ nombre, zona});
+      const direccion = direccionInput.value.trim();
+      const resultado = registrarSurtidor({ nombre, zona, direccion});
 
       if (resultado === "") {
         resultadoDiv.innerHTML = `<p style="color: red;">Nombre inválido.</p>`;
       } else {
         const nuevaEstacion = {
           nombre: resultado.nombre,
-          direccion: "",
+          direccion: resultado.direccion,
           tipoCombustible: "",
           cantidadDisponible: 0,
           zona: resultado.zona
