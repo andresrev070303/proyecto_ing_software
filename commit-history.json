@@ -610,5 +610,22 @@
     },
     "coverage": 0,
     "test_count": 17
+  },
+  {
+    "sha": "63ecfc973285b51fb74a0cdacb24859387597e93",
+    "author": "andresrev070303",
+    "commit": {
+      "date": "2025-05-03T16:55:02.000Z",
+      "message": "feat:lanza un mensaje positivo si la gasolina alcanzara",
+      "url": "https://github.com/andresrev070303/proyecto_ing_software/commit/63ecfc973285b51fb74a0cdacb24859387597e93"
+    },
+    "stats": {
+      "total": 15,
+      "additions": 13,
+      "deletions": 2,
+      "date": "2025-05-03"
+    },
+    "coverage": 0,
+    "test_count": 18
   }
 ]

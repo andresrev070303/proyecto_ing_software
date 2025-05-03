@@ -4,3 +4,11 @@ export function calcularVehiculosEnCola(distancia) {
   export function calcularCapacidadCarga(combustibleTotal) {
     return Math.round(combustibleTotal / 50);
   }
+  export function gasolinaAlcanzara(distancia, combustibleTotal) {
+    const vehiculos = calcularVehiculosEnCola(distancia);
+    const capacidad = calcularCapacidadCarga(combustibleTotal);
+  
+    if (capacidad >= vehiculos) {
+      return "Sí alcanzará: Hay suficiente combustible para su turno";
+    }
+}
