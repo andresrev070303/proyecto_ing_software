@@ -38,17 +38,19 @@ document.addEventListener("DOMContentLoaded", () => {
       const nombre = nombreInput.value;
       const zona = zonaInput.value.trim();
       const direccion = direccionInput.value.trim();
+      const resultadoDiv = document.querySelector("#resultado-surtidor");
+
       const resultado = registrarSurtidor({ nombre, zona, direccion});
 
-      if (resultado === "") {
-        resultadoDiv.innerHTML = `<p style="color: red;">Nombre inválido.</p>`;
+      if (resultado === "Estacion de servicio ya existente") {
+        resultadoDiv.innerHTML = `<p style="color: red;">${resultado}</p>`;
       } else {
         const nuevaEstacion = {
           nombre: resultado.nombre,
+          zona: resultado.zona,
           direccion: resultado.direccion,
           tipoCombustible: "",
-          cantidadDisponible: 0,
-          zona: resultado.zona
+          cantidadDisponible: 0
         };
         
         agregarEstacion(nuevaEstacion);
