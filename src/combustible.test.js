@@ -1,7 +1,28 @@
 /* combustible.test.js */
 import { obtenerEstaciones } from './estaciones.js';
 
+// Simulación de localStorage para entorno Node
+global.localStorage = {
+  store: {},
+  getItem(key) {
+    return this.store[key] || null;
+  },
+  setItem(key, value) {
+    this.store[key] = value;
+  },
+  removeItem(key) {
+    delete this.store[key];
+  },
+  clear() {
+    this.store = {};
+  }
+};
+
 describe('Obtencion de Estaciones', () => {
+  beforeEach(() => {
+    localStorage.clear(); // Asegura que no haya datos agregados
+  });
+
   it('debe retornar estaciones con sus respectivas propiedades', () => {
     const estaciones = obtenerEstaciones();
     
@@ -37,7 +58,7 @@ describe('Obtencion de Estaciones', () => {
       zona: "Sur"
     });
     
-    expect(estaciones.length).toBe(10); // Actualizado a 10 estaciones
+    expect(estaciones.length).toBe(10); // Sin contar añadidos del localStorage
   });
 
   it('debe contener los tres tipos de combustible', () => {

@@ -321,5 +321,22 @@
     },
     "coverage": 0,
     "test_count": 0
+  },
+  {
+    "sha": "64cbec9da50517bd06d79a511dc9528503f709ec",
+    "author": "andresrev070303",
+    "commit": {
+      "date": "2025-05-03T02:53:08.000Z",
+      "message": "fix:Se arreglaron errores de pruebas",
+      "url": "https://github.com/andresrev070303/proyecto_ing_software/commit/64cbec9da50517bd06d79a511dc9528503f709ec"
+    },
+    "stats": {
+      "total": 25,
+      "additions": 23,
+      "deletions": 2,
+      "date": "2025-05-03"
+    },
+    "coverage": 0,
+    "test_count": 11
   }
 ]
