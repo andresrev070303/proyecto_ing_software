@@ -593,5 +593,22 @@
     },
     "coverage": 0,
     "test_count": 16
+  },
+  {
+    "sha": "283d5c80ae0461e49623f1278062def7c995775e",
+    "author": "andresrev070303",
+    "commit": {
+      "date": "2025-05-03T16:50:26.000Z",
+      "message": "feat: deberia devolver la capacidad de carga basdo en la cantidad de litros",
+      "url": "https://github.com/andresrev070303/proyecto_ing_software/commit/283d5c80ae0461e49623f1278062def7c995775e"
+    },
+    "stats": {
+      "total": 10,
+      "additions": 8,
+      "deletions": 2,
+      "date": "2025-05-03"
+    },
+    "coverage": 0,
+    "test_count": 17
   }
 ]
