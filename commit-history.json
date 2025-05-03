@@ -542,5 +542,22 @@
     },
     "coverage": 0,
     "test_count": 14
+  },
+  {
+    "sha": "39f78447c32b97d2b688333e5969409097bd2370",
+    "author": "andresrev070303",
+    "commit": {
+      "date": "2025-05-03T15:50:12.000Z",
+      "message": "feat:Se agrego la visualizacion de introducir distancia para el calculo de colas",
+      "url": "https://github.com/andresrev070303/proyecto_ing_software/commit/39f78447c32b97d2b688333e5969409097bd2370"
+    },
+    "stats": {
+      "total": 9,
+      "additions": 8,
+      "deletions": 1,
+      "date": "2025-05-03"
+    },
+    "coverage": 0,
+    "test_count": 14
   }
 ]

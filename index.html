@@ -42,7 +42,14 @@
 
     <div id="new-window2" style="display:none; border: 0px solid #000; padding: 20px; margin-top: 20px;">
       <h2>Calculadora de colas</h2>
-      <p>Conetnido nuevo window 2</p>
+      <form id="form-cola">
+        <label for="distancia">Distancia al surtidor (en metros):</label><br />
+        <input type="number" id="distancia" name="distancia" required /><br /><br />
+    
+        <input type="submit" value="Calcular vehículos en la cola" />
+      </form>
+    
+      <div id="resultado-cola" style="margin-top: 10px;"></div>
       <button id="close-window2-btn">Cerrar ventana</button>
     </div>
 
