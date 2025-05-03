@@ -1,17 +1,19 @@
 import registrarSurtidor from "./registrarSurtidor.js";
 import { agregarEstacion } from "./data/mockEstaciones.js";
-import { gasolinaAlcanzara } from "./calculadoraColas.js";
+import { gasolinaAlcanzara, calcularVehiculosEnCola, calcularCapacidadCarga } from "./calculadoraColas.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   const openWindowButton = document.querySelector("#open-window-btn");
   const newWindow = document.querySelector("#new-window");
   const originalContent = document.querySelector("#original-content");
   const closeWindowButton = document.querySelector("#close-window-btn");
+  
 
 
   const openWindow2Button = document.querySelector("#open-window2-btn");
   const newWindow2 = document.querySelector("#new-window2");
   const closeWindow2Button = document.querySelector("#close-window2-btn");
+  
   
 
 
@@ -56,6 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const distanciaInput = document.querySelector("#distancia");
   const combustibleInput = document.querySelector("#combustible");
   const resultadoColaDiv = document.querySelector("#resultado-cola");
+  
   const detalleColaDiv = document.querySelector("#detalle-cola");
   const mostrarDetalleBtn = document.querySelector("#mostrar-detalle-btn");
   
@@ -107,12 +110,35 @@ resultadoDiv.innerHTML = `<p style="color: green;">Registrado correctamente: ${r
       e.preventDefault();
   
       const distancia = parseFloat(distanciaInput.value);
-      const combustible = parseFloat(combustibleInput.value);  
+      const combustible = parseFloat(combustibleInput.value);
+  
+      
+      const vehiculos = calcularVehiculosEnCola(distancia);
+      const capacidad = calcularCapacidadCarga(combustible);
       const mensaje = gasolinaAlcanzara(distancia, combustible);
-
+  
       resultadoColaDiv.innerHTML = `<p><strong>${mensaje}</strong></p>`;
       mostrarDetalleBtn.style.display = "inline-block";
-    detalleColaDiv.style.display = "none";
+      detalleColaDiv.style.display = "none";
+  
+      mostrarDetalleBtn.onclick = () => {
+        const visible = detalleColaDiv.style.display === "block";
+        detalleColaDiv.style.display = visible ? "none" : "block";
+        mostrarDetalleBtn.textContent = visible ? "Ver detalles del cálculo" : "Ocultar detalles";
+  
+        if (!visible) {
+          detalleColaDiv.innerHTML = `
+            <h4>Detalles del cálculo:</h4>
+            <ul>
+              <li><strong>Fórmula vehículos en cola:</strong> distancia / 6m (promedio de auto)</li>
+              <li><strong>Fórmula capacidad de carga:</strong> combustible / 50 (promedio de carga por auto)</li>
+              <li><strong>Distancia ingresada:</strong> ${distancia} metros</li>
+              <li><strong>Combustible ingresado:</strong> ${combustible} litros</li>
+              <li><strong>Vehículos en cola:</strong> ${vehiculos}</li>
+              <li><strong>Capacidad del surtidor:</strong> ${capacidad} vehículos</li>
+            </ul>`;
+        }
+      };
     });
   }
   

@@ -712,5 +712,22 @@
     },
     "coverage": 0,
     "test_count": 20
+  },
+  {
+    "sha": "0eca0b8eb115b75929aacc3a3c8a7ef2236545e8",
+    "author": "andresrev070303",
+    "commit": {
+      "date": "2025-05-03T17:41:45.000Z",
+      "message": "feat:Se agrego la visualizacion de detalles de calculo",
+      "url": "https://github.com/andresrev070303/proyecto_ing_software/commit/0eca0b8eb115b75929aacc3a3c8a7ef2236545e8"
+    },
+    "stats": {
+      "total": 34,
+      "additions": 30,
+      "deletions": 4,
+      "date": "2025-05-03"
+    },
+    "coverage": 0,
+    "test_count": 20
   }
 ]
