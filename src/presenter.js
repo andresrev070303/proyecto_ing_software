@@ -1,5 +1,6 @@
 import registrarSurtidor from "./registrarSurtidor.js";
 import { agregarEstacion } from "./data/mockEstaciones.js";
+import { gasolinaAlcanzara } from "./calculadoraColas.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   const openWindowButton = document.querySelector("#open-window-btn");
@@ -49,6 +50,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const zonaInput = document.querySelector("#zona");
   const direccionInput = document.querySelector("#direccion");
 
+  const formCola = document.querySelector("#form-cola");
+  const distanciaInput = document.querySelector("#distancia");
+  const combustibleInput = document.querySelector("#combustible");
+  const resultadoColaDiv = document.querySelector("#resultado-cola");
+
   const resultadoDiv = document.querySelector("#resultado-surtidor");
   if (!nombre || !zona || !direccion) {
     resultadoDiv.innerHTML = `<p style="color: red;">Todos los campos son obligatorios.</p>`;
@@ -90,6 +96,19 @@ resultadoDiv.innerHTML = `<p style="color: green;">Registrado correctamente: ${r
       }
     });
   }
+
+  if (formCola) {
+    formCola.addEventListener("submit", (e) => {
+      e.preventDefault();
+  
+      const distancia = parseFloat(distanciaInput.value);
+      const combustible = parseFloat(combustibleInput.value);  
+      const mensaje = gasolinaAlcanzara(distancia, combustible);
+
+      resultadoColaDiv.innerHTML = `<p><strong>${mensaje}</strong></p>`;
+    });
+  }
+  
 });
 import { estacionesLista } from "./data/mockEstaciones.js";
 console.log("Estaciones registradas ahora:", estacionesLista);

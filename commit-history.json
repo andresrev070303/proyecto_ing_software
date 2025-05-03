@@ -678,5 +678,22 @@
     },
     "coverage": 0,
     "test_count": 20
+  },
+  {
+    "sha": "85ee3286a5e2c57fc708ef90148b2a2d73a3f1cd",
+    "author": "andresrev070303",
+    "commit": {
+      "date": "2025-05-03T17:13:31.000Z",
+      "message": "feat:Se agrego la visualizacion de los mensajes en la interfaz de usuario",
+      "url": "https://github.com/andresrev070303/proyecto_ing_software/commit/85ee3286a5e2c57fc708ef90148b2a2d73a3f1cd"
+    },
+    "stats": {
+      "total": 19,
+      "additions": 19,
+      "deletions": 0,
+      "date": "2025-05-03"
+    },
+    "coverage": 0,
+    "test_count": 20
   }
 ]
