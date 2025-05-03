@@ -1,3 +1,3 @@
 export function calcularVehiculosEnCola(distancia) {
-    return distancia / 6;
+    return Math.round ( distancia / 6);
   }

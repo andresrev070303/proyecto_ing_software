@@ -576,5 +576,22 @@
     },
     "coverage": 0,
     "test_count": 15
+  },
+  {
+    "sha": "8d842f6db68659759c689ae9af68930f83a6f4ff",
+    "author": "andresrev070303",
+    "commit": {
+      "date": "2025-05-03T16:06:23.000Z",
+      "message": "feat:Deberia redondear si sale un resultado con decimales",
+      "url": "https://github.com/andresrev070303/proyecto_ing_software/commit/8d842f6db68659759c689ae9af68930f83a6f4ff"
+    },
+    "stats": {
+      "total": 5,
+      "additions": 4,
+      "deletions": 1,
+      "date": "2025-05-03"
+    },
+    "coverage": 0,
+    "test_count": 16
   }
 ]
