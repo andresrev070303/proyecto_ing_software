@@ -2,7 +2,8 @@
 import { estacionesLista } from './data/mockEstaciones.js';
 
 export function obtenerEstaciones() {
-    return estacionesLista;
+    const adicionales = JSON.parse(localStorage.getItem("nuevasEstaciones") || "[]");
+    return [...estacionesLista, ...adicionales];
 }
 
 export function ordenarPorCantidad(estaciones = estacionesLista) {

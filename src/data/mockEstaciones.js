@@ -1,4 +1,4 @@
-export const estacionesLista = [
+let estacionesLista = [
     // Zona Norte (3 estaciones)
     {
       nombre: "Gulf Norte",
@@ -77,3 +77,8 @@ export const estacionesLista = [
       zona: "Quillacollo"
     }
   ];
+  function agregarEstacion(estacion) {
+    estacionesLista.push(estacion);
+  }
+  
+  export { estacionesLista, agregarEstacion };

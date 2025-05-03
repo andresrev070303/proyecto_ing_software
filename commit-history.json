@@ -304,5 +304,22 @@
     },
     "coverage": 0,
     "test_count": 11
+  },
+  {
+    "sha": "a2425d3befa2d7ad61d2140c7f718f5cae07f763",
+    "author": "andresrev070303",
+    "commit": {
+      "date": "2025-05-03T02:45:17.000Z",
+      "message": "feat:Se agrega el nombre de la estacion de servicio en la lista",
+      "url": "https://github.com/andresrev070303/proyecto_ing_software/commit/a2425d3befa2d7ad61d2140c7f718f5cae07f763"
+    },
+    "stats": {
+      "total": 66,
+      "additions": 56,
+      "deletions": 10,
+      "date": "2025-05-03"
+    },
+    "coverage": 0,
+    "test_count": 0
   }
 ]
