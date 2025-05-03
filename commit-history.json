@@ -661,5 +661,22 @@
     },
     "coverage": 0,
     "test_count": 20
+  },
+  {
+    "sha": "0bdbde69104edf8cd6ec37e9957e1631879446b4",
+    "author": "andresrev070303",
+    "commit": {
+      "date": "2025-05-03T17:06:45.000Z",
+      "message": "feat:Se agrego la visualizacion para ingresas la cantidad de combustible en litros en la interfaz de usuario",
+      "url": "https://github.com/andresrev070303/proyecto_ing_software/commit/0bdbde69104edf8cd6ec37e9957e1631879446b4"
+    },
+    "stats": {
+      "total": 3,
+      "additions": 3,
+      "deletions": 0,
+      "date": "2025-05-03"
+    },
+    "coverage": 0,
+    "test_count": 20
   }
 ]
