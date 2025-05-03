@@ -355,5 +355,22 @@
     },
     "coverage": 0,
     "test_count": 11
+  },
+  {
+    "sha": "25fffee2ba8dbcdacecf1262c89058a25cc2167a",
+    "author": "andresrev070303",
+    "commit": {
+      "date": "2025-05-03T03:08:06.000Z",
+      "message": "feat:deberia registrar correctamente el nombre y la zona del estacion de servicio",
+      "url": "https://github.com/andresrev070303/proyecto_ing_software/commit/25fffee2ba8dbcdacecf1262c89058a25cc2167a"
+    },
+    "stats": {
+      "total": 19,
+      "additions": 16,
+      "deletions": 3,
+      "date": "2025-05-03"
+    },
+    "coverage": 0,
+    "test_count": 12
   }
 ]

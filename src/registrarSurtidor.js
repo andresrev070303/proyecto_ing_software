@@ -1,9 +1,16 @@
-function registrarSurtidor({ nombre }) {
+function registrarSurtidor({ nombre, zona }) {
     if (!nombre || typeof nombre !== "string" || nombre.trim() === "") {
       return "";
     }
   
-    return { nombre: nombre.trim() };
+    const resultado = { nombre: nombre.trim() };
+  
+    if (zona && typeof zona === "string" && zona.trim() !== "") {
+      resultado.zona = zona.trim();
+    }
+  
+    return resultado;
   }
+  
   export default registrarSurtidor;
   
