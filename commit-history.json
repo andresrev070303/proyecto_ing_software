@@ -338,5 +338,22 @@
     },
     "coverage": 0,
     "test_count": 11
+  },
+  {
+    "sha": "213863ec8bbb77f86e5167e2df07ab05f5089f5e",
+    "author": "andresrev070303",
+    "commit": {
+      "date": "2025-05-03T02:59:08.000Z",
+      "message": "feat:Se agrego el seleccionar zona para registrar surtidor en la interfaz",
+      "url": "https://github.com/andresrev070303/proyecto_ing_software/commit/213863ec8bbb77f86e5167e2df07ab05f5089f5e"
+    },
+    "stats": {
+      "total": 8,
+      "additions": 8,
+      "deletions": 0,
+      "date": "2025-05-03"
+    },
+    "coverage": 0,
+    "test_count": 11
   }
 ]
