@@ -525,5 +525,22 @@
     },
     "coverage": 0,
     "test_count": 14
+  },
+  {
+    "sha": "32e2b66e73a267f7f63718043c45ef4730b4cac5",
+    "author": "andresrev070303",
+    "commit": {
+      "date": "2025-05-03T15:27:00.000Z",
+      "message": "feat:Se agrego la visualizacion de la ventana nueva de calculadora de colas",
+      "url": "https://github.com/andresrev070303/proyecto_ing_software/commit/32e2b66e73a267f7f63718043c45ef4730b4cac5"
+    },
+    "stats": {
+      "total": 23,
+      "additions": 22,
+      "deletions": 1,
+      "date": "2025-05-03"
+    },
+    "coverage": 0,
+    "test_count": 14
   }
 ]

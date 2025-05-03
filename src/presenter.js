@@ -7,6 +7,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const originalContent = document.querySelector("#original-content");
   const closeWindowButton = document.querySelector("#close-window-btn");
 
+
+  const openWindow2Button = document.querySelector("#open-window2-btn");
+  const newWindow2 = document.querySelector("#new-window2");
+  const closeWindow2Button = document.querySelector("#close-window2-btn");
+
   // Mostrar la "nueva ventana" y ocultar el contenido original
   if (openWindowButton) {
     openWindowButton.addEventListener("click", () => {
@@ -21,6 +26,21 @@ document.addEventListener("DOMContentLoaded", () => {
       originalContent.style.display = "block";
       newWindow.style.display = "none";
     });
+     // Mostrar la "ventana 2"
+  if (openWindow2Button) {
+    openWindow2Button.addEventListener("click", () => {
+      originalContent.style.display = "none";
+      newWindow2.style.display = "block";
+    });
+  }
+
+  // Cerrar la "ventana 2"
+  if (closeWindow2Button) {
+    closeWindow2Button.addEventListener("click", () => {
+      newWindow2.style.display = "none";
+      originalContent.style.display = "block";
+    });
+  }
   }
 
   // Manejo del formulario
