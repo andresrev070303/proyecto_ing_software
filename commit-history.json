@@ -729,5 +729,22 @@
     },
     "coverage": 0,
     "test_count": 20
+  },
+  {
+    "sha": "5721825bd2bbda26037163f633739062e7af718d",
+    "author": "andresrev070303",
+    "commit": {
+      "date": "2025-05-03T17:44:09.000Z",
+      "message": "feat:Se grego mensaje para que el usuario ingrese valores validos",
+      "url": "https://github.com/andresrev070303/proyecto_ing_software/commit/5721825bd2bbda26037163f633739062e7af718d"
+    },
+    "stats": {
+      "total": 7,
+      "additions": 7,
+      "deletions": 0,
+      "date": "2025-05-03"
+    },
+    "coverage": 0,
+    "test_count": 20
   }
 ]

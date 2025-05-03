@@ -111,6 +111,13 @@ resultadoDiv.innerHTML = `<p style="color: green;">Registrado correctamente: ${r
   
       const distancia = parseFloat(distanciaInput.value);
       const combustible = parseFloat(combustibleInput.value);
+
+      if (isNaN(distancia) || distancia <= 0 || isNaN(combustible) || combustible <= 0) {
+        resultadoColaDiv.innerHTML = `<p style="color: red;">Ingresa valores válidos.</p>`;
+        mostrarDetalleBtn.style.display = "none";
+        detalleColaDiv.style.display = "none";
+        return;
+      }
   
       
       const vehiculos = calcularVehiculosEnCola(distancia);
