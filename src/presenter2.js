@@ -52,9 +52,18 @@ import {
   
       div.appendChild(boton);
       divEstaciones.appendChild(div);
+
+      const boton2 = document.createElement("button");
+      boton2.textContent = "Ingresar combustible";
+      boton2.addEventListener("click", () => MostrarFormularioCombustible());
+  
+      div.appendChild(boton2);
+      divEstaciones.appendChild(div);
     });
   }
+  function MostrarFormularioCombustible(){
 
+  }
   function mostrarFormularioConductor(nombreEstacion) {
     divEstaciones.innerHTML = "";
     divEstaciones.innerHTML = `

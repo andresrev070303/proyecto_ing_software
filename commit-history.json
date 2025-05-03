@@ -323,6 +323,23 @@
     "test_count": 10
   },
   {
+    "sha": "8ba819f0ff95d234be55d6f036be83506a868bca",
+    "author": "Leonardo Koller",
+    "commit": {
+      "date": "2025-05-03T01:19:36.000Z",
+      "message": "feat: se agrego boton para agregar gasolina",
+      "url": "https://github.com/andresrev070303/proyecto_ing_software/commit/8ba819f0ff95d234be55d6f036be83506a868bca"
+    },
+    "stats": {
+      "total": 9,
+      "additions": 9,
+      "deletions": 0,
+      "date": "2025-05-03"
+    },
+    "coverage": 0,
+    "test_count": 20
+  },
+  {
     "sha": "684df33f86eaeaa318c0bcbd7a2ddd90940fd145",
     "author": "andresrev070303",
     "commit": {
