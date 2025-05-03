@@ -491,5 +491,22 @@
     },
     "coverage": 0,
     "test_count": 14
+  },
+  {
+    "sha": "f58087f8b78b4c6b8ea4a84f07c9a4163b6bcb12",
+    "author": "andresrev070303",
+    "commit": {
+      "date": "2025-05-03T04:09:26.000Z",
+      "message": "feat: Se agrego mensaje de confirmacion de registro",
+      "url": "https://github.com/andresrev070303/proyecto_ing_software/commit/f58087f8b78b4c6b8ea4a84f07c9a4163b6bcb12"
+    },
+    "stats": {
+      "total": 3,
+      "additions": 3,
+      "deletions": 0,
+      "date": "2025-05-03"
+    },
+    "coverage": 0,
+    "test_count": 14
   }
 ]

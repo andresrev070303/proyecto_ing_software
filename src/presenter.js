@@ -64,6 +64,9 @@ document.addEventListener("DOMContentLoaded", () => {
 const existentes = JSON.parse(localStorage.getItem("nuevasEstaciones") || "[]");
 existentes.push(nuevaEstacion);
 localStorage.setItem("nuevasEstaciones", JSON.stringify(existentes));
+
+resultadoDiv.innerHTML = `<p style="color: green;">Registrado correctamente: ${resultado.nombre}</p>`;
+
       }
     });
   }
