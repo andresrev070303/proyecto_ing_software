@@ -559,5 +559,22 @@
     },
     "coverage": 0,
     "test_count": 14
+  },
+  {
+    "sha": "91004f43a24f80a2d2f63440da50379300cbd576",
+    "author": "andresrev070303",
+    "commit": {
+      "date": "2025-05-03T15:59:51.000Z",
+      "message": "feat:Deberia calcular la cantidad de vehiculos antes de mi",
+      "url": "https://github.com/andresrev070303/proyecto_ing_software/commit/91004f43a24f80a2d2f63440da50379300cbd576"
+    },
+    "stats": {
+      "total": 10,
+      "additions": 10,
+      "deletions": 0,
+      "date": "2025-05-03"
+    },
+    "coverage": 0,
+    "test_count": 15
   }
 ]
