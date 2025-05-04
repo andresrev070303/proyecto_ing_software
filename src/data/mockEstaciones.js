@@ -88,7 +88,26 @@ let estacionesLista = [
     }
   ];
   function agregarEstacion(estacion) {
-    estacionesLista.push({...estacion, filaEspera: []});
+    if (!estacion.fila) {
+      estacion.fila = [];
+  }
+    estacionesLista.push(estacion);
   }
   
-  export { estacionesLista, agregarEstacion };
+  function agregarAfila(nombreEstacion, datosConductor) {
+    const estacion = estacionesLista.find(est => est.nombre === nombreEstacion);
+    if (estacion) {
+      const nuevaPosicion = estacion.fila.length + 1;
+      estacion.fila.push({
+        ...datosConductor, 
+        posicion: nuevaPosicion
+      });
+      console.log(`Conductor ${datosConductor.nombreConductor} agregado a la fila de ${nombreEstacion}. Posición: ${nuevaPosicion}`);
+      return true;
+    } else {
+      console.error(`Error: No se encontró la estación "${nombreEstacion}"`);
+      return false;
+    }
+  }
+  
+  export { estacionesLista, agregarEstacion, agregarAfila};
