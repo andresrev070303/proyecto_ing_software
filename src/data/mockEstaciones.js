@@ -6,7 +6,16 @@ let estacionesLista = [
       tipoCombustible: "Normal",
       cantidadDisponible: 8500,
       zona: "Norte",
-      filaEspera: []
+      filaEspera: [
+        {
+          nombre: "Eduardo Quiroga",
+          placa: "5678GPQ"
+        },
+        {
+          nombre: "Juan Perez",
+          placa: "1234ABC"
+        }
+      ]
     },
     {
       nombre: "YPFB Cala Cala",
@@ -22,7 +31,20 @@ let estacionesLista = [
       tipoCombustible: "Diesel",
       cantidadDisponible: 6800,
       zona: "Norte",
-      filaEspera: []
+      filaEspera: [
+        {
+          nombre: "María López",
+          placa: "8921BCD"
+        },
+        {
+          nombre: "Carlos Rivas",
+          placa: "3456FGH"
+        },
+        {
+          nombre: "Lucía Mendoza",
+          placa: "7788JKL"
+        }
+      ]
     },
   
     // Zona Sur (3 estaciones)
@@ -32,7 +54,12 @@ let estacionesLista = [
       tipoCombustible: "Normal",
       cantidadDisponible: 9200,
       zona: "Sur",
-      filaEspera: []
+      filaEspera: [
+        {
+          nombre: "Pedro Salazar",
+          placa: "9988MNO"
+        }
+      ]
     },
     {
       nombre: "Gulf Terminal",
@@ -58,7 +85,24 @@ let estacionesLista = [
       tipoCombustible: "Normal",
       cantidadDisponible: 11000,
       zona: "Cercado",
-      filaEspera: []
+      filaEspera: [
+        {
+          nombre: "Valeria Torres",
+          placa: "2233XYZ"
+        },
+        {
+          nombre: "Andrés Gutiérrez",
+          placa: "1122TUV"
+        },
+        {
+          nombre: "Sofía Herrera",
+          placa: "3344QWE"
+        },
+        {
+          nombre: "Diego Castro",
+          placa: "5566RTY"
+        }
+      ]
     },
     {
       nombre: "Petrobras Muyurina",
@@ -86,12 +130,12 @@ let estacionesLista = [
       zona: "Quillacollo",
       filaEspera: [
         {
-          nombre: "juan",
-          placa: "sdasd123"
+          nombre: "Eduardo Quiroga",
+          placa: "5678GPQ"
         },
         {
-          nombre: "juan",
-          placa: "sdasd123"
+          nombre: "Juan Perez",
+          placa: "1234ABC"
         }
       ]
     }
@@ -121,5 +165,11 @@ let estacionesLista = [
       return false;
     }
   }
+  function obtenerCantidadCombustible(nombreEstacion) {
+    const estacion = estacionesLista.find(est => est.nombre === nombreEstacion);
+    if (estacion) {
+      return estacion.cantidadDisponible;
+    } 
+  }
 
-  export { estacionesLista, agregarEstacion, agregarAfila};
+  export { estacionesLista, agregarEstacion, agregarAfila, obtenerCantidadCombustible};
