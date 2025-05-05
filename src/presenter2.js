@@ -20,10 +20,22 @@ import {
       return;
     }
   
-    //divEstaciones.innerHTML = "";
+    divEstaciones.innerHTML = "";
   
     estaciones.forEach(estacion => {
       const div = document.createElement("div");
+
+      let filaHtml = "";
+      if (estacion.filaEspera && estacion.filaEspera.length > 0) {
+        filaHtml = `
+          <h4>Conductores en fila:</h4>
+          <ul>
+            ${estacion.filaEspera.map(conductor => `
+              <li>${conductor.nombre} - ${conductor.placa}</li>
+            `).join("")}
+          </ul>
+        `;
+      }
   
       div.innerHTML = `
         <h3>${estacion.nombre}</h3>
@@ -31,6 +43,7 @@ import {
         <p><strong>Dirección:</strong> ${estacion.direccion}</p>
         <p><strong>Combustible:</strong> ${estacion.tipoCombustible}</p>
         <p><strong>Disponible:</strong> ${estacion.cantidadDisponible} litros</p>
+        ${filaHtml}
       `;
   
       const boton = document.createElement("button");
@@ -68,6 +81,8 @@ import {
   
       document.getElementById("resultadoConductor").innerHTML =
         `<p style="color:green">Conductor registrado en la posición ${posicion} de la fila</p>`;
+
+      mostrarEstaciones(obtenerEstaciones());
     });
   }
   // Función para aplicar todos los filtros

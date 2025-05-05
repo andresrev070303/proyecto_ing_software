@@ -797,5 +797,22 @@
     },
     "coverage": 0,
     "test_count": 0
+  },
+  {
+    "sha": "95902371db4cc806fa56c1bad81db6c9a9be94ea",
+    "author": "Leonardo Koller",
+    "commit": {
+      "date": "2025-05-05T21:17:08.000Z",
+      "message": "feat: se agrego la lista de conductores despues de registrarlos",
+      "url": "https://github.com/andresrev070303/proyecto_ing_software/commit/95902371db4cc806fa56c1bad81db6c9a9be94ea"
+    },
+    "stats": {
+      "total": 38,
+      "additions": 32,
+      "deletions": 6,
+      "date": "2025-05-05"
+    },
+    "coverage": 0,
+    "test_count": 20
   }
 ]

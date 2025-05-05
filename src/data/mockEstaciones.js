@@ -84,12 +84,21 @@ let estacionesLista = [
       tipoCombustible: "Diesel",
       cantidadDisponible: 5800,
       zona: "Quillacollo",
-      filaEspera: []
+      filaEspera: [
+        {
+          nombre: "juan",
+          placa: "sdasd123"
+        },
+        {
+          nombre: "juan",
+          placa: "sdasd123"
+        }
+      ]
     }
   ];
   function agregarEstacion(estacion) {
-    if (!estacion.fila) {
-      estacion.fila = [];
+    if (!estacion.filaEspera) {
+      estacion.filaEspera = [];
   }
     estacionesLista.push(estacion);
   }
@@ -99,10 +108,12 @@ let estacionesLista = [
     console.log(estacion);
     if (estacion) {
       const nuevaPosicion = estacion.filaEspera.length + 1;
+      
       estacion.filaEspera.push({
-        ...datosConductor, 
-        posicion: nuevaPosicion
+        nombre: datosConductor.nombre,
+        placa: datosConductor.placa
       });
+      
       console.log(`Conductor ${datosConductor.nombre} agregado a la fila de ${nombreEstacion}. Posición: ${nuevaPosicion}`);
       return nuevaPosicion;
     } else {
