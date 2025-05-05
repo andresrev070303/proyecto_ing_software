@@ -746,5 +746,22 @@
     },
     "coverage": 0,
     "test_count": 20
+  },
+  {
+    "sha": "237da889e0e1e9f22dad0191966e0780662adfcc",
+    "author": "Leonardo Koller",
+    "commit": {
+      "date": "2025-05-05T15:41:44.000Z",
+      "message": "feat: se la variable fila en el presenter.js",
+      "url": "https://github.com/andresrev070303/proyecto_ing_software/commit/237da889e0e1e9f22dad0191966e0780662adfcc"
+    },
+    "stats": {
+      "total": 3,
+      "additions": 2,
+      "deletions": 1,
+      "date": "2025-05-05"
+    },
+    "coverage": 0,
+    "test_count": 0
   }
 ]

@@ -89,7 +89,8 @@ document.addEventListener("DOMContentLoaded", () => {
           zona: resultado.zona,
           direccion: resultado.direccion,
           tipoCombustible: "",
-          cantidadDisponible: 0
+          cantidadDisponible: 0,
+          fila: [],
         };
         
         agregarEstacion(nuevaEstacion);
