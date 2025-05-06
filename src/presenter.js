@@ -53,6 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const nombreInput = document.querySelector("#nombre");
   const zonaInput = document.querySelector("#zona");
   const direccionInput = document.querySelector("#direccion");
+  const tipoCombustibleInput = document.querySelector("#tipoCombustible");
 
   const formCola = document.querySelector("#form-cola");
   const distanciaInput = document.querySelector("#distancia");
@@ -78,8 +79,9 @@ document.addEventListener("DOMContentLoaded", () => {
       const zona = zonaInput.value.trim();
       const direccion = direccionInput.value.trim();
       const resultadoDiv = document.querySelector("#resultado-surtidor");
+      const tipoCombustible = tipoCombustibleInput.value;
 
-      const resultado = registrarSurtidor({ nombre, zona, direccion});
+      const resultado = registrarSurtidor({ nombre, zona, direccion, tipoCombustible });
 
       if (resultado === "Estacion de servicio ya existente") {
         resultadoDiv.innerHTML = `<p style="color: red;">${resultado}</p>`;
@@ -88,7 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
           nombre: resultado.nombre,
           zona: resultado.zona,
           direccion: resultado.direccion,
-          tipoCombustible: "",
+          tipoCombustible: resultado.tipoCombustible,
           cantidadDisponible: 0,
           fila: [],
         };

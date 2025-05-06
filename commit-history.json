@@ -882,5 +882,22 @@
     },
     "coverage": 0,
     "test_count": 21
+  },
+  {
+    "sha": "3b7087b77c4acd5617aa2a1b241616fab807476f",
+    "author": "andresrev070303",
+    "commit": {
+      "date": "2025-05-06T03:20:21.000Z",
+      "message": "feat:Se agrego la visualizacion del tipo de combustible en la interfaz de usuario",
+      "url": "https://github.com/andresrev070303/proyecto_ing_software/commit/3b7087b77c4acd5617aa2a1b241616fab807476f"
+    },
+    "stats": {
+      "total": 10,
+      "additions": 6,
+      "deletions": 4,
+      "date": "2025-05-06"
+    },
+    "coverage": 0,
+    "test_count": 21
   }
 ]
