@@ -848,5 +848,22 @@
     },
     "coverage": 0,
     "test_count": 20
+  },
+  {
+    "sha": "ac09f92183aba12573147e3a2bb77992eeb017f8",
+    "author": "andresrev070303",
+    "commit": {
+      "date": "2025-05-06T03:01:28.000Z",
+      "message": "feat:Se agrego el seleccionar el tipo de combustible en la interfaz de usuario",
+      "url": "https://github.com/andresrev070303/proyecto_ing_software/commit/ac09f92183aba12573147e3a2bb77992eeb017f8"
+    },
+    "stats": {
+      "total": 11,
+      "additions": 11,
+      "deletions": 0,
+      "date": "2025-05-06"
+    },
+    "coverage": 0,
+    "test_count": 20
   }
 ]
