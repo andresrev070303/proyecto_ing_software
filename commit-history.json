@@ -933,5 +933,22 @@
     },
     "coverage": 0,
     "test_count": 21
+  },
+  {
+    "sha": "c4cd633c84305dda5cf9758e8636b9e7f78ae294",
+    "author": "Jesus Ariel Mamani Gutierrez",
+    "commit": {
+      "date": "2025-05-06T04:36:47.000Z",
+      "message": "style: añadimos un css para el index.html",
+      "url": "https://github.com/andresrev070303/proyecto_ing_software/commit/c4cd633c84305dda5cf9758e8636b9e7f78ae294"
+    },
+    "stats": {
+      "total": 216,
+      "additions": 181,
+      "deletions": 35,
+      "date": "2025-05-06"
+    },
+    "coverage": 0,
+    "test_count": 21
   }
 ]

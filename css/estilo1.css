@@ -1,0 +1,169 @@
+/* Estilos generales para A TODO GAS */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    color: #333;
+  }
+  
+  /* Encabezado principal */
+  h1 {
+    text-align: center;
+    background-color: #ff6b35; /* Naranja energético */
+    color: white;
+    padding: 20px 0;
+    margin: 0;
+  }
+  
+  /* Botones principales */
+  #original-content {
+    text-align: center;
+    margin-top: 30px;
+  }
+  
+  #original-content button,
+  #original-content a {
+    display: inline-block;
+    padding: 12px 24px;
+    margin: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  #open-window-btn {
+    background-color: #2e7d32; /* Verde fuerte */
+    color: white;
+  }
+  
+  #open-window-btn:hover {
+    background-color: #1b5e20;
+  }
+  
+  #open-window2-btn {
+    background-color: #1976d2; /* Azul confiable */
+    color: white;
+  }
+  
+  #open-window2-btn:hover {
+    background-color: #1565c0;
+  }
+  
+  /* Enlace a estaciones */
+  #original-content a {
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    margin-left: 20px;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  #original-content a:hover {
+    background-color: #45a049;
+  }
+  
+  /* Ventanas emergentes (simuladas con div) */
+  #new-window,
+  #new-window2 {
+    display: none;
+    max-width: 500px;
+    margin: 30px auto;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    padding: 20px;
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  #new-window h2,
+  #new-window2 h2 {
+    color: #ff6b35;
+    text-align: center;
+    margin-top: 0;
+  }
+  
+  /* Formularios */
+  form label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  
+  form input[type="text"],
+  form input[type="number"],
+  form select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+  
+  form input[type="submit"] {
+    margin-top: 15px;
+    background-color: #ff6b35;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  form input[type="submit"]:hover {
+    background-color: #e65100;
+  }
+  
+  /* Resultados */
+  #resultado-surtidor,
+  #resultado-cola,
+  #detalle-cola {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #fff3cd;
+    color: #856404;
+    border: 1px solid #ffeeba;
+  }
+  
+  /* Botón de detalles */
+  #mostrar-detalle-btn {
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  #mostrar-detalle-btn:hover {
+    background-color: #5a6268;
+  }
+  
+  /* Botones de cerrar ventanas */
+  #close-window-btn,
+  #close-window2-btn {
+    margin-top: 15px;
+    background-color: #d32f2f;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  #close-window-btn:hover,
+  #close-window2-btn:hover {
+    background-color: #b71c1c;
+  }
