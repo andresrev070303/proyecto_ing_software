@@ -814,5 +814,22 @@
     },
     "coverage": 0,
     "test_count": 20
+  },
+  {
+    "sha": "b0a712a2b26d47ee28f3df31f7ef367f30a724cf",
+    "author": "Leonardo Koller",
+    "commit": {
+      "date": "2025-05-06T00:36:17.000Z",
+      "message": "feat: se agrego el tiempo que tardara el conductor en cargar despues de registrarse",
+      "url": "https://github.com/andresrev070303/proyecto_ing_software/commit/b0a712a2b26d47ee28f3df31f7ef367f30a724cf"
+    },
+    "stats": {
+      "total": 7,
+      "additions": 4,
+      "deletions": 3,
+      "date": "2025-05-06"
+    },
+    "coverage": 0,
+    "test_count": 20
   }
 ]

@@ -20,7 +20,7 @@ import {
       return;
     }
   
-    divEstaciones.innerHTML = "";
+    //divEstaciones.innerHTML = "";
   
     estaciones.forEach(estacion => {
       const div = document.createElement("div");
@@ -78,10 +78,11 @@ import {
       const nuevoConductor = { nombre, placa };
 
       const posicion = agregarAfila(nombreEstacion, nuevoConductor);
+      const tiempo = posicion * 3 ;
   
       document.getElementById("resultadoConductor").innerHTML =
-        `<p style="color:green">Conductor registrado en la posición ${posicion} de la fila</p>`;
-
+        `<p style="color:green">Conductor registrado en la posición ${posicion} de la fila</p>
+        <p style="color:black">Tiempo estimado : ${tiempo} minutos</p>`;
       mostrarEstaciones(obtenerEstaciones());
     });
   }
