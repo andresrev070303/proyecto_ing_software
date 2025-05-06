@@ -33,12 +33,27 @@ describe("RegistrarSurtidor", () => {
           direccion: "Av. Costanera #123" 
         });
       });
+
+      it("debería registrar nombre, zona, dirección y tipo de combustible correctamente", () => {
+        expect(registrarSurtidor({nombre: "Copacabana E.S",zona: "Sur",direccion: "Av. Costanera #123",tipoCombustible: "Diesel"
+        })).toEqual({
+            nombre: "Copacabana E.S",
+            zona: "Sur",
+            direccion: "Av. Costanera #123",
+            tipoCombustible: "Diesel"
+        });
+      });
+
+
+
+      
       it("debería retornar 'Estacion de servicio ya existente' si la estación ya está registrada", () => {
         // Estación que ya existe en la base de datos original
         const resultado = registrarSurtidor({
           nombre: "Gulf Norte",
           zona: "Norte",
-          direccion: "Av. América #1256"
+          direccion: "Av. América #1256",
+          tipoCombustible: "Normal"
         });
       
         expect(resultado).toBe("Estacion de servicio ya existente");

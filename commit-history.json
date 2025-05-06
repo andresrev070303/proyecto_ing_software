@@ -865,5 +865,22 @@
     },
     "coverage": 0,
     "test_count": 20
+  },
+  {
+    "sha": "63a861fb27aa1a74a838eb7eb04283d4ce5bf517",
+    "author": "andresrev070303",
+    "commit": {
+      "date": "2025-05-06T03:13:47.000Z",
+      "message": "feat:Deberia registrar el tipo de combustible",
+      "url": "https://github.com/andresrev070303/proyecto_ing_software/commit/63a861fb27aa1a74a838eb7eb04283d4ce5bf517"
+    },
+    "stats": {
+      "total": 33,
+      "additions": 28,
+      "deletions": 5,
+      "date": "2025-05-06"
+    },
+    "coverage": 0,
+    "test_count": 21
   }
 ]
