@@ -850,6 +850,23 @@
     "test_count": 20
   },
   {
+    "sha": "89eb04fab093e5746a70245029543244331e568f",
+    "author": "Leonardo Koller",
+    "commit": {
+      "date": "2025-05-04T06:01:54.000Z",
+      "message": "feat: se agrego funciones para el Añadir combustible",
+      "url": "https://github.com/andresrev070303/proyecto_ing_software/commit/89eb04fab093e5746a70245029543244331e568f"
+    },
+    "stats": {
+      "total": 413,
+      "additions": 258,
+      "deletions": 155,
+      "date": "2025-05-04"
+    },
+    "coverage": 0,
+    "test_count": 21
+  },
+  {
     "sha": "237da889e0e1e9f22dad0191966e0780662adfcc",
     "author": "Leonardo Koller",
     "commit": {
