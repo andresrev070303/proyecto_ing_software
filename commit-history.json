@@ -984,5 +984,22 @@
     },
     "coverage": 0,
     "test_count": 21
+  },
+  {
+    "sha": "acbd3d0683cb9d5c72d27125f5f2acc9416560fe",
+    "author": "Jesus Ariel Mamani Gutierrez",
+    "commit": {
+      "date": "2025-05-06T11:31:41.000Z",
+      "message": "Style: Añadimos un css, una nueva apariencia a index2",
+      "url": "https://github.com/andresrev070303/proyecto_ing_software/commit/acbd3d0683cb9d5c72d27125f5f2acc9416560fe"
+    },
+    "stats": {
+      "total": 149,
+      "additions": 143,
+      "deletions": 6,
+      "date": "2025-05-06"
+    },
+    "coverage": 0,
+    "test_count": 21
   }
 ]
