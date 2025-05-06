@@ -66,11 +66,12 @@ import {
     divEstaciones.innerHTML = `
       <h2>Agregar combustible a ${nombreEstacion}</h2>
       <form id="form-combustible">
-        <label>cantidad de combustible:</label>
-        <input type="number" id="cantidadCombustible" required><br>
-      </form>
-      <div id="resultadoConductor"></div>
-    `;
+      <label>Cantidad de combustible:</label>
+      <input type="number" id="cantidadCombustible" required><br><br>
+      <button type="submit">Registrar</button>
+    </form>
+    <div id="resultadoCombustible"></div>
+  `;
     const form = document.getElementById("form-combustible");
     form.addEventListener("submit", function (e) {
       e.preventDefault();
