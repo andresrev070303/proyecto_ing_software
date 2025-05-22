@@ -53,7 +53,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const nombreInput = document.querySelector("#nombre");
   const zonaInput = document.querySelector("#zona");
   const direccionInput = document.querySelector("#direccion");
-  const tipoCombustibleInput = document.querySelector("#tipoCombustible");
 
   const formCola = document.querySelector("#form-cola");
   const distanciaInput = document.querySelector("#distancia");
@@ -79,21 +78,30 @@ document.addEventListener("DOMContentLoaded", () => {
       const zona = zonaInput.value.trim();
       const direccion = direccionInput.value.trim();
       const resultadoDiv = document.querySelector("#resultado-surtidor");
-      const tipoCombustible = tipoCombustibleInput.value;
+      const checkboxes = document.querySelectorAll('input[name="combustible"]:checked');
+const tiposSeleccionados = Array.from(checkboxes).map(cb => ({
+  tipo: cb.value,
+  cantidad: 0
+}));
 
-      const resultado = registrarSurtidor({ nombre, zona, direccion, tipoCombustible });
+if (tiposSeleccionados.length === 0) {
+  resultadoDiv.innerHTML = `<p style="color: red;">Selecciona al menos un tipo de combustible.</p>`;
+  return;
+}
 
-      if (resultado === "Estacion de servicio ya existente") {
-        resultadoDiv.innerHTML = `<p style="color: red;">${resultado}</p>`;
-      } else {
-        const nuevaEstacion = {
-          nombre: resultado.nombre,
-          zona: resultado.zona,
-          direccion: resultado.direccion,
-          tipoCombustible: resultado.tipoCombustible,
-          cantidadDisponible: 0,
-          fila: [],
-        };
+const resultado = registrarSurtidor({ nombre, zona, direccion, combustibles: tiposSeleccionados });
+
+if (resultado === "Estacion de servicio ya existente") {
+  resultadoDiv.innerHTML = `<p style="color: red;">${resultado}</p>`;
+} else {
+  const nuevaEstacion = {
+    nombre: resultado.nombre,
+    zona: resultado.zona,
+    direccion: resultado.direccion,
+    combustibles: resultado.combustibles,
+    filaEspera: []
+  };
+
         
         agregarEstacion(nuevaEstacion);
 

@@ -1069,5 +1069,22 @@
     },
     "coverage": 0,
     "test_count": 22
+  },
+  {
+    "sha": "7cb96209dc26f3cfafefe3b26402dd6ee73d7322",
+    "author": "andresrev070303",
+    "commit": {
+      "date": "2025-05-22T04:14:31.000Z",
+      "message": "feat:Se guardan los tipos de combustibles por estacion de servicio",
+      "url": "https://github.com/andresrev070303/proyecto_ing_software/commit/7cb96209dc26f3cfafefe3b26402dd6ee73d7322"
+    },
+    "stats": {
+      "total": 40,
+      "additions": 24,
+      "deletions": 16,
+      "date": "2025-05-22"
+    },
+    "coverage": 0,
+    "test_count": 22
   }
 ]
