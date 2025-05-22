@@ -69,12 +69,26 @@ function obtenerCantidadCombustible(nombreEstacion) {
 
 
 function actualizarCantidadCombustible(nombreEstacion, nuevaCantidad) {
-  const estaciones = obtenerEstaciones();
-  const estacion = estaciones.find(est => est.nombre === nombreEstacion);
+  let estaciones = obtenerEstaciones();
+  const estacion = estaciones.find(est => est.nombre.toLowerCase() === nombreEstacion.toLowerCase());
+
   if (estacion) {
     estacion.cantidadDisponible = nuevaCantidad;
+
+    // Actualizar en localStorage si está allí
+    try {
+      const adicionales = JSON.parse(localStorage.getItem("nuevasEstaciones") || "[]");
+      const index = adicionales.findIndex(e => e.nombre.toLowerCase() === nombreEstacion.toLowerCase());
+      if (index !== -1) {
+        adicionales[index] = estacion;
+        localStorage.setItem("nuevasEstaciones", JSON.stringify(adicionales));
+      }
+    } catch (error) {
+      console.error("Error actualizando cantidad en localStorage:", error);
+    }
   }
 }
+
 
 
 function MostrarFormularioCombustible(nombreEstacion){

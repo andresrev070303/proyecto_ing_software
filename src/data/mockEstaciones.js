@@ -148,23 +148,51 @@ let estacionesLista = [
   }
   
   function agregarAfila(nombreEstacion, datosConductor) {
-    const estacion = estacionesLista.find(est => est.nombre === nombreEstacion);
-    console.log(estacion);
+    const nombreLower = nombreEstacion.toLowerCase();
+  
+    // Buscar en estaciones mock (estacionesLista)
+    let estacion = estacionesLista.find(est => est.nombre.toLowerCase() === nombreLower);
     if (estacion) {
       const nuevaPosicion = estacion.filaEspera.length + 1;
-      
       estacion.filaEspera.push({
         nombre: datosConductor.nombre,
         placa: datosConductor.placa
       });
-      
-      console.log(`Conductor ${datosConductor.nombre} agregado a la fila de ${nombreEstacion}. Posición: ${nuevaPosicion}`);
+  
+      console.log(`Conductor ${datosConductor.nombre} agregado a estación mock "${nombreEstacion}". Posición: ${nuevaPosicion}`);
       return nuevaPosicion;
-    } else {
-      console.error(`Error: No se encontró la estación "${nombreEstacion}"`);
-      return false;
     }
+  
+    // Si no está en mock, buscar en localStorage
+    try {
+      const adicionales = JSON.parse(localStorage.getItem("nuevasEstaciones") || "[]");
+      const index = adicionales.findIndex(e => e.nombre.toLowerCase() === nombreLower);
+  
+      if (index !== -1) {
+        estacion = adicionales[index];
+        const nuevaPosicion = estacion.filaEspera.length + 1;
+  
+        estacion.filaEspera.push({
+          nombre: datosConductor.nombre,
+          placa: datosConductor.placa
+        });
+  
+        adicionales[index] = estacion;
+        localStorage.setItem("nuevasEstaciones", JSON.stringify(adicionales));
+  
+        console.log(`Conductor ${datosConductor.nombre} agregado a estación localStorage "${nombreEstacion}". Posición: ${nuevaPosicion}`);
+        return nuevaPosicion;
+      }
+    } catch (error) {
+      console.error("Error al acceder a estaciones del localStorage:", error);
+    }
+  
+    // Si no se encontró en ningún lado
+    console.error(`Error: No se encontró la estación "${nombreEstacion}"`);
+    return false;
   }
+  
+  
   function obtenerCantidadCombustible(nombreEstacion) {
     const estacion = estacionesLista.find(est => est.nombre === nombreEstacion);
     if (estacion) {

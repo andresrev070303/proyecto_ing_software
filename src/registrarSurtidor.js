@@ -21,7 +21,13 @@ function registrarSurtidor({ nombre, zona, direccion, tipoCombustible }) {
       
     }
     if (resultado.nombre && resultado.zona && resultado.direccion && resultado.tipoCombustible) {
-        const adicionales = JSON.parse(localStorage.getItem("nuevasEstaciones") || "[]");
+      let adicionales = [];
+      try {
+        adicionales = JSON.parse(localStorage.getItem("nuevasEstaciones") || "[]");
+      } catch (e) {
+        console.error("Error leyendo nuevasEstaciones:", e);
+      }
+      
         const existentes = [...estacionesLista, ...adicionales];
     
         const yaExiste = existentes.some(e =>

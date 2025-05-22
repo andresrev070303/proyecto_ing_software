@@ -1001,5 +1001,22 @@
     },
     "coverage": 0,
     "test_count": 21
+  },
+  {
+    "sha": "b65ab8cf5a9b6959f45d3c34dec9e8fcbaab5061",
+    "author": "andresrev070303",
+    "commit": {
+      "date": "2025-05-22T02:55:38.000Z",
+      "message": "fix:Se arreglaron errores al momento de ingresar combustible y agregar a fila",
+      "url": "https://github.com/andresrev070303/proyecto_ing_software/commit/b65ab8cf5a9b6959f45d3c34dec9e8fcbaab5061"
+    },
+    "stats": {
+      "total": 70,
+      "additions": 59,
+      "deletions": 11,
+      "date": "2025-05-22"
+    },
+    "coverage": 0,
+    "test_count": 21
   }
 ]
