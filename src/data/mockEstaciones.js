@@ -4,7 +4,7 @@ let estacionesLista = [
     direccion: "Av. América #1256",
     zona: "Norte",
     combustibles: [
-      { tipo: "Normal", cantidad: 8500 }
+      { tipo: "Normal", cantidad: 850 }
     ],
     filaEspera: [
       { nombre: "Eduardo Quiroga", placa: "5678GPQ" },
@@ -16,7 +16,7 @@ let estacionesLista = [
     direccion: "Av. Melchor Pérez #245",
     zona: "Norte",
     combustibles: [
-      { tipo: "Especial", cantidad: 7200 }
+      { tipo: "Especial", cantidad: 720 }
     ],
     filaEspera: []
   },
@@ -25,7 +25,7 @@ let estacionesLista = [
     direccion: "Calle Jordán #321",
     zona: "Norte",
     combustibles: [
-      { tipo: "Diesel", cantidad: 6800 }
+      { tipo: "Diesel", cantidad: 680 }
     ],
     filaEspera: [
       { nombre: "María López", placa: "8921BCD" },
@@ -38,7 +38,7 @@ let estacionesLista = [
     direccion: "Av. Villazón #789",
     zona: "Sur",
     combustibles: [
-      { tipo: "Normal", cantidad: 9200 }
+      { tipo: "Normal", cantidad: 920 }
     ],
     filaEspera: [
       { nombre: "Pedro Salazar", placa: "9988MNO" }
@@ -49,7 +49,7 @@ let estacionesLista = [
     direccion: "Av. Panamericana km 5",
     zona: "Sur",
     combustibles: [
-      { tipo: "Diesel", cantidad: 5500 }
+      { tipo: "Diesel", cantidad: 550 }
     ],
     filaEspera: []
   },
@@ -58,7 +58,7 @@ let estacionesLista = [
     direccion: "Av. 6 de Agosto #456",
     zona: "Sur",
     combustibles: [
-      { tipo: "Especial", cantidad: 4800 }
+      { tipo: "Especial", cantidad: 480 }
     ],
     filaEspera: []
   },
@@ -67,7 +67,7 @@ let estacionesLista = [
     direccion: "Plaza Bolívar #123",
     zona: "Cercado",
     combustibles: [
-      { tipo: "Normal", cantidad: 11000 }
+      { tipo: "Normal", cantidad: 110 }
     ],
     filaEspera: [
       { nombre: "Valeria Torres", placa: "2233XYZ" },
@@ -81,7 +81,7 @@ let estacionesLista = [
     direccion: "Av. Ayacucho #678",
     zona: "Cercado",
     combustibles: [
-      { tipo: "Diesel", cantidad: 7500 }
+      { tipo: "Diesel", cantidad: 750 }
     ],
     filaEspera: []
   },
@@ -90,7 +90,7 @@ let estacionesLista = [
     direccion: "Av. Blanco Galindo #901",
     zona: "Quillacollo",
     combustibles: [
-      { tipo: "Especial", cantidad: 6200 }
+      { tipo: "Especial", cantidad: 620 }
     ],
     filaEspera: []
   },
@@ -99,7 +99,7 @@ let estacionesLista = [
     direccion: "Calle Bolívar #1002",
     zona: "Quillacollo",
     combustibles: [
-      { tipo: "Diesel", cantidad: 5800 }
+      { tipo: "Diesel", cantidad: 580 }
     ],
     filaEspera: [
       { nombre: "Eduardo Quiroga", placa: "5678GPQ" },

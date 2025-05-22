@@ -1,5 +1,5 @@
-/* combustible.test.js */
-import { obtenerEstaciones } from './estaciones.js';
+/* estaciones.test.js */
+import { obtenerEstaciones } from '../utils/estaciones.js';
 
 global.localStorage = {
   store: {},
@@ -22,7 +22,7 @@ describe('Obtencion de Estaciones', () => {
       direccion: "Av. América #1256",
       zona: "Norte",
       combustibles: [
-        { tipo: "Normal", cantidad: 8500 }
+        { tipo: "Normal", cantidad: 850 }
       ],
       filaEspera: [
         { nombre: "Eduardo Quiroga", placa: "5678GPQ" },

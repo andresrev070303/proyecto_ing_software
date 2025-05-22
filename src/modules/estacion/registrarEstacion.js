@@ -1,6 +1,7 @@
-import { estacionesLista } from "./data/mockEstaciones.js";
+/*src/modules/estacion/registrarEstacion.js*/
+import { estacionesLista } from "../../data/mockEstaciones.js";
 
-function registrarSurtidor(data) {
+function registrarEstacion(data) {
   const resultado = {};
 
   if (!data.nombre || typeof data.nombre !== "string" || data.nombre.trim() === "") {
@@ -47,4 +48,4 @@ function registrarSurtidor(data) {
   return resultado;
 }
 
-export default registrarSurtidor;
+export default registrarEstacion;

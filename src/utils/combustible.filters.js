@@ -1,10 +1,6 @@
-/* estaciones.js */
-import { estacionesLista } from './data/mockEstaciones.js';
+/* combustible.filters.js */
+import { estacionesLista } from '../data/mockEstaciones.js';
 
-export function obtenerEstaciones() {
-  const adicionales = JSON.parse(localStorage.getItem("nuevasEstaciones") || "[]");
-  return [...estacionesLista, ...adicionales];
-}
 
 export function ordenarPorCantidad(estaciones = estacionesLista) {
   return [...estaciones].sort((a, b) =>

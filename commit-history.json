@@ -1103,5 +1103,22 @@
     },
     "coverage": 0,
     "test_count": 22
+  },
+  {
+    "sha": "5eb6ae7864b2250f41aa5a34d4fa359743070a2d",
+    "author": "Jesus Ariel Mamani Gutierrez",
+    "commit": {
+      "date": "2025-05-22T14:24:27.000Z",
+      "message": "refactor: Estrucuturacion de los archivos de manera que todo quede mas ordenado y mas entendible",
+      "url": "https://github.com/andresrev070303/proyecto_ing_software/commit/5eb6ae7864b2250f41aa5a34d4fa359743070a2d"
+    },
+    "stats": {
+      "total": 87,
+      "additions": 49,
+      "deletions": 38,
+      "date": "2025-05-22"
+    },
+    "coverage": 0,
+    "test_count": 22
   }
 ]

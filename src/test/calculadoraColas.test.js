@@ -1,4 +1,5 @@
-import { calcularVehiculosEnCola, calcularCapacidadCarga, gasolinaAlcanzara } from "./calculadoraColas.js";
+/*calculadoraColas.test.sj*/
+import { calcularVehiculosEnCola, calcularCapacidadCarga, gasolinaAlcanzara } from "../utils/calculadoraColas.js";
 
 describe("calcularCola", () => {
   it("debería devolver 2 para una distancia de 12", () => {

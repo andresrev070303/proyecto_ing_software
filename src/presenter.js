@@ -1,6 +1,6 @@
-import registrarSurtidor from "./registrarSurtidor.js";
+import registrarSurtidor from "./modules/estacion/registrarEstacion.js";
 import { agregarEstacion } from "./data/mockEstaciones.js";
-import { gasolinaAlcanzara, calcularVehiculosEnCola, calcularCapacidadCarga } from "./calculadoraColas.js";
+import { gasolinaAlcanzara, calcularVehiculosEnCola, calcularCapacidadCarga } from "./utils/calculadoraColas.js";
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -170,5 +170,6 @@ resultadoDiv.innerHTML = `<p style="color: green;">Registrado correctamente: ${r
   }
   
 });
+
 import { estacionesLista } from "./data/mockEstaciones.js";
 console.log("Estaciones registradas ahora:", estacionesLista);

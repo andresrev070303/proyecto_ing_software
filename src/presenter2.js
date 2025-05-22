@@ -1,11 +1,13 @@
 import { agregarAfila } from './data/mockEstaciones.js';
 import { 
   obtenerEstaciones, 
+} from './utils/estaciones.js';
+import {
   filtrarPorCombustible, 
   ordenarPorCantidad,
   filtrarPorZona,
   aplicarFiltrosCombinados 
-} from './estaciones.js';
+} from './utils/combustible.filters.js';
 
 
 const selectCombustible = document.querySelector("#combustible");

@@ -1,12 +1,12 @@
 /* combustible.filters.test.js */
-import { ordenarPorCantidad, filtrarPorCombustible } from './estaciones.js';
+import { ordenarPorCantidad, filtrarPorCombustible } from '../utils/combustible.filters.js';
 
 describe('Ordenamiento de Estaciones', () => {
   it('debe ordenar por cantidad descendente', () => {
     const ordenadas = ordenarPorCantidad();
 
-    expect(ordenadas[0].nombre).toBe("YPFB Central");
-    expect(ordenadas[0].combustibles[0].cantidad).toBe(11000);
+    expect(ordenadas[0].nombre).toBe("YPFB San Antonio");
+    expect(ordenadas[0].combustibles[0].cantidad).toBe(920);
 
     expect(ordenadas[1].combustibles[0].cantidad).toBeGreaterThanOrEqual(ordenadas[2].combustibles[0].cantidad);
 
