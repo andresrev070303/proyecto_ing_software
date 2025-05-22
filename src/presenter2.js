@@ -120,12 +120,18 @@ function MostrarFormularioCombustible(nombreEstacion) {
 
       <button type="submit">Registrar</button>
     </form>
-    <div id="resultadoCombustible"></div>
+    <div id="resultadoCombustible"></div><div id="resultadoCombustible"></div>
+<button id="cerrarFormularioBtn">Cerrar ventana</button>
+
   `;
 
   const form = document.getElementById("form-combustible");
   form.addEventListener("submit", function (e) {
     e.preventDefault();
+    document.getElementById("cerrarFormularioBtn").addEventListener("click", () => {
+      mostrarEstaciones(obtenerEstaciones());
+    });
+    
 
     const tipo = document.getElementById("tipoCombustible").value;
     const cantidad = parseFloat(document.getElementById("cantidadCombustible").value);
@@ -139,13 +145,13 @@ function MostrarFormularioCombustible(nombreEstacion) {
     const resultado = agregarCombustibleExistente(nombreEstacion, tipo, cantidad);
 
     if (resultado.startsWith("Se agregó")) {
-      document.getElementById("resultadoCombustible").innerHTML =
-        `<p style="color:green">${resultado}</p>`;
-      mostrarEstaciones(obtenerEstaciones());
-    } else {
-      document.getElementById("resultadoCombustible").innerHTML =
-        `<p style="color:red">${resultado}</p>`;
+      document.getElementById("resultadoCombustible").innerHTML = `
+        <div style="color: green; font-weight: bold; padding: 5px; border: 1px solid green; border-radius: 4px;">
+          ✅ Se registró correctamente el ingreso de <strong>${tipo}</strong> con <strong>${cantidad} litros</strong>.
+        </div>`;
     }
+    
+    
   });
 }
 

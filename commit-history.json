@@ -1188,5 +1188,22 @@
     },
     "coverage": 0,
     "test_count": 23
+  },
+  {
+    "sha": "b9b6889edb34206e14c404d3acdc4eb9a18dc68f",
+    "author": "andresrev070303",
+    "commit": {
+      "date": "2025-05-22T20:28:06.000Z",
+      "message": "feat:Se agrego mensaje de confirmacion para el combustible agregado",
+      "url": "https://github.com/andresrev070303/proyecto_ing_software/commit/b9b6889edb34206e14c404d3acdc4eb9a18dc68f"
+    },
+    "stats": {
+      "total": 20,
+      "additions": 13,
+      "deletions": 7,
+      "date": "2025-05-22"
+    },
+    "coverage": 0,
+    "test_count": 23
   }
 ]
