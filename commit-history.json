@@ -1052,5 +1052,22 @@
     },
     "coverage": 0,
     "test_count": 21
+  },
+  {
+    "sha": "7174cc39080c6ee6d74a60373d1d90de2504c54b",
+    "author": "andresrev070303",
+    "commit": {
+      "date": "2025-05-22T04:00:19.000Z",
+      "message": "feat:Deberia agregar mas de un tipo de combustible",
+      "url": "https://github.com/andresrev070303/proyecto_ing_software/commit/7174cc39080c6ee6d74a60373d1d90de2504c54b"
+    },
+    "stats": {
+      "total": 555,
+      "additions": 248,
+      "deletions": 307,
+      "date": "2025-05-22"
+    },
+    "coverage": 0,
+    "test_count": 22
   }
 ]
