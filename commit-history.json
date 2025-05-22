@@ -1018,5 +1018,22 @@
     },
     "coverage": 0,
     "test_count": 21
+  },
+  {
+    "sha": "b917f34bc5b9527fbfd966b71df8a0ba5d6d5aeb",
+    "author": "andresrev070303",
+    "commit": {
+      "date": "2025-05-22T03:16:13.000Z",
+      "message": "feat:Se agrego la lista de surtidtores en la pagina principal",
+      "url": "https://github.com/andresrev070303/proyecto_ing_software/commit/b917f34bc5b9527fbfd966b71df8a0ba5d6d5aeb"
+    },
+    "stats": {
+      "total": 643,
+      "additions": 303,
+      "deletions": 340,
+      "date": "2025-05-22"
+    },
+    "coverage": 0,
+    "test_count": 21
   }
 ]
