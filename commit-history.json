@@ -1154,5 +1154,22 @@
     },
     "coverage": 0,
     "test_count": 22
+  },
+  {
+    "sha": "e18800dade1507bca0ccb45a7dd5de2d278c2d12",
+    "author": "andresrev070303",
+    "commit": {
+      "date": "2025-05-22T20:05:32.000Z",
+      "message": "feat:Deberia agregar combustible a una estacion de servicio con combustible ya existente",
+      "url": "https://github.com/andresrev070303/proyecto_ing_software/commit/e18800dade1507bca0ccb45a7dd5de2d278c2d12"
+    },
+    "stats": {
+      "total": 62,
+      "additions": 61,
+      "deletions": 1,
+      "date": "2025-05-22"
+    },
+    "coverage": 0,
+    "test_count": 23
   }
 ]
