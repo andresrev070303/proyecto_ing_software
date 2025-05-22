@@ -13,7 +13,6 @@ const selectZona = document.querySelector("#filtro-zona");
 const checkboxOrdenar = document.querySelector("#ordenar-checkbox");
 const divEstaciones = document.querySelector("#estaciones-container");
 
-
 function mostrarEstaciones(estaciones) {
   if (estaciones.length === 0) {
     divEstaciones.innerHTML = "<p>No se encontraron estaciones con los filtros aplicados</p>";
@@ -41,8 +40,13 @@ function mostrarEstaciones(estaciones) {
       <h3>${estacion.nombre}</h3>
       <p><strong>Zona:</strong> ${estacion.zona}</p>
       <p><strong>Dirección:</strong> ${estacion.direccion}</p>
-      <p><strong>Combustible:</strong> ${estacion.tipoCombustible}</p>
-      <p><strong>Disponible:</strong> ${estacion.cantidadDisponible} litros</p>
+      ${Array.isArray(estacion.combustibles) ? `
+        <p><strong>Combustibles:</strong></p>
+        <ul>
+          ${estacion.combustibles.map(c => `<li>${c.tipo}: ${c.cantidad} litros</li>`).join("")}
+        </ul>` : `<p><strong>Combustibles:</strong> No definidos</p>`
+      }
+      
       ${filaHtml}
     `;
 
@@ -197,3 +201,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
   mostrarEstaciones(obtenerEstaciones());
 });
+export {mostrarEstaciones};

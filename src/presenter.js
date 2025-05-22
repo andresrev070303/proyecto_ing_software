@@ -2,6 +2,7 @@ import registrarSurtidor from "./registrarSurtidor.js";
 import { agregarEstacion } from "./data/mockEstaciones.js";
 import { gasolinaAlcanzara, calcularVehiculosEnCola, calcularCapacidadCarga } from "./calculadoraColas.js";
 
+
 document.addEventListener("DOMContentLoaded", () => {
   const openWindowButton = document.querySelector("#open-window-btn");
   const newWindow = document.querySelector("#new-window");
@@ -22,6 +23,10 @@ document.addEventListener("DOMContentLoaded", () => {
     openWindowButton.addEventListener("click", () => {
       originalContent.style.display = "none";
       newWindow.style.display = "block";
+      const contenedorEstaciones = document.querySelector("#estaciones-container");
+      if (contenedorEstaciones) {
+        contenedorEstaciones.style.display = "none";
+      }
     });
   }
 
@@ -30,6 +35,10 @@ document.addEventListener("DOMContentLoaded", () => {
     closeWindowButton.addEventListener("click", () => {
       originalContent.style.display = "block";
       newWindow.style.display = "none";
+      const contenedorEstaciones = document.querySelector("#estaciones-container");
+if (contenedorEstaciones) {
+  contenedorEstaciones.style.display = "block";
+}
     });
      // Mostrar la "ventana 2"
   if (openWindow2Button) {

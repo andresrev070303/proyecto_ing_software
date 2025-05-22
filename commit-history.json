@@ -1086,5 +1086,22 @@
     },
     "coverage": 0,
     "test_count": 22
+  },
+  {
+    "sha": "0e81adc1328a8439139f8670b3afc99097264119",
+    "author": "andresrev070303",
+    "commit": {
+      "date": "2025-05-22T12:30:13.000Z",
+      "message": "feat:Se agrego la visualizacion de todos los tipos de combustibles",
+      "url": "https://github.com/andresrev070303/proyecto_ing_software/commit/0e81adc1328a8439139f8670b3afc99097264119"
+    },
+    "stats": {
+      "total": 26234,
+      "additions": 3776,
+      "deletions": 22458,
+      "date": "2025-05-22"
+    },
+    "coverage": 0,
+    "test_count": 22
   }
 ]
