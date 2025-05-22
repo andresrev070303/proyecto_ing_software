@@ -1,6 +1,9 @@
 import registrarSurtidor from "./modules/estacion/registrarEstacion.js";
 import { agregarEstacion } from "./data/mockEstaciones.js";
+import { mostrarEstaciones } from "./presenter2.js";
+import { obtenerEstaciones } from "./utils/estaciones.js";
 import { gasolinaAlcanzara, calcularVehiculosEnCola, calcularCapacidadCarga } from "./utils/calculadoraColas.js";
+
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -118,6 +121,7 @@ if (resultado === "Estacion de servicio ya existente") {
 const existentes = JSON.parse(localStorage.getItem("nuevasEstaciones") || "[]");
 existentes.push(nuevaEstacion);
 localStorage.setItem("nuevasEstaciones", JSON.stringify(existentes));
+mostrarEstaciones(obtenerEstaciones());
 
 resultadoDiv.innerHTML = `<p style="color: green;">Registrado correctamente: ${resultado.nombre}</p>`;
 

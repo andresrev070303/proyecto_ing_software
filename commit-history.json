@@ -1120,5 +1120,22 @@
     },
     "coverage": 0,
     "test_count": 22
+  },
+  {
+    "sha": "6476e8e65aa933d30e2aefc05d4583678b5a8ae1",
+    "author": "andresrev070303",
+    "commit": {
+      "date": "2025-05-22T19:17:57.000Z",
+      "message": "feat:Se agrego la visualizacion de los surtidores recien creados",
+      "url": "https://github.com/andresrev070303/proyecto_ing_software/commit/6476e8e65aa933d30e2aefc05d4583678b5a8ae1"
+    },
+    "stats": {
+      "total": 10,
+      "additions": 8,
+      "deletions": 2,
+      "date": "2025-05-22"
+    },
+    "coverage": 0,
+    "test_count": 22
   }
 ]
