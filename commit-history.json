@@ -1171,5 +1171,22 @@
     },
     "coverage": 0,
     "test_count": 23
+  },
+  {
+    "sha": "a2dfd450ffc13ce88a0e0be067e6ed4d18e22dd8",
+    "author": "andresrev070303",
+    "commit": {
+      "date": "2025-05-22T20:17:09.000Z",
+      "message": "feat:Se agrego la visualizacion del combustible en la interfaz de usuario",
+      "url": "https://github.com/andresrev070303/proyecto_ing_software/commit/a2dfd450ffc13ce88a0e0be067e6ed4d18e22dd8"
+    },
+    "stats": {
+      "total": 84,
+      "additions": 52,
+      "deletions": 32,
+      "date": "2025-05-22"
+    },
+    "coverage": 0,
+    "test_count": 23
   }
 ]

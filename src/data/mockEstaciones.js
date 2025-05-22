@@ -167,18 +167,33 @@ let estacionesLista = [
     } 
   }
   function agregarCombustibleExistente(nombreEstacion, tipo, cantidad) {
-    const adicionales = JSON.parse(localStorage.getItem("nuevasEstaciones") || "[]");
-    const estacion = adicionales.find(e => e.nombre === nombreEstacion);
+    const nombreLower = nombreEstacion.toLowerCase();
+  
+    let estacion = estacionesLista.find(est => est.nombre.toLowerCase() === nombreLower);
+    let enMock = true;
+  
+    if (!estacion) {
+      const adicionales = JSON.parse(localStorage.getItem("nuevasEstaciones") || "[]");
+      estacion = adicionales.find(e => e.nombre.toLowerCase() === nombreLower);
+      enMock = false;
+  
+      if (!estacion) return "Estación no encontrada";
+  
+      const combustible = estacion.combustibles.find(c => c.tipo === tipo);
+      if (!combustible) return `Tipo de combustible "${tipo}" no registrado en esta estación`;
+  
+      combustible.cantidad += cantidad;
+      localStorage.setItem("nuevasEstaciones", JSON.stringify(adicionales));
+      return `Se agregó ${cantidad} litros a ${tipo}`;
+    }
   
     const combustible = estacion.combustibles.find(c => c.tipo === tipo);
     if (!combustible) return `Tipo de combustible "${tipo}" no registrado en esta estación`;
   
     combustible.cantidad += cantidad;
-  
-    localStorage.setItem("nuevasEstaciones", JSON.stringify(adicionales));
-  
     return `Se agregó ${cantidad} litros a ${tipo}`;
   }
+  
   
   
 

@@ -8,6 +8,7 @@ import {
   filtrarPorZona,
   aplicarFiltrosCombinados 
 } from './utils/combustible.filters.js';
+import { agregarCombustibleExistente } from './data/mockEstaciones.js';
 
 
 const selectCombustible = document.querySelector("#combustible");
@@ -97,49 +98,53 @@ function actualizarCantidadCombustible(nombreEstacion, nuevaCantidad) {
 
 
 
-function MostrarFormularioCombustible(nombreEstacion){
+function MostrarFormularioCombustible(nombreEstacion) {
+  const estacion = obtenerEstaciones().find(e => e.nombre === nombreEstacion);
+  if (!estacion) {
+    divEstaciones.innerHTML = `<p style="color:red">Estación no encontrada</p>`;
+    return;
+  }
+
+  const opcionesCombustible = estacion.combustibles.map(c =>
+    `<option value="${c.tipo}">${c.tipo}</option>`
+  ).join("");
+
   divEstaciones.innerHTML = `
-  <h2>Agregar combustible a ${nombreEstacion}</h2>
-  <form id="form-combustible">
-    <label>Tipo de combustible:</label>
-    <select id="tipoCombustible">
-      <option value="Normal">Normal</option>
-      <option value="Especial">Especial</option>
-      <option value="Diesel">Diesel</option>
-      <option value="Gas">Gas</option>
-    </select><br><br>
+    <h2>Agregar combustible a ${nombreEstacion}</h2>
+    <form id="form-combustible">
+      <label>Tipo de combustible:</label>
+      <select id="tipoCombustible">${opcionesCombustible}</select><br><br>
 
-    <label>Cantidad de combustible:</label>
-    <input type="number" id="cantidadCombustible" required><br><br>
-    
-    <button type="submit">Registrar</button>
-  </form>
-  <div id="resultadoCombustible"></div>
-`;
+      <label>Cantidad de combustible:</label>
+      <input type="number" id="cantidadCombustible" required><br><br>
 
+      <button type="submit">Registrar</button>
+    </form>
+    <div id="resultadoCombustible"></div>
+  `;
 
   const form = document.getElementById("form-combustible");
   form.addEventListener("submit", function (e) {
     e.preventDefault();
 
+    const tipo = document.getElementById("tipoCombustible").value;
     const cantidad = parseFloat(document.getElementById("cantidadCombustible").value);
+
     if (isNaN(cantidad) || cantidad <= 0) {
       document.getElementById("resultadoCombustible").innerHTML =
-      `<p style="color:red">Cantidad inválida.</p>`;
+        `<p style="color:red">Cantidad inválida.</p>`;
       return;
     }
 
-    const cantidadActual = obtenerCantidadCombustible(nombreEstacion);
-    if (cantidadActual !== null) {
-      const cantidadTotal = cantidadActual + cantidad;
+    const resultado = agregarCombustibleExistente(nombreEstacion, tipo, cantidad);
 
-      
-      actualizarCantidadCombustible(nombreEstacion, cantidadTotal);
-
+    if (resultado.startsWith("Se agregó")) {
       document.getElementById("resultadoCombustible").innerHTML =
-        '<p style="color:green">Se agregó ${cantidad} litros. Total disponible: ${cantidadTotal} litros.</p>';
-
+        `<p style="color:green">${resultado}</p>`;
       mostrarEstaciones(obtenerEstaciones());
+    } else {
+      document.getElementById("resultadoCombustible").innerHTML =
+        `<p style="color:red">${resultado}</p>`;
     }
   });
 }
