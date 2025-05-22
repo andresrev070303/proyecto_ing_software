@@ -28,14 +28,13 @@
           <option value="Colcapirua">Colcapirua</option>
         </select><br /><br />
 
-        <label for="tipoCombustible">Tipo de Combustible:</label><br />
-        <select id="tipoCombustible" name="tipoCombustible" required>
-          <option value="Normal">Normal</option>
-          <option value="Especial">Especial</option>
-          <option value="Diesel">Diesel</option>
-          <option value="Gas">Gas</option>
-        </select><br /><br />
-
+        <label>Tipos de Combustible:</label><br />
+        <div id="tipos-combustible">
+          <label><input type="checkbox" name="combustible" value="Normal"> Normal</label>
+          <label><input type="checkbox" name="combustible" value="Especial"> Especial</label>
+          <label><input type="checkbox" name="combustible" value="Diesel"> Diesel</label>
+          <label><input type="checkbox" name="combustible" value="Gas"> Gas</label>
+        </div><br />
         <input type="submit" value="Registrar" />
       </form>
       <div id="resultado-surtidor"></div>
