@@ -99,14 +99,24 @@ function actualizarCantidadCombustible(nombreEstacion, nuevaCantidad) {
 
 function MostrarFormularioCombustible(nombreEstacion){
   divEstaciones.innerHTML = `
-    <h2>Agregar combustible a ${nombreEstacion}</h2>
-    <form id="form-combustible">
-      <label>Cantidad de combustible:</label>
-      <input type="number" id="cantidadCombustible" required><br><br>
-      <button type="submit">Registrar</button>
-    </form>
-    <div id="resultadoCombustible"></div>
-  `;
+  <h2>Agregar combustible a ${nombreEstacion}</h2>
+  <form id="form-combustible">
+    <label>Tipo de combustible:</label>
+    <select id="tipoCombustible">
+      <option value="Normal">Normal</option>
+      <option value="Especial">Especial</option>
+      <option value="Diesel">Diesel</option>
+      <option value="Gas">Gas</option>
+    </select><br><br>
+
+    <label>Cantidad de combustible:</label>
+    <input type="number" id="cantidadCombustible" required><br><br>
+    
+    <button type="submit">Registrar</button>
+  </form>
+  <div id="resultadoCombustible"></div>
+`;
+
 
   const form = document.getElementById("form-combustible");
   form.addEventListener("submit", function (e) {

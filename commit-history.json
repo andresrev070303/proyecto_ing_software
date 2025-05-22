@@ -1137,5 +1137,22 @@
     },
     "coverage": 0,
     "test_count": 22
+  },
+  {
+    "sha": "cc504582f5c62cc6e44452ab444acd343b56e128",
+    "author": "andresrev070303",
+    "commit": {
+      "date": "2025-05-22T19:30:57.000Z",
+      "message": "feat:Se agrego en la visualizacion el agregar combustible por tipo",
+      "url": "https://github.com/andresrev070303/proyecto_ing_software/commit/cc504582f5c62cc6e44452ab444acd343b56e128"
+    },
+    "stats": {
+      "total": 26,
+      "additions": 18,
+      "deletions": 8,
+      "date": "2025-05-22"
+    },
+    "coverage": 0,
+    "test_count": 22
   }
 ]
