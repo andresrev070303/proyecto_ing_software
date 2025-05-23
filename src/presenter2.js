@@ -71,27 +71,49 @@ calcularBtn.style.display = "block";
 const resultadoCola = document.createElement("div");
 resultadoCola.style.marginTop = "5px";
 
+let detallesVisibles = false;
+
 calcularBtn.addEventListener("click", () => {
+  detallesVisibles = !detallesVisibles;
+
+  if (!detallesVisibles) {
+    resultadoCola.innerHTML = "";
+    return;
+  }
+
   const cantidadAutos = estacion.filaEspera?.length || 0;
-  const distanciaTotal = cantidadAutos * 6;
 
-  const totalCombustible = estacion.combustibles?.reduce((sum, c) => sum + c.cantidad, 0) || 0;
+  const evaluaciones = estacion.combustibles.map(c => {
+    const capacidad = Math.floor(c.cantidad / 50);
+    let mensaje = "";
 
-  const mensaje = gasolinaAlcanzara(distanciaTotal, totalCombustible);
+    if (capacidad > cantidadAutos) {
+      mensaje = `✅ <strong>${c.tipo}:</strong> Sí alcanzará`;
+    } else if (capacidad === cantidadAutos) {
+      mensaje = `⚠️ <strong>${c.tipo}:</strong> Alcanza justo, considera otro surtidor`;
+    } else {
+      mensaje = `❌ <strong>${c.tipo}:</strong> No alcanzará`;
+    }
+
+    return `
+      <li>${mensaje}
+        <ul>
+          <li>Litros disponibles: ${c.cantidad}</li>
+          <li>Capacidad para ${capacidad} vehículos</li>
+          <li>Vehículos en cola: ${cantidadAutos}</li>
+        </ul>
+      </li>
+    `;
+  }).join("");
 
   resultadoCola.innerHTML = `
-  <div style="margin-top: 10px; border: 1px solid #ccc; padding: 8px; border-radius: 5px;">
-    <p><strong>${mensaje}</strong></p>
-    <ul>
-      <li><strong>Vehículos en cola:</strong> ${cantidadAutos}</li>
-      <li><strong>Distancia estimada:</strong> ${distanciaTotal} metros</li>
-      <li><strong>Combustible disponible:</strong> ${totalCombustible} litros</li>
-      <li><strong>Capacidad del surtidor:</strong> ${Math.floor(totalCombustible / 50)} vehículos</li>
-    </ul>
-  </div>
-`;
-
+    <div style="margin-top: 10px; border: 1px solid #ccc; padding: 8px; border-radius: 5px;">
+      <p><strong>Evaluación por tipo de combustible:</strong></p>
+      <ul>${evaluaciones}</ul>
+    </div>
+  `;
 });
+
 
 div.appendChild(calcularBtn);
 div.appendChild(resultadoCola);

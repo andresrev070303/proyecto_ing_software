@@ -1256,5 +1256,22 @@
     },
     "coverage": 0,
     "test_count": 23
+  },
+  {
+    "sha": "2f7586debd9f4c755e86178145ecd4cd6df1bc23",
+    "author": "andresrev070303",
+    "commit": {
+      "date": "2025-05-23T01:08:55.000Z",
+      "message": "feat:Se agrego el calcular cola automatizado por surtidor",
+      "url": "https://github.com/andresrev070303/proyecto_ing_software/commit/2f7586debd9f4c755e86178145ecd4cd6df1bc23"
+    },
+    "stats": {
+      "total": 50,
+      "additions": 36,
+      "deletions": 14,
+      "date": "2025-05-23"
+    },
+    "coverage": 0,
+    "test_count": 23
   }
 ]
