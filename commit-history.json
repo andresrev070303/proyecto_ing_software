@@ -1205,5 +1205,22 @@
     },
     "coverage": 0,
     "test_count": 23
+  },
+  {
+    "sha": "a9f775bf3b329cde266daaf9822ca94b9217fc3f",
+    "author": "andresrev070303",
+    "commit": {
+      "date": "2025-05-23T00:31:28.000Z",
+      "message": "fix:Se arreglaron errores de duplicado al registrar surtidor",
+      "url": "https://github.com/andresrev070303/proyecto_ing_software/commit/a9f775bf3b329cde266daaf9822ca94b9217fc3f"
+    },
+    "stats": {
+      "total": 78,
+      "additions": 43,
+      "deletions": 35,
+      "date": "2025-05-23"
+    },
+    "coverage": 0,
+    "test_count": 23
   }
 ]

@@ -86,47 +86,55 @@ if (contenedorEstaciones) {
   if (form) {
     form.addEventListener("submit", (e) => {
       e.preventDefault();
-      const nombre = nombreInput.value;
+      const nombre = nombreInput.value.trim();
       const zona = zonaInput.value.trim();
       const direccion = direccionInput.value.trim();
       const resultadoDiv = document.querySelector("#resultado-surtidor");
       const checkboxes = document.querySelectorAll('input[name="combustible"]:checked');
-const tiposSeleccionados = Array.from(checkboxes).map(cb => ({
-  tipo: cb.value,
-  cantidad: 0
-}));
-
-if (tiposSeleccionados.length === 0) {
-  resultadoDiv.innerHTML = `<p style="color: red;">Selecciona al menos un tipo de combustible.</p>`;
-  return;
-}
-
-const resultado = registrarSurtidor({ nombre, zona, direccion, combustibles: tiposSeleccionados });
-
-if (resultado === "Estacion de servicio ya existente") {
-  resultadoDiv.innerHTML = `<p style="color: red;">${resultado}</p>`;
-} else {
-  const nuevaEstacion = {
-    nombre: resultado.nombre,
-    zona: resultado.zona,
-    direccion: resultado.direccion,
-    combustibles: resultado.combustibles,
-    filaEspera: []
-  };
-
-        
-        agregarEstacion(nuevaEstacion);
-
-// Guardar en localStorage
-const existentes = JSON.parse(localStorage.getItem("nuevasEstaciones") || "[]");
-existentes.push(nuevaEstacion);
-localStorage.setItem("nuevasEstaciones", JSON.stringify(existentes));
-mostrarEstaciones(obtenerEstaciones());
-
-resultadoDiv.innerHTML = `<p style="color: green;">Registrado correctamente: ${resultado.nombre}</p>`;
-
+    
+      const tiposSeleccionados = Array.from(checkboxes).map(cb => ({
+        tipo: cb.value,
+        cantidad: 0
+      }));
+    
+      if (!nombre || !zona || !direccion || tiposSeleccionados.length === 0) {
+        resultadoDiv.innerHTML = `<p style="color: red;">Completa todos los campos y selecciona al menos un combustible.</p>`;
+        return;
       }
+    
+      const nuevaEstacion = {
+        nombre,
+        zona,
+        direccion,
+        combustibles: tiposSeleccionados,
+        filaEspera: []
+      };
+    
+      // Verificamos si ya existe antes de registrar
+      const existentes = obtenerEstaciones();
+      const yaExiste = existentes.some(e =>
+        e.nombre === nuevaEstacion.nombre &&
+        e.zona === nuevaEstacion.zona &&
+        e.direccion === nuevaEstacion.direccion
+      );
+    
+      if (yaExiste) {
+        resultadoDiv.innerHTML = `<p style="color: red;">Estación ya registrada.</p>`;
+        return;
+      }
+    
+      //agregarEstacion(nuevaEstacion);
+    
+      // Guardar en localStorage
+      const adicionales = JSON.parse(localStorage.getItem("nuevasEstaciones") || "[]");
+      adicionales.push(nuevaEstacion);
+      localStorage.setItem("nuevasEstaciones", JSON.stringify(adicionales));
+    
+      mostrarEstaciones(obtenerEstaciones());
+    
+      resultadoDiv.innerHTML = `<p style="color: green;">Registrado correctamente: ${nombre}</p>`;
     });
+    
   }
 
   if (formCola) {
