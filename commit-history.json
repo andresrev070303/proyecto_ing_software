@@ -1324,5 +1324,22 @@
     },
     "coverage": 0,
     "test_count": 23
+  },
+  {
+    "sha": "bc34508632d3126572396c538a372522fed9eaf6",
+    "author": "andresrev070303",
+    "commit": {
+      "date": "2025-05-23T01:38:43.000Z",
+      "message": "feat:Si no hay combustible lanza un mensaje de que no hay combustible disponible",
+      "url": "https://github.com/andresrev070303/proyecto_ing_software/commit/bc34508632d3126572396c538a372522fed9eaf6"
+    },
+    "stats": {
+      "total": 16,
+      "additions": 14,
+      "deletions": 2,
+      "date": "2025-05-23"
+    },
+    "coverage": 0,
+    "test_count": 23
   }
 ]

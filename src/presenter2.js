@@ -94,8 +94,20 @@ calcularBtn.addEventListener("click", () => {
 
 const evaluaciones = estacion.combustibles.map(c => {
   const tipo = c.tipo;
+  const cantidad = c.cantidad;
   const cantidadEnCola = autosPorTipo[tipo] || 0;
-  const capacidad = Math.floor(c.cantidad / 50);
+
+  if (cantidad <= 0) {
+    return `
+      <li>❌ <strong>${tipo}:</strong> No hay combustible disponible
+        <ul>
+          <li>Vehículos en cola para ${tipo}: ${cantidadEnCola}</li>
+        </ul>
+      </li>
+    `;
+  }
+
+  const capacidad = Math.floor(cantidad / 50);
   let mensaje = "";
 
   if (capacidad > cantidadEnCola) {
@@ -109,7 +121,7 @@ const evaluaciones = estacion.combustibles.map(c => {
   return `
     <li>${mensaje}
       <ul>
-        <li>Litros disponibles: ${c.cantidad}</li>
+        <li>Litros disponibles: ${cantidad}</li>
         <li>Capacidad para ${capacidad} vehículos</li>
         <li>Vehículos en cola para ${tipo}: ${cantidadEnCola}</li>
       </ul>
