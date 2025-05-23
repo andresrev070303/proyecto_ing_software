@@ -1222,5 +1222,22 @@
     },
     "coverage": 0,
     "test_count": 23
+  },
+  {
+    "sha": "05b097d9bc29ca576317a4a7e0ef30ec5ea41db5",
+    "author": "andresrev070303",
+    "commit": {
+      "date": "2025-05-23T00:52:09.000Z",
+      "message": "feat:Se agrego el boton  de calcular cola en la interfaz de usuario",
+      "url": "https://github.com/andresrev070303/proyecto_ing_software/commit/05b097d9bc29ca576317a4a7e0ef30ec5ea41db5"
+    },
+    "stats": {
+      "total": 25,
+      "additions": 24,
+      "deletions": 1,
+      "date": "2025-05-23"
+    },
+    "coverage": 0,
+    "test_count": 23
   }
 ]

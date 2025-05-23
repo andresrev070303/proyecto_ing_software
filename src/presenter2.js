@@ -62,6 +62,29 @@ function mostrarEstaciones(estaciones) {
     boton2.textContent = "Ingresar combustible";
     boton2.addEventListener("click", () => MostrarFormularioCombustible(estacion.nombre)); 
     div.appendChild(boton2);
+    // Botón para calcular si alcanza la gasolina automáticamente
+const calcularBtn = document.createElement("button");
+calcularBtn.textContent = "Calcular Cola";
+calcularBtn.style.marginTop = "5px";
+calcularBtn.style.display = "block";
+
+const resultadoCola = document.createElement("div");
+resultadoCola.style.marginTop = "5px";
+
+calcularBtn.addEventListener("click", () => {
+  const cantidadAutos = estacion.filaEspera?.length || 0;
+  const distanciaTotal = cantidadAutos * 6;
+
+  const totalCombustible = estacion.combustibles?.reduce((sum, c) => sum + c.cantidad, 0) || 0;
+
+  const mensaje = gasolinaAlcanzara(distanciaTotal, totalCombustible);
+
+  resultadoCola.innerHTML = `<p><strong>${mensaje}</strong></p>`;
+});
+
+div.appendChild(calcularBtn);
+div.appendChild(resultadoCola);
+
 
     divEstaciones.appendChild(div);
   });
