@@ -82,30 +82,41 @@ calcularBtn.addEventListener("click", () => {
     return;
   }
 
-  const cantidadAutos = estacion.filaEspera?.length || 0;
+  const autosPorTipo = {};
 
-  const evaluaciones = estacion.combustibles.map(c => {
-    const capacidad = Math.floor(c.cantidad / 50);
-    let mensaje = "";
+(estacion.filaEspera || []).forEach(conductor => {
+  const tipo = conductor.tipo || "Desconocido";
+  if (!autosPorTipo[tipo]) {
+    autosPorTipo[tipo] = 0;
+  }
+  autosPorTipo[tipo]++;
+});
 
-    if (capacidad > cantidadAutos) {
-      mensaje = `✅ <strong>${c.tipo}:</strong> Sí alcanzará`;
-    } else if (capacidad === cantidadAutos) {
-      mensaje = `⚠️ <strong>${c.tipo}:</strong> Alcanza justo, considera otro surtidor`;
-    } else {
-      mensaje = `❌ <strong>${c.tipo}:</strong> No alcanzará`;
-    }
+const evaluaciones = estacion.combustibles.map(c => {
+  const tipo = c.tipo;
+  const cantidadEnCola = autosPorTipo[tipo] || 0;
+  const capacidad = Math.floor(c.cantidad / 50);
+  let mensaje = "";
 
-    return `
-      <li>${mensaje}
-        <ul>
-          <li>Litros disponibles: ${c.cantidad}</li>
-          <li>Capacidad para ${capacidad} vehículos</li>
-          <li>Vehículos en cola: ${cantidadAutos}</li>
-        </ul>
-      </li>
-    `;
-  }).join("");
+  if (capacidad > cantidadEnCola) {
+    mensaje = `✅ <strong>${tipo}:</strong> Sí alcanzará`;
+  } else if (capacidad === cantidadEnCola) {
+    mensaje = `⚠️ <strong>${tipo}:</strong> Alcanza justo, considera otro surtidor`;
+  } else {
+    mensaje = `❌ <strong>${tipo}:</strong> No alcanzará`;
+  }
+
+  return `
+    <li>${mensaje}
+      <ul>
+        <li>Litros disponibles: ${c.cantidad}</li>
+        <li>Capacidad para ${capacidad} vehículos</li>
+        <li>Vehículos en cola para ${tipo}: ${cantidadEnCola}</li>
+      </ul>
+    </li>
+  `;
+}).join("");
+
 
   resultadoCola.innerHTML = `
     <div style="margin-top: 10px; border: 1px solid #ccc; padding: 8px; border-radius: 5px;">

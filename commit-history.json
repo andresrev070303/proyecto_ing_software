@@ -1307,5 +1307,22 @@
     },
     "coverage": 0,
     "test_count": 23
+  },
+  {
+    "sha": "f26abda344badf9a6834858be9da1bb2b85119e5",
+    "author": "andresrev070303",
+    "commit": {
+      "date": "2025-05-23T01:33:33.000Z",
+      "message": "feat:Se calcula la estimacion por tipo de combustible",
+      "url": "https://github.com/andresrev070303/proyecto_ing_software/commit/f26abda344badf9a6834858be9da1bb2b85119e5"
+    },
+    "stats": {
+      "total": 57,
+      "additions": 34,
+      "deletions": 23,
+      "date": "2025-05-23"
+    },
+    "coverage": 0,
+    "test_count": 23
   }
 ]
