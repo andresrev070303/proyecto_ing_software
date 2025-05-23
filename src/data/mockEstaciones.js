@@ -123,13 +123,14 @@ let estacionesLista = [
       const nuevaPosicion = estacion.filaEspera.length + 1;
       estacion.filaEspera.push({
         nombre: datosConductor.nombre,
-        placa: datosConductor.placa
+        placa: datosConductor.placa,
+        tipo: datosConductor.tipo 
       });
-  
+    
       console.log(`Conductor ${datosConductor.nombre} agregado a estación mock "${nombreEstacion}". Posición: ${nuevaPosicion}`);
       return nuevaPosicion;
     }
-  
+    
     // Si no está en mock, buscar en localStorage
     try {
       const adicionales = JSON.parse(localStorage.getItem("nuevasEstaciones") || "[]");
@@ -141,8 +142,10 @@ let estacionesLista = [
   
         estacion.filaEspera.push({
           nombre: datosConductor.nombre,
-          placa: datosConductor.placa
+          placa: datosConductor.placa,
+          tipo: datosConductor.tipo
         });
+        
   
         adicionales[index] = estacion;
         localStorage.setItem("nuevasEstaciones", JSON.stringify(adicionales));

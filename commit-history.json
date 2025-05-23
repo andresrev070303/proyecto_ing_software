@@ -1290,5 +1290,22 @@
     },
     "coverage": 0,
     "test_count": 23
+  },
+  {
+    "sha": "f9b957e1142be59e82374c924dc1ae03b431e532",
+    "author": "andresrev070303",
+    "commit": {
+      "date": "2025-05-23T01:28:46.000Z",
+      "message": "feat:Se agrego el tipo de combustible por el que el usuario esta haciendo la cola",
+      "url": "https://github.com/andresrev070303/proyecto_ing_software/commit/f9b957e1142be59e82374c924dc1ae03b431e532"
+    },
+    "stats": {
+      "total": 26,
+      "additions": 15,
+      "deletions": 11,
+      "date": "2025-05-23"
+    },
+    "coverage": 0,
+    "test_count": 23
   }
 ]

@@ -32,9 +32,10 @@ function mostrarEstaciones(estaciones) {
       filaHtml = `
         <h4>Conductores en fila:</h4>
         <ul>
-          ${estacion.filaEspera.map(conductor => `
-            <li>${conductor.nombre} - ${conductor.placa}</li>
-          `).join("")}
+        ${estacion.filaEspera.map(conductor => `
+          <li>${conductor.nombre} - ${conductor.placa} (${conductor.tipo || 'sin tipo'})</li>
+        `).join("")}
+        
         </ul>
       `;
     }
@@ -215,7 +216,7 @@ function MostrarFormularioCombustible(nombreEstacion) {
 function mostrarFormularioConductor(nombreEstacion) {
   const estacion = obtenerEstaciones().find(e => e.nombre === nombreEstacion);
   const opcionesCombustible = estacion.combustibles.map(c => `<option value="${c.tipo}">${c.tipo}</option>`).join("");
-  
+
   divEstaciones.innerHTML = `
     <h2>Agregar conductor a ${nombreEstacion}</h2>
     <form id="form-conductor">
@@ -229,7 +230,6 @@ function mostrarFormularioConductor(nombreEstacion) {
     </form>
     <div id="resultadoConductor"></div>
   `;
-  
 
   const form = document.getElementById("form-conductor");
   form.addEventListener("submit", function(e) {
@@ -237,7 +237,9 @@ function mostrarFormularioConductor(nombreEstacion) {
 
     const nombre = document.getElementById("nombreConductor").value.trim();
     const placa = document.getElementById("placaVehiculo").value.trim();
-    const nuevoConductor = { nombre, placa };
+    const tipo = document.getElementById("tipoCombustible").value;
+
+    const nuevoConductor = { nombre, placa, tipo };
 
     const posicion = agregarAfila(nombreEstacion, nuevoConductor);
     const tiempo = posicion * 5;
@@ -248,7 +250,6 @@ function mostrarFormularioConductor(nombreEstacion) {
     mostrarEstaciones(obtenerEstaciones());
   });
 }
-
 
 function aplicarFiltros() {
   const estacionesFiltradas = aplicarFiltrosCombinados({
