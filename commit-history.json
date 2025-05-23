@@ -1273,5 +1273,22 @@
     },
     "coverage": 0,
     "test_count": 23
+  },
+  {
+    "sha": "e61432290a4fc5d756785703ab19e63d1a691243",
+    "author": "andresrev070303",
+    "commit": {
+      "date": "2025-05-23T01:18:09.000Z",
+      "message": "feat:Se agrego la visualizacion de seleccionar el tipo de combustible por el que la persona hara cola",
+      "url": "https://github.com/andresrev070303/proyecto_ing_software/commit/e61432290a4fc5d756785703ab19e63d1a691243"
+    },
+    "stats": {
+      "total": 6,
+      "additions": 6,
+      "deletions": 0,
+      "date": "2025-05-23"
+    },
+    "coverage": 0,
+    "test_count": 23
   }
 ]

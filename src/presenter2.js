@@ -213,6 +213,9 @@ function MostrarFormularioCombustible(nombreEstacion) {
 
 
 function mostrarFormularioConductor(nombreEstacion) {
+  const estacion = obtenerEstaciones().find(e => e.nombre === nombreEstacion);
+  const opcionesCombustible = estacion.combustibles.map(c => `<option value="${c.tipo}">${c.tipo}</option>`).join("");
+  
   divEstaciones.innerHTML = `
     <h2>Agregar conductor a ${nombreEstacion}</h2>
     <form id="form-conductor">
@@ -220,10 +223,13 @@ function mostrarFormularioConductor(nombreEstacion) {
       <input type="text" id="nombreConductor" required><br>
       <label>Placa del vehículo:</label>
       <input type="text" id="placaVehiculo" required><br>
+      <label>Tipo de combustible:</label>
+      <select id="tipoCombustible">${opcionesCombustible}</select><br><br>
       <button type="submit">Registrar</button>
     </form>
     <div id="resultadoConductor"></div>
   `;
+  
 
   const form = document.getElementById("form-conductor");
   form.addEventListener("submit", function(e) {
