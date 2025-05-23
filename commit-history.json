@@ -1239,5 +1239,22 @@
     },
     "coverage": 0,
     "test_count": 23
+  },
+  {
+    "sha": "8c3dceb3ee931a7f4ea26df45f9af0dd6c9508c2",
+    "author": "andresrev070303",
+    "commit": {
+      "date": "2025-05-23T00:56:10.000Z",
+      "message": "feat:Se agrego la visualizacion de ver detalle en la interfaz de usuario",
+      "url": "https://github.com/andresrev070303/proyecto_ing_software/commit/8c3dceb3ee931a7f4ea26df45f9af0dd6c9508c2"
+    },
+    "stats": {
+      "total": 13,
+      "additions": 12,
+      "deletions": 1,
+      "date": "2025-05-23"
+    },
+    "coverage": 0,
+    "test_count": 23
   }
 ]

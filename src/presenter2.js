@@ -79,7 +79,18 @@ calcularBtn.addEventListener("click", () => {
 
   const mensaje = gasolinaAlcanzara(distanciaTotal, totalCombustible);
 
-  resultadoCola.innerHTML = `<p><strong>${mensaje}</strong></p>`;
+  resultadoCola.innerHTML = `
+  <div style="margin-top: 10px; border: 1px solid #ccc; padding: 8px; border-radius: 5px;">
+    <p><strong>${mensaje}</strong></p>
+    <ul>
+      <li><strong>Vehículos en cola:</strong> ${cantidadAutos}</li>
+      <li><strong>Distancia estimada:</strong> ${distanciaTotal} metros</li>
+      <li><strong>Combustible disponible:</strong> ${totalCombustible} litros</li>
+      <li><strong>Capacidad del surtidor:</strong> ${Math.floor(totalCombustible / 50)} vehículos</li>
+    </ul>
+  </div>
+`;
+
 });
 
 div.appendChild(calcularBtn);
