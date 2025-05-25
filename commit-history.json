@@ -1409,5 +1409,22 @@
     },
     "coverage": 0,
     "test_count": 28
+  },
+  {
+    "sha": "e8a4ac8ae6ae40d823779d8fb3c78f0d142baefc",
+    "author": "Leonardo Koller",
+    "commit": {
+      "date": "2025-05-25T21:56:43.000Z",
+      "message": "feat: se agrego obtenerTodosLosTicketsAgrupados",
+      "url": "https://github.com/andresrev070303/proyecto_ing_software/commit/e8a4ac8ae6ae40d823779d8fb3c78f0d142baefc"
+    },
+    "stats": {
+      "total": 52,
+      "additions": 51,
+      "deletions": 1,
+      "date": "2025-05-25"
+    },
+    "coverage": 0,
+    "test_count": 30
   }
 ]

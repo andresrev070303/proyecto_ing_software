@@ -3,7 +3,8 @@ import {
   generarTicket,
   obtenerTicketsPorEstacion,
   existeTicketActivoPorNombre,
-  resetTickets
+  resetTickets,
+  obtenerTodosLosTicketsAgrupados
 } from '../utils/ticket.js';
 
 import { estacionesLista } from '../data/mockEstaciones';
@@ -53,4 +54,33 @@ describe('Generación de Ticket - TDD', () => {
     expect(tiene).toBe(true);
   });
   
+  describe('Obtener todos los tickets agrupados por estación', () => {
+    beforeEach(() => {
+      resetTickets(estacionesLista);
+    });
+  
+    it('debe retornar un objeto con tickets agrupados por estación', () => {
+      const agrupados = obtenerTodosLosTicketsAgrupados();
+      
+      expect(agrupados).toHaveProperty('Gulf Norte');
+      expect(Array.isArray(agrupados['Gulf Norte'])).toBe(true);
+      expect(agrupados['Gulf Norte'].length).toBeGreaterThanOrEqual(1);
+    });
+  
+    it('cada estación debe tener tickets ordenados por fecha y turno', () => {
+      const agrupados = obtenerTodosLosTicketsAgrupados();
+      const tickets = agrupados['Gulf Norte'];
+  
+      for (let i = 1; i < tickets.length; i++) {
+        const prev = tickets[i - 1];
+        const curr = tickets[i];
+  
+        if (prev.fechaCarga === curr.fechaCarga) {
+          expect(prev.numeroTurno).toBeLessThanOrEqual(curr.numeroTurno);
+        } else {
+          expect(prev.fechaCarga <= curr.fechaCarga).toBe(true);
+        }
+      }
+    });
+  });
 });

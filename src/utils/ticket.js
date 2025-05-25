@@ -90,3 +90,23 @@ export function existeTicketActivoPorNombre(nombre) {
     estacion.filaEspera.some(p => p.nombre === nombre)
   );
 }
+
+/**
+ * Devuelve todos los tickets activos agrupados por estación
+ *
+ * @returns {Object} - Un objeto con estaciones como clave y array de tickets como valor
+ */
+export function obtenerTodosLosTicketsAgrupados() {
+  const resultado = {};
+
+  estacionesConColas.forEach(estacion => {
+    resultado[estacion.nombre] = [...estacion.filaTickets].sort((a, b) => {
+      if (a.fechaCarga !== b.fechaCarga) {
+        return a.fechaCarga.localeCompare(b.fechaCarga);
+      }
+      return a.numeroTurno - b.numeroTurno;
+    });
+  });
+
+  return resultado;
+}
