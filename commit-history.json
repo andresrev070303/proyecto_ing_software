@@ -1375,5 +1375,22 @@
     },
     "coverage": 0,
     "test_count": 28
+  },
+  {
+    "sha": "c6ef5f56aadb78e845714665a7241a6227bfd26c",
+    "author": "Leonardo Koller",
+    "commit": {
+      "date": "2025-05-25T21:38:41.000Z",
+      "message": "feat: se agrego el cuestionario de ticket en el front",
+      "url": "https://github.com/andresrev070303/proyecto_ing_software/commit/c6ef5f56aadb78e845714665a7241a6227bfd26c"
+    },
+    "stats": {
+      "total": 102,
+      "additions": 99,
+      "deletions": 3,
+      "date": "2025-05-25"
+    },
+    "coverage": 0,
+    "test_count": 28
   }
 ]

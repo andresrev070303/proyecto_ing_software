@@ -3,7 +3,8 @@ import { agregarEstacion } from "./data/mockEstaciones.js";
 import { mostrarEstaciones } from "./presenter2.js";
 import { obtenerEstaciones } from "./utils/estaciones.js";
 import { gasolinaAlcanzara, calcularVehiculosEnCola, calcularCapacidadCarga } from "./utils/calculadoraColas.js";
-
+import { generarTicket } from "./utils/ticket.js";
+import { obtenerEstaciones } from "./utils/estaciones.js";
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -180,8 +181,76 @@ if (contenedorEstaciones) {
       };
     });
   }
-  
+  const openWindow3Button = document.querySelector("#open-window3-btn");
+  const newWindow3 = document.querySelector("#new-window3");
+  const closeWindow3Button = document.querySelector("#close-window3-btn");
+
+  if (openWindow3Button) {
+    openWindow3Button.addEventListener("click", () => {
+      originalContent.style.display = "none";
+      newWindow3.style.display = "block";
+    });
+  }
+
+  if (closeWindow3Button) {
+    closeWindow3Button.addEventListener("click", () => {
+      originalContent.style.display = "block";
+      newWindow3.style.display = "none";
+    });
+  }
+  const formTicket = document.querySelector("#form-ticket");
+  const nombreInputT = document.querySelector("#ticket-nombre");
+  const placaInput = document.querySelector("#ticket-placa");
+  const estacionSelect = document.querySelector("#ticket-estacion");
+  const tipoSelect = document.querySelector("#ticket-combustible");
+  const fechaInput = document.querySelector("#ticket-fecha");
+  const resultadoDivT = document.querySelector("#ticket-resultado");
+
+  // Cargar opciones de estaciones y combustibles
+  const estaciones = obtenerEstaciones();
+  estaciones.forEach(e => {
+    const option = document.createElement("option");
+    option.value = e.nombre;
+    option.textContent = e.nombre;
+    estacionSelect.appendChild(option);
+  });
+
+  // Cuando se selecciona estación, cargar tipos de combustible
+  estacionSelect.addEventListener("change", () => {
+    const seleccionada = estaciones.find(e => e.nombre === estacionSelect.value);
+    tipoSelect.innerHTML = "";
+    (seleccionada?.combustibles || []).forEach(c => {
+      const option = document.createElement("option");
+      option.value = c.tipo;
+      option.textContent = c.tipo;
+      tipoSelect.appendChild(option);
+    });
+  });
+
+  formTicket.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const nombre = nombreInputT.value.trim();
+    const placa = placaInput.value.trim();
+    const estacion = estacionSelect.value;
+    const tipo = tipoSelect.value;
+    const fecha = fechaInput.value;
+
+    try {
+      const ticket = generarTicket(estacion, tipo, placa, nombre, fecha);
+      resultadoDivT.innerHTML = `
+        <p style="color:green">✅ Ticket generado con éxito</p>
+        <p>Turno: ${ticket.numeroTurno} - Estación: ${ticket.estacion} - Combustible: ${ticket.tipoCombustible}</p>`;
+    } catch (err) {
+      resultadoDivT.innerHTML = `<p style="color:red">❌ ${err.message}</p>`;
+    }
+  });
+
 });
 
 import { estacionesLista } from "./data/mockEstaciones.js";
 console.log("Estaciones registradas ahora:", estacionesLista);
+
+import { resetTickets } from "./utils/ticket.js";
+import { obtenerEstaciones } from "./utils/estaciones.js";
+
+resetTickets(obtenerEstaciones());

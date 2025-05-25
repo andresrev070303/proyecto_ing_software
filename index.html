@@ -12,6 +12,33 @@
       <!---<button id="open-window2-btn">Calculadora de colas</button>-->
     </div>
 
+    <div id="new-window3">
+      <h2>Generar Ticket</h2>
+      <form id="form-ticket">
+        <label>Nombre del conductor:</label><br>
+        <input type="text" id="ticket-nombre" required><br><br>
+    
+        <label>Placa del vehículo:</label><br>
+        <input type="text" id="ticket-placa" required><br><br>
+    
+        <label>Estación:</label><br>
+        <select id="ticket-estacion"></select><br><br>
+    
+        <label>Tipo de combustible:</label><br>
+        <select id="ticket-combustible"></select><br><br>
+    
+        <label>Fecha de carga:</label><br>
+        <input type="date" id="ticket-fecha" required><br><br>
+    
+        <input type="submit" value="Generar Ticket">
+      </form>
+      <div id="ticket-resultado"></div>
+      <button id="close-window3-btn">Cerrar ventana</button>
+    </div>
+    
+    <!-- Botón para abrir -->
+    <button id="open-window3-btn">Reservar Ticket</button>
+
     <div id="new-window">
       <h2>REGISTRO DE SURTIDOR</h2>
       <form id="form-surtidor">
