@@ -15,9 +15,9 @@ describe('Obtencion de Estaciones', () => {
   });
 
   it('debe retornar estaciones con sus respectivas propiedades', () => {
-  const estaciones = obtenerEstaciones();
+    const estaciones = obtenerEstaciones();
 
-  expect(estaciones[0]).toEqual({
+    expect(estaciones[0]).toMatchObject({
     nombre: "Gulf Norte",
     direccion: "Av. América #1256",
     zona: "Norte",
@@ -30,7 +30,7 @@ describe('Obtencion de Estaciones', () => {
       { nombre: "Juan Perez", placa: "1234ABC", tipo: "Normal" }
     ]
   });
-});
+  });
 
   it('debe contener los tres tipos de combustible', () => {
     const estaciones = obtenerEstaciones();

@@ -1358,5 +1358,22 @@
     },
     "coverage": 0,
     "test_count": 23
+  },
+  {
+    "sha": "14a34c520992256d79c15d3032636b73231f2b2a",
+    "author": "Jesus Ariel Mamani Gutierrez",
+    "commit": {
+      "date": "2025-05-25T17:33:24.000Z",
+      "message": "test, refactor: implementacion de generar ticket, verificar si existe el ticket, tambien filtar por estacion",
+      "url": "https://github.com/andresrev070303/proyecto_ing_software/commit/14a34c520992256d79c15d3032636b73231f2b2a"
+    },
+    "stats": {
+      "total": 498,
+      "additions": 328,
+      "deletions": 170,
+      "date": "2025-05-25"
+    },
+    "coverage": 0,
+    "test_count": 28
   }
 ]
