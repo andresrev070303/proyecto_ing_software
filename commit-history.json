@@ -1426,5 +1426,22 @@
     },
     "coverage": 0,
     "test_count": 30
+  },
+  {
+    "sha": "c7fdebae79d303543dc69fbdadf42995fd905c84",
+    "author": "Leonardo Koller",
+    "commit": {
+      "date": "2025-05-25T22:22:13.000Z",
+      "message": "feat: se agrego la funcion de eliminar ticket",
+      "url": "https://github.com/andresrev070303/proyecto_ing_software/commit/c7fdebae79d303543dc69fbdadf42995fd905c84"
+    },
+    "stats": {
+      "total": 47,
+      "additions": 45,
+      "deletions": 2,
+      "date": "2025-05-25"
+    },
+    "coverage": 0,
+    "test_count": 33
   }
 ]

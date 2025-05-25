@@ -4,7 +4,8 @@ import {
   obtenerTicketsPorEstacion,
   existeTicketActivoPorNombre,
   resetTickets,
-  obtenerTodosLosTicketsAgrupados
+  obtenerTodosLosTicketsAgrupados,
+  eliminarTicket
 } from '../utils/ticket.js';
 
 import { estacionesLista } from '../data/mockEstaciones';
@@ -53,7 +54,7 @@ describe('Generación de Ticket - TDD', () => {
     const tiene = existeTicketActivoPorNombre('Lucía Mendoza');
     expect(tiene).toBe(true);
   });
-  
+
   describe('Obtener todos los tickets agrupados por estación', () => {
     beforeEach(() => {
       resetTickets(estacionesLista);
@@ -81,6 +82,31 @@ describe('Generación de Ticket - TDD', () => {
           expect(prev.fechaCarga <= curr.fechaCarga).toBe(true);
         }
       }
+    });
+  });
+  
+  describe('Eliminar Ticket', () => {
+    beforeEach(() => {
+      resetTickets(estacionesLista);
+    });
+  
+    it('debe eliminar un ticket existente por nombre y estación', () => {
+      const eliminado = eliminarTicket('Gulf Norte', 'Lucía Mendoza');
+      expect(eliminado).toBe(false);
+  
+      const tickets = obtenerTicketsPorEstacion('Gulf Norte');
+      const aunExiste = tickets.some(t => t.nombre === 'Lucía Mendoza');
+      expect(aunExiste).toBe(false);
+    });
+  
+    it('no debe eliminar si el ticket no existe', () => {
+      const eliminado = eliminarTicket('Gulf Norte', 'Nombre Inexistente');
+      expect(eliminado).toBe(false);
+    });
+  
+    it('no debe eliminar si la estación no existe', () => {
+      const eliminado = eliminarTicket('Estación Fantasma', 'Lucía Mendoza');
+      expect(eliminado).toBe(false);
     });
   });
 });

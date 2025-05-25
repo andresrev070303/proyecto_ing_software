@@ -110,3 +110,20 @@ export function obtenerTodosLosTicketsAgrupados() {
 
   return resultado;
 }
+/**
+ * Elimina un ticket activo de una estación para un conductor específico
+ *
+ * @param {string} estacionNombre - Nombre de la estación
+ * @param {string} nombre - Nombre del conductor
+ * @returns {boolean} - true si se eliminó, false si no se encontró
+ */
+export function eliminarTicket(estacionNombre, nombre) {
+  const estacion = estacionesConColas.find(e => e.nombre === estacionNombre);
+  if (!estacion) return false;
+
+  const index = estacion.filaTickets.findIndex(t => t.nombre === nombre);
+  if (index === -1) return false;
+
+  estacion.filaTickets.splice(index, 1);
+  return true;
+}
