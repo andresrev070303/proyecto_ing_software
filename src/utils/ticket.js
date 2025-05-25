@@ -63,12 +63,23 @@ export function generarTicket(estacionNombre, tipoCombustible, placa, nombre, fe
 }
 
 /**
- * Devuelve todos los tickets de una estación
+ * Devuelve todos los tickets activos de una estación, ordenados por fecha y turno
+ *
+ * @param {string} estacionNombre - Nombre de la estación
+ * @returns {Array<Object>} - Lista de tickets
  */
 export function obtenerTicketsPorEstacion(estacionNombre) {
   const estacion = estacionesConColas.find(e => e.nombre === estacionNombre);
-  return estacion ? [...estacion.filaTickets] : [];
+  if (!estacion) return [];
+
+  return [...estacion.filaTickets].sort((a, b) => {
+    if (a.fechaCarga !== b.fechaCarga) {
+      return a.fechaCarga.localeCompare(b.fechaCarga);
+    }
+    return a.numeroTurno - b.numeroTurno;
+  });
 }
+
 
 /**
  * Verifica si una persona tiene algún ticket activo en cualquier estación

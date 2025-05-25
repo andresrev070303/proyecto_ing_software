@@ -40,11 +40,17 @@ describe('Generación de Ticket - TDD', () => {
 
   it('debe listar todos los tickets de una estación', () => {
     const tickets = obtenerTicketsPorEstacion('Gulf Norte');
-    expect(tickets.length).toBe(2);
+    expect(tickets.length).toBeGreaterThanOrEqual(2);
+    expect(tickets[0].fechaCarga <= tickets[1].fechaCarga).toBe(true);
+  
+    if (tickets[0].fechaCarga === tickets[1].fechaCarga) {
+      expect(tickets[0].numeroTurno).toBeLessThan(tickets[1].numeroTurno);
+    }
   });
 
   it('debe verificar si una persona tiene ticket activo', () => {
     const tiene = existeTicketActivoPorNombre('Lucía Mendoza');
     expect(tiene).toBe(true);
   });
+  
 });

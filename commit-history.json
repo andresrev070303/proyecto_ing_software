@@ -1392,5 +1392,22 @@
     },
     "coverage": 0,
     "test_count": 28
+  },
+  {
+    "sha": "73977310add5405701ac977b6fb3908adc8191d5",
+    "author": "Leonardo Koller",
+    "commit": {
+      "date": "2025-05-25T21:51:12.000Z",
+      "message": "feat: se agrego la funcion de mostrar tickets",
+      "url": "https://github.com/andresrev070303/proyecto_ing_software/commit/73977310add5405701ac977b6fb3908adc8191d5"
+    },
+    "stats": {
+      "total": 23,
+      "additions": 20,
+      "deletions": 3,
+      "date": "2025-05-25"
+    },
+    "coverage": 0,
+    "test_count": 28
   }
 ]
