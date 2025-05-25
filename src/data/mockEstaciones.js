@@ -4,11 +4,12 @@ let estacionesLista = [
     direccion: "Av. América #1256",
     zona: "Norte",
     combustibles: [
-      { tipo: "Normal", cantidad: 850 }
+      { tipo: "Normal", cantidad: 850 },
+      { tipo: "Diesel", cantidad: 600 }
     ],
     filaEspera: [
-      { nombre: "Eduardo Quiroga", placa: "5678GPQ" },
-      { nombre: "Juan Perez", placa: "1234ABC" }
+      { nombre: "Eduardo Quiroga", placa: "5678GPQ", tipo: "Normal" },
+      { nombre: "Juan Perez", placa: "1234ABC", tipo: "Normal" }
     ]
   },
   {
@@ -16,7 +17,8 @@ let estacionesLista = [
     direccion: "Av. Melchor Pérez #245",
     zona: "Norte",
     combustibles: [
-      { tipo: "Especial", cantidad: 720 }
+      { tipo: "Especial", cantidad: 720 },
+      { tipo: "Diesel", cantidad: 550 }
     ],
     filaEspera: []
   },
@@ -25,12 +27,13 @@ let estacionesLista = [
     direccion: "Calle Jordán #321",
     zona: "Norte",
     combustibles: [
-      { tipo: "Diesel", cantidad: 680 }
+      { tipo: "Diesel", cantidad: 680 },
+      { tipo: "Normal", cantidad: 900 } 
     ],
     filaEspera: [
-      { nombre: "María López", placa: "8921BCD" },
-      { nombre: "Carlos Rivas", placa: "3456FGH" },
-      { nombre: "Lucía Mendoza", placa: "7788JKL" }
+      { nombre: "María López", placa: "8921BCD", tipo: "Diesel" },
+      { nombre: "Carlos Rivas", placa: "3456FGH", tipo: "Diesel" },
+      { nombre: "Lucía Mendoza", placa: "7788JKL", tipo: "Diesel" }
     ]
   },
   {
@@ -38,10 +41,11 @@ let estacionesLista = [
     direccion: "Av. Villazón #789",
     zona: "Sur",
     combustibles: [
-      { tipo: "Normal", cantidad: 920 }
+      { tipo: "Normal", cantidad: 920 },
+      { tipo: "Diesel", cantidad: 700 }
     ],
     filaEspera: [
-      { nombre: "Pedro Salazar", placa: "9988MNO" }
+      { nombre: "Pedro Salazar", placa: "9988MNO", tipo: "Normal" }
     ]
   },
   {
@@ -49,7 +53,8 @@ let estacionesLista = [
     direccion: "Av. Panamericana km 5",
     zona: "Sur",
     combustibles: [
-      { tipo: "Diesel", cantidad: 550 }
+      { tipo: "Diesel", cantidad: 550 },
+      { tipo: "Especial", cantidad: 400 } 
     ],
     filaEspera: []
   },
@@ -58,7 +63,8 @@ let estacionesLista = [
     direccion: "Av. 6 de Agosto #456",
     zona: "Sur",
     combustibles: [
-      { tipo: "Especial", cantidad: 480 }
+      { tipo: "Especial", cantidad: 480 },
+      { tipo: "Diesel", cantidad: 500 }
     ],
     filaEspera: []
   },
@@ -67,13 +73,14 @@ let estacionesLista = [
     direccion: "Plaza Bolívar #123",
     zona: "Cercado",
     combustibles: [
-      { tipo: "Normal", cantidad: 110 }
+      { tipo: "Normal", cantidad: 110 },
+      { tipo: "Diesel", cantidad: 200 }
     ],
     filaEspera: [
-      { nombre: "Valeria Torres", placa: "2233XYZ" },
-      { nombre: "Andrés Gutiérrez", placa: "1122TUV" },
-      { nombre: "Sofía Herrera", placa: "3344QWE" },
-      { nombre: "Diego Castro", placa: "5566RTY" }
+      { nombre: "Valeria Torres", placa: "2233XYZ", tipo: "Normal" },
+      { nombre: "Andrés Gutiérrez", placa: "1122TUV", tipo: "Normal" },
+      { nombre: "Sofía Herrera", placa: "3344QWE", tipo: "Normal" },
+      { nombre: "Diego Castro", placa: "5566RTY", tipo: "Normal" }
     ]
   },
   {
@@ -81,7 +88,8 @@ let estacionesLista = [
     direccion: "Av. Ayacucho #678",
     zona: "Cercado",
     combustibles: [
-      { tipo: "Diesel", cantidad: 750 }
+      { tipo: "Diesel", cantidad: 750 },
+      { tipo: "Normal", cantidad: 800 } 
     ],
     filaEspera: []
   },
@@ -90,7 +98,8 @@ let estacionesLista = [
     direccion: "Av. Blanco Galindo #901",
     zona: "Quillacollo",
     combustibles: [
-      { tipo: "Especial", cantidad: 620 }
+      { tipo: "Especial", cantidad: 620 },
+      { tipo: "Diesel", cantidad: 650 }
     ],
     filaEspera: []
   },
@@ -99,11 +108,12 @@ let estacionesLista = [
     direccion: "Calle Bolívar #1002",
     zona: "Quillacollo",
     combustibles: [
-      { tipo: "Diesel", cantidad: 580 }
+      { tipo: "Diesel", cantidad: 580 },
+      { tipo: "Especial", cantidad: 450 } 
     ],
     filaEspera: [
-      { nombre: "Eduardo Quiroga", placa: "5678GPQ" },
-      { nombre: "Juan Perez", placa: "1234ABC" }
+      { nombre: "Eduardo Quiroga", placa: "5678GPQ", tipo: "Diesel" },
+      { nombre: "Juan Perez", placa: "1234ABC", tipo: "Diesel" }
     ]
   },
 ];

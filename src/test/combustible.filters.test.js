@@ -2,40 +2,51 @@
 import { ordenarPorCantidad, filtrarPorCombustible } from '../utils/combustible.filters.js';
 
 describe('Ordenamiento de Estaciones', () => {
-  it('debe ordenar por cantidad descendente', () => {
+  it('debe ordenar por cantidad total de combustible (descendente)', () => {
     const ordenadas = ordenarPorCantidad();
 
+    // Verificar que esté ordenado correctamente
+    for (let i = 0; i < ordenadas.length - 1; i++) {
+      const totalActual = ordenadas[i].combustibles.reduce((sum, c) => sum + c.cantidad, 0);
+      const totalSiguiente = ordenadas[i + 1].combustibles.reduce((sum, c) => sum + c.cantidad, 0);
+      expect(totalActual).toBeGreaterThanOrEqual(totalSiguiente);
+    }
+
+    // Caso específico: YPFB San Antonio debería estar primero (Normal + Diesel altos)
     expect(ordenadas[0].nombre).toBe("YPFB San Antonio");
-    expect(ordenadas[0].combustibles[0].cantidad).toBe(920);
 
-    expect(ordenadas[1].combustibles[0].cantidad).toBeGreaterThanOrEqual(ordenadas[2].combustibles[0].cantidad);
-
-    expect(ordenadas[ordenadas.length - 1].combustibles[0].cantidad).toBeLessThanOrEqual(ordenadas[0].combustibles[0].cantidad);
+    // Última estación debe tener menos o igual cantidad total
+    const totalPrimera = ordenadas[0].combustibles.reduce((sum, c) => sum + c.cantidad, 0);
+    const totalUltima = ordenadas[ordenadas.length - 1].combustibles.reduce((sum, c) => sum + c.cantidad, 0);
+    expect(totalUltima).toBeLessThanOrEqual(totalPrimera);
   });
 });
 
 describe('Filtrado por Combustible', () => {
-  it('debe filtrar solo estaciones Diesel', () => {
+  it('debe filtrar solo estaciones que tengan "Diesel"', () => {
     const dieselStations = filtrarPorCombustible("Diesel");
-    expect(dieselStations.length).toBe(4); 
+
+    expect(dieselStations.length).toBe(10); // Todas las estaciones tienen "Diesel"
     expect(dieselStations.every(e => e.combustibles.some(c => c.tipo === "Diesel"))).toBe(true);
   });
 
-  it('debe filtrar solo estaciones Normal', () => {
+  it('debe filtrar solo estaciones que tengan "Normal"', () => {
     const normalStations = filtrarPorCombustible("Normal");
-    expect(normalStations.length).toBe(3); 
+
+    expect(normalStations.length).toBe(5); // Gulf Norte, YPFB San Antonio, YPFB Central, Petrobras Muyurina, Petrobras La Recoleta
     expect(normalStations.every(e => e.combustibles.some(c => c.tipo === "Normal"))).toBe(true);
   });
 
-  it('debe filtrar solo estaciones Especial', () => {
+  it('debe filtrar solo estaciones que tengan "Especial"', () => {
     const especialStations = filtrarPorCombustible("Especial");
-    expect(especialStations.length).toBe(3);
+
+    expect(especialStations.length).toBe(5); // YPFB Cala Cala, Petrobras Queru Queru, Gulf Quillacollo, YPFB Quillacollo Centro
     expect(especialStations.every(e => e.combustibles.some(c => c.tipo === "Especial"))).toBe(true);
   });
 
-  it('debe retornar array vacio para "Gas" (tipo valido sin estaciones)', () => {
+  it('debe retornar array vacío para "Gas" (tipo válido sin estaciones)', () => {
     const gasStations = filtrarPorCombustible("Gas");
-    expect(gasStations.length).toBe(0); 
+    expect(gasStations.length).toBe(0);
     expect(gasStations).toEqual([]);
   });
 

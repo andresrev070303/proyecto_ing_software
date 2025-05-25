@@ -53,16 +53,16 @@ describe("RegistrarSurtidor", () => {
 
       
       it("debería retornar 'Estacion de servicio ya existente' si la estación ya está registrada", () => {
-        // Estación que ya existe en la base de datos original
         expect(registrarEstacion({
           nombre: "Gulf Norte",
           zona: "Norte",
           direccion: "Av. América #1256",
           combustibles: [
-            { tipo: "Normal", cantidad: 850 } // debe coincidir con el mock
+            { tipo: "Normal", cantidad: 850 },
+            { tipo: "Diesel", cantidad: 600 } // Ahora sí coincide con el array original
           ]
         })).toBe("Estacion de servicio ya existente");
-        }); 
+      });
         
         /********************************* */
         it("debería registrar una estación con un solo tipo de combustible en la nueva estructura", () => {

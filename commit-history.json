@@ -1341,5 +1341,22 @@
     },
     "coverage": 0,
     "test_count": 23
+  },
+  {
+    "sha": "fc1aa18084a98491a3093ab06d157c3cc39ec2d0",
+    "author": "Jesus Ariel Mamani Gutierrez",
+    "commit": {
+      "date": "2025-05-25T13:47:46.000Z",
+      "message": "feat: Las estaciones de combustible ya cuentan con 2 tipos de combustible y las calculadores ya tienen en cuenta las personas que estan en fila ya que tiene asigndo un combustible",
+      "url": "https://github.com/andresrev070303/proyecto_ing_software/commit/fc1aa18084a98491a3093ab06d157c3cc39ec2d0"
+    },
+    "stats": {
+      "total": 128,
+      "additions": 75,
+      "deletions": 53,
+      "date": "2025-05-25"
+    },
+    "coverage": 0,
+    "test_count": 23
   }
 ]
