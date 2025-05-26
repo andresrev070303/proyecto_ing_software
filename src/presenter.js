@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const newWindow2 = document.querySelector("#new-window2");
   const closeWindow2Button = document.querySelector("#close-window2-btn");
   
-  
+
 
 
   // Mostrar la "nueva ventana" y ocultar el contenido original
@@ -207,25 +207,35 @@ if (contenedorEstaciones) {
   const resultadoDivT = document.querySelector("#ticket-resultado");
 
   // Cargar opciones de estaciones y combustibles
-  const estaciones = obtenerEstaciones();
-  estaciones.forEach(e => {
-    const option = document.createElement("option");
-    option.value = e.nombre;
-    option.textContent = e.nombre;
-    estacionSelect.appendChild(option);
-  });
+ const estaciones = obtenerEstaciones();
 
-  // Cuando se selecciona estación, cargar tipos de combustible
-  estacionSelect.addEventListener("change", () => {
-    const seleccionada = estaciones.find(e => e.nombre === estacionSelect.value);
-    tipoSelect.innerHTML = "";
-    (seleccionada?.combustibles || []).forEach(c => {
+estaciones.forEach(e => {
+  const option = document.createElement("option");
+  option.value = e.nombre;
+  option.textContent = e.nombre;
+  estacionSelect.appendChild(option);
+});
+
+function actualizarCombustibles() {
+  const seleccionada = estaciones.find(e => e.nombre === estacionSelect.value);
+  tipoSelect.innerHTML = "";
+  if (seleccionada && seleccionada.combustibles) {
+    seleccionada.combustibles.forEach(c => {
       const option = document.createElement("option");
       option.value = c.tipo;
       option.textContent = c.tipo;
       tipoSelect.appendChild(option);
     });
-  });
+  }
+}
+
+if (estaciones.length > 0) {
+  estacionSelect.value = estaciones[0].nombre;
+  actualizarCombustibles();
+}
+
+estacionSelect.addEventListener("change", actualizarCombustibles);
+
 
   formTicket.addEventListener("submit", (e) => {
     e.preventDefault();

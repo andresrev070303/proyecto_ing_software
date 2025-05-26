@@ -1443,5 +1443,22 @@
     },
     "coverage": 0,
     "test_count": 33
+  },
+  {
+    "sha": "db24a111ad3f1dad29d8461e3229d6676b30fd57",
+    "author": "Jesus Ariel Mamani Gutierrez",
+    "commit": {
+      "date": "2025-05-26T00:30:26.000Z",
+      "message": "refactor, fix: Arreglar el error de que el combustible de los tikets debe ser segun l estacion y su tipo de combustible",
+      "url": "https://github.com/andresrev070303/proyecto_ing_software/commit/db24a111ad3f1dad29d8461e3229d6676b30fd57"
+    },
+    "stats": {
+      "total": 414,
+      "additions": 205,
+      "deletions": 209,
+      "date": "2025-05-26"
+    },
+    "coverage": 0,
+    "test_count": 33
   }
 ]

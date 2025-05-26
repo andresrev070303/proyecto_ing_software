@@ -1,224 +1,166 @@
 import { agregarAfila } from './data/mockEstaciones.js';
-import { 
-  obtenerEstaciones, 
-} from './utils/estaciones.js';
-import {
-  filtrarPorCombustible, 
-  ordenarPorCantidad,
-  filtrarPorZona,
-  aplicarFiltrosCombinados 
-} from './utils/combustible.filters.js';
+import { obtenerEstaciones } from './utils/estaciones.js';
+import { filtrarPorCombustible, ordenarPorCantidad, filtrarPorZona, aplicarFiltrosCombinados } from './utils/combustible.filters.js';
 import { agregarCombustibleExistente } from './data/mockEstaciones.js';
-
 
 const selectCombustible = document.querySelector("#combustible");
 const selectZona = document.querySelector("#filtro-zona");
 const checkboxOrdenar = document.querySelector("#ordenar-checkbox");
 const divEstaciones = document.querySelector("#estaciones-container");
 
+// Función para mostrar las estaciones según un arreglo dado
 function mostrarEstaciones(estaciones) {
-  if (estaciones.length === 0) {
+  if (!Array.isArray(estaciones) || estaciones.length === 0) {
     divEstaciones.innerHTML = "<p>No se encontraron estaciones con los filtros aplicados</p>";
     return;
   }
 
-  divEstaciones.innerHTML = ""; 
+  divEstaciones.innerHTML = "";
 
   estaciones.forEach(estacion => {
     const div = document.createElement("div");
+    div.classList.add("estacion");
 
+    // HTML para conductores en fila
     let filaHtml = "";
     if (estacion.filaEspera && estacion.filaEspera.length > 0) {
       filaHtml = `
         <h4>Conductores en fila:</h4>
         <ul>
-        ${estacion.filaEspera.map(conductor => `
-          <li>${conductor.nombre} - ${conductor.placa} (${conductor.tipo || 'sin tipo'})</li>
-        `).join("")}
-        
+          ${estacion.filaEspera.map(c => `<li>${c.nombre} - ${c.placa} (${c.tipo || 'sin tipo'})</li>`).join("")}
         </ul>
       `;
     }
+
+    // HTML de los combustibles
+    const combustiblesHtml = Array.isArray(estacion.combustibles)
+      ? `<ul>${estacion.combustibles.map(c => `<li>${c.tipo}: ${c.cantidad} litros</li>`).join("")}</ul>`
+      : `<p>No definidos</p>`;
 
     div.innerHTML = `
       <h3>${estacion.nombre}</h3>
       <p><strong>Zona:</strong> ${estacion.zona}</p>
       <p><strong>Dirección:</strong> ${estacion.direccion}</p>
-      ${Array.isArray(estacion.combustibles) ? `
-        <p><strong>Combustibles:</strong></p>
-        <ul>
-          ${estacion.combustibles.map(c => `<li>${c.tipo}: ${c.cantidad} litros</li>`).join("")}
-        </ul>` : `<p><strong>Combustibles:</strong> No definidos</p>`
-      }
-      
+      <p><strong>Combustibles:</strong> ${combustiblesHtml}</p>
       ${filaHtml}
     `;
 
-    const boton = document.createElement("button");
-    boton.textContent = "Agregar conductor a la fila";
-    boton.addEventListener("click", () => mostrarFormularioConductor(estacion.nombre));
-    div.appendChild(boton);
+    // Botón para agregar conductor
+    const btnAgregarConductor = document.createElement("button");
+    btnAgregarConductor.textContent = "Agregar conductor a la fila";
+    btnAgregarConductor.addEventListener("click", () => mostrarFormularioConductor(estacion.nombre));
+    div.appendChild(btnAgregarConductor);
 
-    const boton2 = document.createElement("button");
-    boton2.textContent = "Ingresar combustible";
-    boton2.addEventListener("click", () => MostrarFormularioCombustible(estacion.nombre)); 
-    div.appendChild(boton2);
-    // Botón para calcular si alcanza la gasolina automáticamente
-const calcularBtn = document.createElement("button");
-calcularBtn.textContent = "Calcular Cola";
-calcularBtn.style.marginTop = "5px";
-calcularBtn.style.display = "block";
+    // Botón para ingresar combustible
+    const btnAgregarCombustible = document.createElement("button");
+    btnAgregarCombustible.textContent = "Ingresar combustible";
+    btnAgregarCombustible.addEventListener("click", () => mostrarFormularioCombustible(estacion.nombre));
+    div.appendChild(btnAgregarCombustible);
 
-const resultadoCola = document.createElement("div");
-resultadoCola.style.marginTop = "5px";
+    // Botón calcular cola y resultado
+    const btnCalcularCola = document.createElement("button");
+    btnCalcularCola.textContent = "Calcular Cola";
+    btnCalcularCola.style.marginTop = "5px";
+    btnCalcularCola.style.display = "block";
 
-let detallesVisibles = false;
+    const resultadoCola = document.createElement("div");
+    resultadoCola.style.marginTop = "5px";
 
-calcularBtn.addEventListener("click", () => {
-  detallesVisibles = !detallesVisibles;
+    let detallesVisibles = false;
 
-  if (!detallesVisibles) {
-    resultadoCola.innerHTML = "";
-    return;
-  }
+    btnCalcularCola.addEventListener("click", () => {
+      detallesVisibles = !detallesVisibles;
+      if (!detallesVisibles) {
+        resultadoCola.innerHTML = "";
+        return;
+      }
 
-  const autosPorTipo = {};
+      const autosPorTipo = {};
+      (estacion.filaEspera || []).forEach(c => {
+        const tipo = c.tipo || "Desconocido";
+        autosPorTipo[tipo] = (autosPorTipo[tipo] || 0) + 1;
+      });
 
-(estacion.filaEspera || []).forEach(conductor => {
-  const tipo = conductor.tipo || "Desconocido";
-  if (!autosPorTipo[tipo]) {
-    autosPorTipo[tipo] = 0;
-  }
-  autosPorTipo[tipo]++;
-});
+      const evaluaciones = (estacion.combustibles || []).map(c => {
+        const tipo = c.tipo;
+        const cantidad = c.cantidad;
+        const cantidadEnCola = autosPorTipo[tipo] || 0;
 
-const evaluaciones = estacion.combustibles.map(c => {
-  const tipo = c.tipo;
-  const cantidad = c.cantidad;
-  const cantidadEnCola = autosPorTipo[tipo] || 0;
+        if (cantidad <= 0) {
+          return `<li>❌ <strong>${tipo}:</strong> No hay combustible disponible
+            <ul><li>Vehículos en cola para ${tipo}: ${cantidadEnCola}</li></ul></li>`;
+        }
 
-  if (cantidad <= 0) {
-    return `
-      <li>❌ <strong>${tipo}:</strong> No hay combustible disponible
-        <ul>
-          <li>Vehículos en cola para ${tipo}: ${cantidadEnCola}</li>
-        </ul>
-      </li>
-    `;
-  }
+        const capacidad = Math.floor(cantidad / 50);
+        let mensaje = "";
 
-  const capacidad = Math.floor(cantidad / 50);
-  let mensaje = "";
+        if (capacidad > cantidadEnCola) {
+          mensaje = `✅ <strong>${tipo}:</strong> Sí alcanzará`;
+        } else if (capacidad === cantidadEnCola) {
+          mensaje = `⚠️ <strong>${tipo}:</strong> Alcanza justo, considera otro surtidor`;
+        } else {
+          mensaje = `❌ <strong>${tipo}:</strong> No alcanzará`;
+        }
 
-  if (capacidad > cantidadEnCola) {
-    mensaje = `✅ <strong>${tipo}:</strong> Sí alcanzará`;
-  } else if (capacidad === cantidadEnCola) {
-    mensaje = `⚠️ <strong>${tipo}:</strong> Alcanza justo, considera otro surtidor`;
-  } else {
-    mensaje = `❌ <strong>${tipo}:</strong> No alcanzará`;
-  }
+        return `<li>${mensaje}
+          <ul>
+            <li>Litros disponibles: ${cantidad}</li>
+            <li>Capacidad para ${capacidad} vehículos</li>
+            <li>Vehículos en cola para ${tipo}: ${cantidadEnCola}</li>
+          </ul>
+        </li>`;
+      }).join("");
 
-  return `
-    <li>${mensaje}
-      <ul>
-        <li>Litros disponibles: ${cantidad}</li>
-        <li>Capacidad para ${capacidad} vehículos</li>
-        <li>Vehículos en cola para ${tipo}: ${cantidadEnCola}</li>
-      </ul>
-    </li>
-  `;
-}).join("");
+      resultadoCola.innerHTML = `
+        <div style="margin-top: 10px; border: 1px solid #ccc; padding: 8px; border-radius: 5px;">
+          <p><strong>Evaluación por tipo de combustible:</strong></p>
+          <ul>${evaluaciones}</ul>
+        </div>
+      `;
+    });
 
-
-  resultadoCola.innerHTML = `
-    <div style="margin-top: 10px; border: 1px solid #ccc; padding: 8px; border-radius: 5px;">
-      <p><strong>Evaluación por tipo de combustible:</strong></p>
-      <ul>${evaluaciones}</ul>
-    </div>
-  `;
-});
-
-
-div.appendChild(calcularBtn);
-div.appendChild(resultadoCola);
-
+    div.appendChild(btnCalcularCola);
+    div.appendChild(resultadoCola);
 
     divEstaciones.appendChild(div);
   });
 }
 
-
-function obtenerCantidadCombustible(nombreEstacion) {
-  const estaciones = obtenerEstaciones();
-  const estacion = estaciones.find(est => est.nombre === nombreEstacion);
-  return estacion ? estacion.cantidadDisponible : null;
-}
-
-
-function actualizarCantidadCombustible(nombreEstacion, nuevaCantidad) {
-  let estaciones = obtenerEstaciones();
-  const estacion = estaciones.find(est => est.nombre.toLowerCase() === nombreEstacion.toLowerCase());
-
-  if (estacion) {
-    estacion.cantidadDisponible = nuevaCantidad;
-
-    // Actualizar en localStorage si está allí
-    try {
-      const adicionales = JSON.parse(localStorage.getItem("nuevasEstaciones") || "[]");
-      const index = adicionales.findIndex(e => e.nombre.toLowerCase() === nombreEstacion.toLowerCase());
-      if (index !== -1) {
-        adicionales[index] = estacion;
-        localStorage.setItem("nuevasEstaciones", JSON.stringify(adicionales));
-      }
-    } catch (error) {
-      console.error("Error actualizando cantidad en localStorage:", error);
-    }
-  }
-}
-
-
-
-function MostrarFormularioCombustible(nombreEstacion) {
+function mostrarFormularioCombustible(nombreEstacion) {
   const estacion = obtenerEstaciones().find(e => e.nombre === nombreEstacion);
   if (!estacion) {
     divEstaciones.innerHTML = `<p style="color:red">Estación no encontrada</p>`;
     return;
   }
 
-  const opcionesCombustible = estacion.combustibles.map(c =>
-    `<option value="${c.tipo}">${c.tipo}</option>`
-  ).join("");
+  const opcionesCombustible = estacion.combustibles.map(c => `<option value="${c.tipo}">${c.tipo}</option>`).join("");
 
   divEstaciones.innerHTML = `
     <h2>Agregar combustible a ${nombreEstacion}</h2>
     <form id="form-combustible">
       <label>Tipo de combustible:</label>
       <select id="tipoCombustible">${opcionesCombustible}</select><br><br>
-
       <label>Cantidad de combustible:</label>
       <input type="number" id="cantidadCombustible" required><br><br>
-
       <button type="submit">Registrar</button>
     </form>
-    <div id="resultadoCombustible"></div><div id="resultadoCombustible"></div>
-<button id="cerrarFormularioBtn">Cerrar ventana</button>
-
+    <div id="resultadoCombustible"></div>
+    <button id="cerrarFormularioBtn">Cerrar ventana</button>
   `;
 
+  document.getElementById("cerrarFormularioBtn").addEventListener("click", () => {
+    mostrarEstaciones(obtenerEstaciones());
+  });
+
   const form = document.getElementById("form-combustible");
-  form.addEventListener("submit", function (e) {
+  form.addEventListener("submit", e => {
     e.preventDefault();
-    document.getElementById("cerrarFormularioBtn").addEventListener("click", () => {
-      mostrarEstaciones(obtenerEstaciones());
-    });
-    
 
     const tipo = document.getElementById("tipoCombustible").value;
     const cantidad = parseFloat(document.getElementById("cantidadCombustible").value);
 
     if (isNaN(cantidad) || cantidad <= 0) {
-      document.getElementById("resultadoCombustible").innerHTML =
-        `<p style="color:red">Cantidad inválida.</p>`;
+      document.getElementById("resultadoCombustible").innerHTML = `<p style="color:red">Cantidad inválida.</p>`;
       return;
     }
 
@@ -229,15 +171,18 @@ function MostrarFormularioCombustible(nombreEstacion) {
         <div style="color: green; font-weight: bold; padding: 5px; border: 1px solid green; border-radius: 4px;">
           ✅ Se registró correctamente el ingreso de <strong>${tipo}</strong> con <strong>${cantidad} litros</strong>.
         </div>`;
+      // Actualizamos la vista para que muestre los cambios sin cerrar
+      setTimeout(() => mostrarEstaciones(obtenerEstaciones()), 1000);
     }
-    
-    
   });
 }
 
-
 function mostrarFormularioConductor(nombreEstacion) {
   const estacion = obtenerEstaciones().find(e => e.nombre === nombreEstacion);
+  if (!estacion) {
+    divEstaciones.innerHTML = `<p style="color:red">Estación no encontrada</p>`;
+    return;
+  }
   const opcionesCombustible = estacion.combustibles.map(c => `<option value="${c.tipo}">${c.tipo}</option>`).join("");
 
   divEstaciones.innerHTML = `
@@ -252,62 +197,103 @@ function mostrarFormularioConductor(nombreEstacion) {
       <button type="submit">Registrar</button>
     </form>
     <div id="resultadoConductor"></div>
+    <button id="cerrarFormularioConductorBtn">Cerrar ventana</button>
   `;
 
+  document.getElementById("cerrarFormularioConductorBtn").addEventListener("click", () => {
+    mostrarEstaciones(obtenerEstaciones());
+  });
+
   const form = document.getElementById("form-conductor");
-  form.addEventListener("submit", function(e) {
+  form.addEventListener("submit", e => {
     e.preventDefault();
 
     const nombre = document.getElementById("nombreConductor").value.trim();
     const placa = document.getElementById("placaVehiculo").value.trim();
     const tipo = document.getElementById("tipoCombustible").value;
 
+    if (!nombre || !placa) {
+      document.getElementById("resultadoConductor").innerHTML = `<p style="color:red">Todos los campos son obligatorios.</p>`;
+      return;
+    }
+
     const nuevoConductor = { nombre, placa, tipo };
-
     const posicion = agregarAfila(nombreEstacion, nuevoConductor);
-    const tiempo = posicion * 5;
 
-    document.getElementById("resultadoConductor").innerHTML =
-      `<p style="color:green">Conductor registrado en la posición ${posicion} de la fila</p>
-      <p style="color:black">Tiempo estimado : ${tiempo} minutos</p>`;
-    mostrarEstaciones(obtenerEstaciones());
+    if (posicion !== -1) {
+      document.getElementById("resultadoConductor").innerHTML = `
+        <div style="color: green; font-weight: bold; padding: 5px; border: 1px solid green; border-radius: 4px;">
+          ✅ El conductor <strong>${nombre}</strong> con placa <strong>${placa}</strong> fue agregado a la fila en la posición <strong>${posicion + 1}</strong>.
+        </div>`;
+      setTimeout(() => mostrarEstaciones(obtenerEstaciones()), 1000);
+    } else {
+      document.getElementById("resultadoConductor").innerHTML = `<p style="color:red">Error al agregar conductor.</p>`;
+    }
   });
 }
 
-function aplicarFiltros() {
-  const estacionesFiltradas = aplicarFiltrosCombinados({
-    zona: selectZona.value,
-    combustible: selectCombustible.value,
-    ordenar: checkboxOrdenar.checked
+// Función para actualizar la lista de estaciones con los filtros aplicados
+function actualizarLista() {
+  let estaciones = obtenerEstaciones();
+
+  // Aplicar filtro por zona
+  const zonaSeleccionada = selectZona.value;
+  if (zonaSeleccionada && zonaSeleccionada !== "todas") {
+    estaciones = filtrarPorZona(estaciones, zonaSeleccionada);
+  }
+
+  // Aplicar filtro por combustible
+  const combustibleSeleccionado = selectCombustible.value;
+  if (combustibleSeleccionado && combustibleSeleccionado !== "todos") {
+    estaciones = filtrarPorCombustible(estaciones, combustibleSeleccionado);
+  }
+
+  // Aplicar orden si está marcado
+  if (checkboxOrdenar.checked) {
+    estaciones = ordenarPorCantidad(estaciones);
+  }
+
+  mostrarEstaciones(estaciones);
+}
+function cargarOpcionesFiltros() {
+  const estaciones = obtenerEstaciones();
+
+  // Obtener zonas únicas
+  const zonasUnicas = [...new Set(estaciones.map(e => e.zona))];
+  // Limpiar opciones existentes
+  selectZona.innerHTML = '<option value="todas">Todas las zonas</option>';
+  zonasUnicas.forEach(zona => {
+    const option = document.createElement('option');
+    option.value = zona;
+    option.textContent = zona;
+    selectZona.appendChild(option);
   });
 
-  mostrarEstaciones(estacionesFiltradas);
+  // Obtener combustibles únicos
+  // Extraemos todos los tipos de combustible de todas las estaciones
+  const tiposCombustible = new Set();
+  estaciones.forEach(est => {
+    est.combustibles.forEach(c => tiposCombustible.add(c.tipo));
+  });
+  // Limpiar opciones existentes
+  selectCombustible.innerHTML = '<option value="todos">Todos los combustibles</option>';
+  tiposCombustible.forEach(tipo => {
+    const option = document.createElement('option');
+    option.value = tipo;
+    option.textContent = tipo;
+    selectCombustible.appendChild(option);
+  });
 }
 
 
-selectCombustible.addEventListener("change", aplicarFiltros);
-selectZona.addEventListener("change", aplicarFiltros);
-checkboxOrdenar.addEventListener("change", aplicarFiltros);
 
+// Eventos para filtros y orden
+selectZona.addEventListener("change", actualizarLista);
+selectCombustible.addEventListener("change", actualizarLista);
+checkboxOrdenar.addEventListener("change", actualizarLista);
 
-document.addEventListener("DOMContentLoaded", () => {
-  selectZona.innerHTML = `
-    <option value="Todas las zonas">Todas las zonas</option>
-    <option value="Norte">Zona Norte</option>
-    <option value="Sur">Zona Sur</option>
-    <option value="Cercado">Cercado</option>
-    <option value="Quillacollo">Quillacollo</option>
-    <option value="Colcapirua">Colcapirua</option>
-  `;
+// Inicialización al cargar el script
+cargarOpcionesFiltros();
+actualizarLista();
 
-  selectCombustible.innerHTML = `
-    <option value="Todos">Todos</option>
-    <option value="Normal">Normal</option>
-    <option value="Especial">Especial</option>
-    <option value="Diesel">Diesel</option>
-    <option value="Gas">Gas</option>
-  `;
-
-  mostrarEstaciones(obtenerEstaciones());
-});
-export {mostrarEstaciones};
+export { mostrarEstaciones };
