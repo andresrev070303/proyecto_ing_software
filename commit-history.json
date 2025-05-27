@@ -1528,5 +1528,22 @@
     },
     "coverage": 0,
     "test_count": 31
+  },
+  {
+    "sha": "413aa4d0b2552449d93d6cbc54a4358ae95f4a99",
+    "author": "andresrev070303",
+    "commit": {
+      "date": "2025-05-27T06:06:33.000Z",
+      "message": "feat:Se agrego la visualizacion de generar ticket en cada estacion de servicio",
+      "url": "https://github.com/andresrev070303/proyecto_ing_software/commit/413aa4d0b2552449d93d6cbc54a4358ae95f4a99"
+    },
+    "stats": {
+      "total": 5,
+      "additions": 4,
+      "deletions": 1,
+      "date": "2025-05-27"
+    },
+    "coverage": 0,
+    "test_count": 31
   }
 ]

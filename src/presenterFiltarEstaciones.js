@@ -166,6 +166,8 @@ function actualizarVista() {
       ${generarCalculoCombustibleHTML(estacion)}
       <button class="btn-agregar-combustible" data-estacion="${estacion.nombre}">Agregar Combustible</button>
       <button class="btn-agregar-fila" data-estacion="${estacion.nombre}">Agregar a Fila</button>
+      <button class="btn-generar-ticket" data-estacion="${estacion.nombre}">Generar Ticket</button>
+
 
 
       <hr />
