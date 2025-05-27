@@ -1477,5 +1477,22 @@
     },
     "coverage": 0,
     "test_count": 31
+  },
+  {
+    "sha": "2f467561163a607e816f57feb8982654ed2cb51c",
+    "author": "andresrev070303",
+    "commit": {
+      "date": "2025-05-27T05:39:37.000Z",
+      "message": "feat:Se oculto el formulario de agregar combustible de la pantalla principal",
+      "url": "https://github.com/andresrev070303/proyecto_ing_software/commit/2f467561163a607e816f57feb8982654ed2cb51c"
+    },
+    "stats": {
+      "total": 4,
+      "additions": 1,
+      "deletions": 3,
+      "date": "2025-05-27"
+    },
+    "coverage": 0,
+    "test_count": 31
   }
 ]
