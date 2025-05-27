@@ -1460,5 +1460,22 @@
     },
     "coverage": 0,
     "test_count": 33
+  },
+  {
+    "sha": "7f585d248295cdf18dc053d4d271461f84f23ebc",
+    "author": "Jesus Ariel Mamani Gutierrez",
+    "commit": {
+      "date": "2025-05-27T04:58:30.000Z",
+      "message": "refactor, fix: Reestructuracion del presenter y presenter2 a una mejor estrcutura y organizacion de los archivos presenter y correccion de errores de funcionalidades que no funcionaban",
+      "url": "https://github.com/andresrev070303/proyecto_ing_software/commit/7f585d248295cdf18dc053d4d271461f84f23ebc"
+    },
+    "stats": {
+      "total": 1741,
+      "additions": 991,
+      "deletions": 750,
+      "date": "2025-05-27"
+    },
+    "coverage": 0,
+    "test_count": 31
   }
 ]

@@ -1,6 +1,5 @@
 /*src/modules/estacion/registrarEstacion.js*/
 import { estacionesLista } from "../../data/mockEstaciones.js";
-
 function registrarEstacion(data) {
   const resultado = {};
 
@@ -18,8 +17,12 @@ function registrarEstacion(data) {
     resultado.direccion = data.direccion.trim();
   }
 
+  // 👇 Aquí está la corrección
   if (Array.isArray(data.combustibles) && data.combustibles.length > 0) {
-    resultado.combustibles = data.combustibles;
+    resultado.combustibles = data.combustibles.map(tipo => ({
+      tipo,
+      cantidad: 0 // Ahora sí tiene el formato correcto
+    }));
   }
 
   // Solo si todos los campos están presentes

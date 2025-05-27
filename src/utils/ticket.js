@@ -6,7 +6,12 @@ let estacionesConColas = [];
  * Reinicia el estado inicial de las estaciones
  */
 export function resetTickets(mockEstaciones = []) {
-  estacionesConColas = JSON.parse(JSON.stringify(mockEstaciones)); // clonar sin mutar
+  // Clonar profundamente y asegurar estructura completa
+  estacionesConColas = clonarEstaciones(mockEstaciones).map(estacion => ({
+    ...estacion,
+    filaEspera: estacion.filaEspera || [],
+    filaTickets: estacion.filaTickets || []
+  }));
 }
 
 /**
@@ -59,6 +64,8 @@ export function generarTicket(estacionNombre, tipoCombustible, placa, nombre, fe
 
   estacion.filaTickets.push(nuevoTicket);
 
+  // 👇 Guardar cambios en localStorage
+  guardarEnLocalStorage();
   return nuevoTicket;
 }
 
@@ -126,4 +133,30 @@ export function eliminarTicket(estacionNombre, nombre) {
 
   estacion.filaTickets.splice(index, 1);
   return true;
+}
+
+export function clonarEstaciones(estaciones) {
+  return JSON.parse(JSON.stringify(estaciones));
+}
+
+function guardarEnLocalStorage() {
+  try {
+    const adicionales = JSON.parse(localStorage.getItem("nuevasEstaciones") || "[]");
+    
+    // Actualizar la estación correspondiente con los nuevos tickets
+    estacionesConColas.forEach(estacion => {
+      const index = adicionales.findIndex(e => e.nombre === estacion.nombre);
+      
+      if (index !== -1) {
+        adicionales[index] = estacion;
+      } else {
+        // Si no está en localStorage, pero sí es nueva, la añadimos
+        adicionales.push(estacion);
+      }
+    });
+
+    localStorage.setItem("nuevasEstaciones", JSON.stringify(adicionales));
+  } catch (e) {
+    console.error("Error al guardar en localStorage:", e);
+  }
 }

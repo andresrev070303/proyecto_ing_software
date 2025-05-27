@@ -153,13 +153,19 @@ export function agregarEstacion(estacion) {
   }
   estacionesLista.push(estacion);
 }
-
 export function agregarAfila(nombreEstacion, datosConductor) {
   const nombreLower = nombreEstacion.toLowerCase();
 
   let estacion = estacionesLista.find(est => est.nombre.toLowerCase() === nombreLower);
+
   if (estacion) {
+    // 👇 Garantizar que filaEspera exista
+    if (!estacion.filaEspera) {
+      estacion.filaEspera = [];
+    }
+
     const nuevaPosicion = estacion.filaEspera.length + 1;
+
     estacion.filaEspera.push({
       nombre: datosConductor.nombre,
       placa: datosConductor.placa,
@@ -176,6 +182,12 @@ export function agregarAfila(nombreEstacion, datosConductor) {
 
     if (index !== -1) {
       estacion = adicionales[index];
+
+      // 👇 Garantizar que filaEspera exista en localStorage también
+      if (!estacion.filaEspera) {
+        estacion.filaEspera = [];
+      }
+
       const nuevaPosicion = estacion.filaEspera.length + 1;
 
       estacion.filaEspera.push({
@@ -197,7 +209,6 @@ export function agregarAfila(nombreEstacion, datosConductor) {
   console.error(`Error: No se encontró la estación "${nombreEstacion}"`);
   return false;
 }
-
 export function obtenerCantidadCombustible(nombreEstacion) {
   const estacion = estacionesLista.find(est => est.nombre === nombreEstacion);
   if (estacion) {
