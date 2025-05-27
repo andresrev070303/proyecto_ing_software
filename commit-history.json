@@ -1494,5 +1494,22 @@
     },
     "coverage": 0,
     "test_count": 31
+  },
+  {
+    "sha": "433b514e7de0b782929b3f4b7a7c00c9d739cb72",
+    "author": "andresrev070303",
+    "commit": {
+      "date": "2025-05-27T05:53:20.000Z",
+      "message": "feat:Se agrego el boton de registrar combustible en cada surtidor visualizado en la interfaz de usuario",
+      "url": "https://github.com/andresrev070303/proyecto_ing_software/commit/433b514e7de0b782929b3f4b7a7c00c9d739cb72"
+    },
+    "stats": {
+      "total": 57,
+      "additions": 56,
+      "deletions": 1,
+      "date": "2025-05-27"
+    },
+    "coverage": 0,
+    "test_count": 31
   }
 ]

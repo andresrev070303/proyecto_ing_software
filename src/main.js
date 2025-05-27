@@ -16,3 +16,8 @@ import "./presenterFiltarEstaciones.js";
 import "./presenterGenerarTickets.js";
 import "./presenterMostrarTickets.js";
 console.log("Aplicación iniciada");
+document.querySelector("#btn-volver-estaciones")?.addEventListener("click", () => {
+    document.querySelector("#agregar-combustible-section").style.display = "none";
+    document.querySelector("#seccion-estaciones").style.display = "block";
+  });
+  

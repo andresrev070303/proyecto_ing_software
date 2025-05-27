@@ -157,18 +157,44 @@ function actualizarVista() {
         <li>Total en cola: <strong>${totalEnFila}</strong></li>
         <li>Última placa registrada: <strong>${ultimaPlaca}</strong></li>
       </ul>
+      
 
       <!-- Tickets agrupados por fecha -->
       ${generarTicketsHTML(estacion.filaTickets)}
 
       <!-- Análisis de disponibilidad -->
       ${generarCalculoCombustibleHTML(estacion)}
+      <button class="btn-agregar-combustible" data-estacion="${estacion.nombre}">Agregar Combustible</button>
 
       <hr />
     `;
     container.appendChild(div);
   });
 }
+
+
+document.addEventListener("click", function (e) {
+  if (e.target.classList.contains("btn-agregar-combustible")) {
+    const nombreEstacion = e.target.getAttribute("data-estacion");
+
+    const formSection = document.querySelector("#agregar-combustible-section");
+    const selectEstacion = document.querySelector("#estacion");
+
+    // Mostrar sección
+    formSection.style.display = "block";
+
+    // Seleccionar estación automáticamente
+    if (selectEstacion) {
+      selectEstacion.value = nombreEstacion;
+    }
+
+    // Scroll opcional hacia el formulario
+    formSection.scrollIntoView({ behavior: "smooth" });
+  }
+});
+
+
+
 
 // Escuchar cambios en el filtro de zona
 if (container) {
@@ -207,5 +233,27 @@ if (container) {
     });
   }
 }
+document.addEventListener("click", function (e) {
+  if (e.target.classList.contains("btn-agregar-combustible")) {
+    const nombreEstacion = e.target.getAttribute("data-estacion");
+
+    const formSection = document.querySelector("#agregar-combustible-section");
+    const selectEstacion = document.querySelector("#estacion");
+    const listaEstaciones = document.querySelector("#seccion-estaciones");
+
+    // Mostrar formulario y ocultar la lista
+    formSection.style.display = "block";
+    if (listaEstaciones) listaEstaciones.style.display = "none";
+
+    // Preseleccionar estación
+    if (selectEstacion) {
+      selectEstacion.value = nombreEstacion;
+    }
+
+    // Scroll hacia el formulario
+    formSection.scrollIntoView({ behavior: "smooth" });
+  }
+});
+
 
 export { actualizarVista };
