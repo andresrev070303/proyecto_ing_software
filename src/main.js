@@ -100,6 +100,13 @@ if (btnVerTickets && seccionEstaciones && listaTickets) {
     listaTickets.style.display = "block";
   });
 }
+const btnVolverTickets = document.querySelector("#btn-volver-estaciones-tickets");
+if (btnVolverTickets) {
+  btnVolverTickets.addEventListener("click", () => {
+    document.querySelector("#lista-tickets").style.display = "none";
+    document.querySelector("#seccion-estaciones").style.display = "block";
+  });
+}
 
 }
 

@@ -1613,5 +1613,22 @@
     },
     "coverage": 0,
     "test_count": 31
+  },
+  {
+    "sha": "3fa5be4dd0c71dfdc5514e497be1aac143b2d083",
+    "author": "andresrev070303",
+    "commit": {
+      "date": "2025-05-27T06:51:13.000Z",
+      "message": "feat:Se agrego un boton volver para la lista de tickets",
+      "url": "https://github.com/andresrev070303/proyecto_ing_software/commit/3fa5be4dd0c71dfdc5514e497be1aac143b2d083"
+    },
+    "stats": {
+      "total": 24,
+      "additions": 23,
+      "deletions": 1,
+      "date": "2025-05-27"
+    },
+    "coverage": 0,
+    "test_count": 31
   }
 ]

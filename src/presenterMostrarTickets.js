@@ -36,6 +36,17 @@ function mostrarTickets() {
     `;
     container.appendChild(divEstacion);
   }
+  const btnVolver = document.createElement("button");
+btnVolver.id = "btn-volver-estaciones-tickets";
+btnVolver.textContent = "Volver";
+btnVolver.classList.add("btn-secundario");
+btnVolver.addEventListener("click", () => {
+  document.querySelector("#lista-tickets").style.display = "none";
+  document.querySelector("#seccion-estaciones").style.display = "block";
+});
+
+container.appendChild(btnVolver);
+
 }
 
 // Escuchar evento cuando se activa la vista
