@@ -163,7 +163,10 @@ function actualizarVista() {
       ${generarTicketsHTML(estacion.filaTickets)}
 
       <!-- Análisis de disponibilidad -->
-      ${generarCalculoCombustibleHTML(estacion)}
+      <!-- Botón para calcular disponibilidad -->
+<button class="btn-calcular-colas" data-estacion='${JSON.stringify(estacion)}'>Calcular Colas</button>
+<div class="resultado-colas" id="resultado-colas-${estacion.nombre.replace(/\s/g, "")}"></div>
+
       <button class="btn-agregar-combustible" data-estacion="${estacion.nombre}">Agregar Combustible</button>
       <button class="btn-agregar-fila" data-estacion="${estacion.nombre}">Agregar a Fila</button>
       <button class="btn-generar-ticket" data-estacion="${estacion.nombre}">Generar Ticket</button>
@@ -175,6 +178,52 @@ function actualizarVista() {
     container.appendChild(div);
   });
 }
+document.addEventListener("click", function (e) {
+  if (e.target.classList.contains("btn-calcular-colas")) {
+    const estacionData = JSON.parse(e.target.getAttribute("data-estacion"));
+    const contenedorResultado = document.querySelector(`#resultado-colas-${estacionData.nombre.replace(/\s/g, "")}`);
+
+    if (!contenedorResultado) return;
+
+    const vehiculosEnCola = estacionData.filaEspera?.length || 0;
+    let html = "<p><strong>Análisis de disponibilidad:</strong></p><ul>";
+
+    estacionData.combustibles.forEach(c => {
+      const capacidad = calcularCapacidadCarga(c.cantidad);
+      const mensaje = gasolinaAlcanzara(vehiculosEnCola, c.cantidad);
+
+      let icono = "";
+      if (c.cantidad <= 0) {
+        icono = "❌ No hay combustible, lo sentimos, busque otro surtidor";
+      } else if (capacidad > vehiculosEnCola) {
+        icono = "✅ La probabilidad de recargar combustible es óptima";
+      } else if (capacidad === vehiculosEnCola && vehiculosEnCola > 0) {
+        icono = "⚠️ La posibilidad es muy justa, mejor buscar otro surtidor";
+      } else {
+        icono = "❌ No alcanzará";
+      }
+
+      html += `<li><strong>${c.tipo}:</strong> ${icono}</li>`;
+    });
+
+    html += "</ul>";
+    html += `<button class="btn-cerrar-colas" data-estacion='${estacionData.nombre.replace(/\s/g, "")}'>Cerrar análisis</button>`;
+
+    contenedorResultado.innerHTML = html;
+
+    contenedorResultado.scrollIntoView({ behavior: "smooth" });
+
+    document.addEventListener("click", function (e) {
+      if (e.target.classList.contains("btn-cerrar-colas")) {
+        const id = e.target.getAttribute("data-estacion");
+        const contenedor = document.querySelector(`#resultado-colas-${id}`);
+        if (contenedor) contenedor.innerHTML = "";
+      }
+    });
+    
+  }
+});
+
 
 
 document.addEventListener("click", function (e) {
