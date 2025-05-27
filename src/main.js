@@ -21,3 +21,29 @@ document.querySelector("#btn-volver-estaciones")?.addEventListener("click", () =
     document.querySelector("#seccion-estaciones").style.display = "block";
   });
   
+  // ✅ Botón "Volver" del formulario de agregar a fila
+  document.querySelector("#btn-volver-estaciones-fila")?.addEventListener("click", () => {
+    document.querySelector("#agregar-fila-section").style.display = "none";
+    document.querySelector("#seccion-estaciones").style.display = "block";
+  });
+  
+  // ✅ Mostrar formulario de agregar a fila desde la tarjeta
+  document.addEventListener("click", function (e) {
+    if (e.target.classList.contains("btn-agregar-fila")) {
+      const nombreEstacion = e.target.getAttribute("data-estacion");
+  
+      const formFila = document.querySelector("#agregar-fila-section");
+      const listaEstaciones = document.querySelector("#seccion-estaciones");
+      const selectFila = document.querySelector("#estacion-fila");
+  
+      formFila.style.display = "block";
+      if (listaEstaciones) listaEstaciones.style.display = "none";
+  
+      // Preseleccionar estación
+      if (selectFila) {
+        selectFila.value = nombreEstacion;
+      }
+  
+      formFila.scrollIntoView({ behavior: "smooth" });
+    }
+  });

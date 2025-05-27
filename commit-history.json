@@ -1511,5 +1511,22 @@
     },
     "coverage": 0,
     "test_count": 31
+  },
+  {
+    "sha": "def33ddcbdaa86716622a7418cf1ed82016fa377",
+    "author": "andresrev070303",
+    "commit": {
+      "date": "2025-05-27T06:03:43.000Z",
+      "message": "feat:Se agrego la visualizacion del boton de agregar fila en cada surtidor registrado",
+      "url": "https://github.com/andresrev070303/proyecto_ing_software/commit/def33ddcbdaa86716622a7418cf1ed82016fa377"
+    },
+    "stats": {
+      "total": 34,
+      "additions": 32,
+      "deletions": 2,
+      "date": "2025-05-27"
+    },
+    "coverage": 0,
+    "test_count": 31
   }
 ]

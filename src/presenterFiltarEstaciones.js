@@ -165,6 +165,8 @@ function actualizarVista() {
       <!-- Análisis de disponibilidad -->
       ${generarCalculoCombustibleHTML(estacion)}
       <button class="btn-agregar-combustible" data-estacion="${estacion.nombre}">Agregar Combustible</button>
+      <button class="btn-agregar-fila" data-estacion="${estacion.nombre}">Agregar a Fila</button>
+
 
       <hr />
     `;
