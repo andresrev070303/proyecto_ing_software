@@ -47,3 +47,30 @@ document.querySelector("#btn-volver-estaciones")?.addEventListener("click", () =
       formFila.scrollIntoView({ behavior: "smooth" });
     }
   });
+  // Botón "Volver" de formulario Generar Ticket
+document.querySelector("#btn-volver-estaciones-ticket")?.addEventListener("click", () => {
+    document.querySelector("#generar-ticket-section").style.display = "none";
+    document.querySelector("#seccion-estaciones").style.display = "block";
+  });
+  
+  // Mostrar formulario de Generar Ticket desde botón
+  document.addEventListener("click", function (e) {
+    if (e.target.classList.contains("btn-generar-ticket")) {
+      const nombreEstacion = e.target.getAttribute("data-estacion");
+  
+      const formTicket = document.querySelector("#generar-ticket-section");
+      const listaEstaciones = document.querySelector("#seccion-estaciones");
+      const selectTicket = document.querySelector("#ticket-estacion");
+  
+      formTicket.style.display = "block";
+      if (listaEstaciones) listaEstaciones.style.display = "none";
+  
+      // Preseleccionar estación
+      if (selectTicket) {
+        selectTicket.value = nombreEstacion;
+      }
+  
+      formTicket.scrollIntoView({ behavior: "smooth" });
+    }
+  });
+  

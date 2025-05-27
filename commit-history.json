@@ -1545,5 +1545,22 @@
     },
     "coverage": 0,
     "test_count": 31
+  },
+  {
+    "sha": "cf28e77a3e0d03b1637a92c58685bd7ba0fddce4",
+    "author": "andresrev070303",
+    "commit": {
+      "date": "2025-05-27T06:09:09.000Z",
+      "message": "feat:Se agrego el boton de volver para el formulario de generar ticket",
+      "url": "https://github.com/andresrev070303/proyecto_ing_software/commit/cf28e77a3e0d03b1637a92c58685bd7ba0fddce4"
+    },
+    "stats": {
+      "total": 31,
+      "additions": 30,
+      "deletions": 1,
+      "date": "2025-05-27"
+    },
+    "coverage": 0,
+    "test_count": 31
   }
 ]
