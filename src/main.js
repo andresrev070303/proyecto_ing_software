@@ -73,4 +73,35 @@ document.querySelector("#btn-volver-estaciones-ticket")?.addEventListener("click
       formTicket.scrollIntoView({ behavior: "smooth" });
     }
   });
+
+
+  const openRegistrarBtn = document.querySelector("#open-window-btn");
+const registrarForm = document.querySelector("#new-window");
+const seccionEstaciones = document.querySelector("#seccion-estaciones");
+const closeRegistrarBtn = document.querySelector("#close-window-btn");
+
+if (openRegistrarBtn && registrarForm && closeRegistrarBtn && seccionEstaciones) {
+  openRegistrarBtn.addEventListener("click", () => {
+    registrarForm.style.display = "block";
+    seccionEstaciones.style.display = "none";
+  });
+
+  closeRegistrarBtn.addEventListener("click", () => {
+    registrarForm.style.display = "none";
+    seccionEstaciones.style.display = "block";
+  });
+  const btnVerTickets = document.querySelector("#btn-ver-tickets");
+const seccionEstaciones = document.querySelector("#seccion-estaciones");
+const listaTickets = document.querySelector("#lista-tickets");
+
+if (btnVerTickets && seccionEstaciones && listaTickets) {
+  btnVerTickets.addEventListener("click", () => {
+    seccionEstaciones.style.display = "none";
+    listaTickets.style.display = "block";
+  });
+}
+
+}
+
+
   

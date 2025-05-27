@@ -10,6 +10,8 @@
 
   <!-- Botón para abrir ventana Registrar Estación -->
   <button id="open-window-btn">Registrar Estación</button>
+  <button id="btn-ver-tickets">Ver todos los tickets</button>
+
 
   <!-- Ventana Registrar Estación -->
   <div id="new-window">
@@ -117,7 +119,7 @@
     <!-- Aquí aparecerán las estaciones dinámicamente -->
   </div>
 </div>
-<div id="lista-tickets"> Ticketssss</div>
+<div id="lista-tickets" style="display: none;"></div>
 
 
 <!-- Formulario Agregar a Fila -->
@@ -182,22 +184,7 @@
 
   <!-- Script principal -->
   <script type="module" src="./src/main.js"></script>
-  <script>
-  // Mostrar y ocultar ventana Registrar Estación
-  const openBtn = document.getElementById("open-window-btn");
-  const newWindow = document.getElementById("new-window");
-  const closeBtn = document.getElementById("close-window-btn");
-
-  if (openBtn && newWindow && closeBtn) {
-    openBtn.addEventListener("click", () => {
-      newWindow.style.display = "block";
-    });
-
-    closeBtn.addEventListener("click", () => {
-      newWindow.style.display = "none";
-    });
-  }
-</script>
+  <
 <script>
   document.getElementById("limpiar-localstorage")?.addEventListener("click", () => {
     localStorage.clear(); // o localStorage.removeItem("nuevasEstaciones")

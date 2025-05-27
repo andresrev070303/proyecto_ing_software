@@ -1,39 +1,47 @@
 import { obtenerTodosLosTicketsAgrupados } from "./utils/ticket.js";
 
-const container = document.querySelector("#lista-tickets");
+function mostrarTickets() {
+  const container = document.querySelector("#lista-tickets");
 
-if (container) {
-  window.addEventListener("DOMContentLoaded", () => {
-    const ticketsAgrupados = obtenerTodosLosTicketsAgrupados();
+  if (!container) return;
 
-    // Limpiar contenedor
-    container.innerHTML = "";
+  const ticketsAgrupados = obtenerTodosLosTicketsAgrupados();
 
-    if (Object.keys(ticketsAgrupados).length === 0) {
-      container.innerHTML = "<p>No hay tickets registrados.</p>";
-      return;
-    }
+  // Limpiar contenedor
+  container.innerHTML = '<h2>Tickets por Estación</h2>';
 
-    // Mostrar tickets agrupados por estación
-    for (const [nombreEstacion, tickets] of Object.entries(ticketsAgrupados)) {
-      if (tickets.length === 0) continue;
+  if (Object.keys(ticketsAgrupados).length === 0) {
+    container.innerHTML += "<p>No hay tickets registrados.</p>";
+    return;
+  }
 
-      const divEstacion = document.createElement("div");
-      divEstacion.className = "ticket-estacion";
-      divEstacion.innerHTML = `
-        <h3>Tickets - ${nombreEstacion}</h3>
-        <ul>
-          ${tickets.map(t => `
-            <li>
-              Turno: <strong>${t.numeroTurno}</strong> |
-              Nombre: <strong>${t.nombre}</strong> |
-              Placa: <strong>${t.placa}</strong> |
-              Fecha: <strong>${t.fechaCarga}</strong>
-            </li>
-          `).join("")}
-        </ul>
-      `;
-      container.appendChild(divEstacion);
-    }
-  });
+  for (const [nombreEstacion, tickets] of Object.entries(ticketsAgrupados)) {
+    if (tickets.length === 0) continue;
+
+    const divEstacion = document.createElement("div");
+    divEstacion.className = "ticket-estacion";
+    divEstacion.style.marginBottom = "20px";
+    divEstacion.innerHTML = `
+      <h3>Tickets - ${nombreEstacion}</h3>
+      <ul>
+        ${tickets.map(t => `
+          <li>
+            Turno: <strong>${t.numeroTurno}</strong> |
+            Nombre: <strong>${t.nombre}</strong> |
+            Placa: <strong>${t.placa}</strong> |
+            Fecha: <strong>${t.fechaCarga}</strong>
+          </li>
+        `).join("")}
+      </ul>
+    `;
+    container.appendChild(divEstacion);
+  }
 }
+
+// Escuchar evento cuando se activa la vista
+window.addEventListener("DOMContentLoaded", () => {
+  mostrarTickets(); // Carga inicial, si fuera necesario
+});
+
+// Exportar por si se necesita recargar manualmente
+export { mostrarTickets };

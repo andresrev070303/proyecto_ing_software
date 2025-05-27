@@ -1579,5 +1579,22 @@
     },
     "coverage": 0,
     "test_count": 31
+  },
+  {
+    "sha": "c0b811202133809aa095c5010e130e935c8790e5",
+    "author": "andresrev070303",
+    "commit": {
+      "date": "2025-05-27T06:36:00.000Z",
+      "message": "feat:Se agrego la visualizacion de todos los tickets",
+      "url": "https://github.com/andresrev070303/proyecto_ing_software/commit/c0b811202133809aa095c5010e130e935c8790e5"
+    },
+    "stats": {
+      "total": 134,
+      "additions": 80,
+      "deletions": 54,
+      "date": "2025-05-27"
+    },
+    "coverage": 0,
+    "test_count": 31
   }
 ]
