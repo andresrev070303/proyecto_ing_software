@@ -1596,5 +1596,22 @@
     },
     "coverage": 0,
     "test_count": 31
+  },
+  {
+    "sha": "4a3e1d9b0892a451a1ccaff847e3ea5ebe83beec",
+    "author": "andresrev070303",
+    "commit": {
+      "date": "2025-05-27T06:44:22.000Z",
+      "message": "feat:Se cambio el css para mejorar la interfaz de usuario",
+      "url": "https://github.com/andresrev070303/proyecto_ing_software/commit/4a3e1d9b0892a451a1ccaff847e3ea5ebe83beec"
+    },
+    "stats": {
+      "total": 316,
+      "additions": 121,
+      "deletions": 195,
+      "date": "2025-05-27"
+    },
+    "coverage": 0,
+    "test_count": 31
   }
 ]
